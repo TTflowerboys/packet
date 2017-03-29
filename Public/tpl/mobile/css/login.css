@@ -1,0 +1,106 @@
+/* CSS basic */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{ margin: 0; padding: 0; -webkit-box-sizing: border-box;box-sizing: border-box;}
+fieldset,img{ border: 0; }
+:focus{ outline: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{ font-style: normal; font-weight: normal; }
+h1,h2,h3,h4,h5,h6{ font-size: 100%; font-weight: normal; font-family: "Microsoft YaHei"; }
+input,button,textarea,select{ *font-size: 100%; border:none;}
+body {max-width:640px;font-family: "Microsoft Yahei";font-size: 12px;margin: 0 auto;background: #3c3c3a url('../images/loginbg.jpg') center top no-repeat;}
+ol,ul{ list-style: none; }
+table{ border-collapse: collapse; border-spacing: 0; }
+input,textarea {outline:none;}
+:link, :visited, ins{ text-decoration: none; }
+a{text-decoration: none;color: #40b079;font-family: "Microsoft YaHei";}
+a:hover{color: #f90;transition : color 0.2s linear 0s,background-color 0.3 linear 0s;}
+.clearfix:after,.form-group:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix,.form-group{*zoom:1;}.fr{float: right;}.fl{float: left;}
+.mt10{margin-top: 10px;}.t-blue{color: #38ABE2}.t-green{color: #22b200;}
+.w-50p{width: 50%;float: left;}
+.p10 {padding: 10px!important;}.plr10{padding: 0 10px;}
+.t-red{color: red;}.t-orange{color: #f90;}
+.t-blue{color: #0880d7}.t-red2{color: #be3948;}
+.tac{text-align: center;}
+
+/* header */
+.header{position: relative;height: 42px;font: 17px/42px 'Microsoft Yahei';text-align: center;color: #fff;background-color: #3b7eb3;}
+.header a{position: absolute;right: 12px;top: 0;padding: 0 12px;color: #fff;font-size: 15px;}
+.mui-content-padded{}
+.tt-login{margin: 22px 12px 0;}
+.input-group{border-radius: 3px;overflow: hidden;border:1px solid #c8c7cc;}
+.form-group{position: relative;border-bottom: 1px solid #c8c7cc;}
+.form-group:last-child{border-bottom: 0;}
+.text-ipt{height: 40px;width: 100%;}
+.verify-pic{position: absolute;right: 2px;top: 0;z-index: 2;border-radius: 6px;}
+
+
+.link-area{margin: 16px auto;font: 15px/22px 'Microsoft YaHei';color: #fff;text-align: right;}
+.link-area a{color: #fff;}#verifyImg{position: absolute;right: 0;top: 4px;z-index: 2;border-radius: 6px;}
+
+.mui-icon{font-size: 20px;position: absolute;z-index: 1;top: 10px;left: 0;width: 38px;height: 38px;text-align: center;color: #999;}
+
+/* tt-login */
+.tt-login{min-height: 312px;}
+
+/* 按钮 */
+.tt-login .mui-btn-blue1{background-color: #0077ba;}
+.tt-login .mui-btn-blue2{background-color: #3b7eb3;}
+.tt-login .mui-btn-green{background-color: #3b7eb3;}
+.tt-login .login-btn{height: 40px;font: 400 16px/40px 'Microsoft YaHei';color: #fff;text-align: center;border:0;border-radius: 4px;}
+.tt-login .btn-block{display: block;width: 100%;padding: 0;margin-bottom: 15px;}
+/* 表单部分 */
+input[type='text'], input[type='search'], input[type='password'], input[type='datetime'], input[type='datetime-local'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='number'], input[type='email'], input[type='url'], input[type='tel'], input[type='color'] {border-radius: 0;padding-left: 38px;font-size: 14px;font-family: 'Microsoft YaHei';}
+.mui-content-padded{margin: 20px 15px 0;}
+.mui-input-group{border-radius: 4px;margin-top: 15px;border: 1px solid #c8c7cc;}
+.mui-input-group:before,.mui-input-group:after{height: 0;}
+.mui-input-group .mui-input-row{margin-bottom: 0;}
+.mui-input-group .mui-input-row:after{left: 0;right: 0;}
+.mui-input-group .mui-input-row:last-child:after{height: 0}
+.mui-input-row .btncode {font: 13px/20px 'Microsoft YaHei';margin: 0px;position: absolute;right: 8px;padding: 4px 5px;top: 6px;border: 0px;background-color: #d2d2d2;color: #fff;border-radius: 3px;}
+.mui-input-row .btncode-ok{background-color: #0babed;}
+.text-ipt-verify,.mui-input-row .mui-input-verity2{padding-right: 110px;}
+.mui-bar .mui-btn-link{color: #fff;}
+/* login-footer */
+.login-footer{font-size: 12px;line-height: 20px;text-align: center;color: #fff;}
+.login-footer img,.logoIcon{border: 1px solid #fff;border-radius: 10px;padding: 2px;background: #fff;width: 60px;height: 60px;}
+.login-footer span{font-size: 15px;display: block;}
+.login-footer p{margin: 25px auto 12px;}
+.login-footer-default{color: #189cfc;}
+.login-footer-default img{background-color: #1898fc;}
+.login-footer-default p{color: #999;}
+
+.logoIcon{margin: 42px auto;display: block;}
+/* tt-checkbox */
+.tt-checkbox{font-size: 14px;color: #999}
+.tt-checkbox.mui-left label{padding: 10px 10px 10px 30px;line-height: 20px;}
+.tt-checkbox input[type='checkbox']{width: 22px;height: 22px;top: 8px;}
+.tt-checkbox.mui-left input[type='checkbox']{left: 2px;}
+.tt-checkbox input[type='checkbox']:before {font-size: 22px;}
+
+.result-stauts{color: green;font-size: 52px;display: block;margin: 10px auto;}
+#getsmscode{font: 13px/20px 'Microsoft YaHei';margin: 0px;
+    position: absolute;
+    right: 8px;
+    padding: 4px 5px;
+    top: 6px;
+    border: 0px;
+    background-color: #1B9AF7;
+    color: #fff;
+    border-radius: 3px;}
+
+/* stepList */
+.stepList{position: relative;padding: 10px 0;margin: 10px 42px 0;height: 42px;color: #898787;font:14px/22px 'Microsoft YaHei';list-style: none;}
+.stepList:before,.stepList:after{position: absolute;top: 10px;left: 0;content: "";height: 1px;display: block;}
+.stepList:after{background: #7c0;}
+.stepList:before{width: 100%;background: #898787;}
+.stepList li{width: 33.33%;float: left;list-style: none;}
+.stepList li span{position: relative;display: block;margin: 0 auto;width: 64px;height: 34px;padding-top: 12px;text-align: center;}
+.stepList li span:before{position: absolute;left: 50%;z-index: 2;background: #efeff4;margin-left: -11px;width: 22px;overflow: hidden;font-size: 18px;top: -12px;content: "\e91b";font-family: 'icomoon';}
+.stepList li:first-child span{margin-left: -32px;text-align: center;}
+.stepList li:last-child span{float: right;margin-right: -32px;}
+.step1 li:first-child{color: #7c0;}
+.step1:after{width: 30%;}
+.step2 li{color: #7c0;}
+.step2 li:last-child{color: #898787;}
+.step2:after{width: 70%;}
+.step3 li{color: #7c0!important;}
+.step3:after{width: 100%;}

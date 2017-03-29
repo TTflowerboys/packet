@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>会员登录</title>
+  <link rel="stylesheet" href="__PUBLIC__/tpl/user/default/css/login.css">
+  <link rel="stylesheet" href="__PUBLIC__/static/css/fonts.css">
+</head>
+<body>
+
+<div class="main" id="APPBox">
+  <div class="login-form">
+    <h1><img src="__PUBLIC__/tpl/user/default/images/logo.png" alt=""></h1>
+    <div class="loginBox">   
+      <form class="ajaxForm3" action="<{:U('login/loginDo')}>" method="post">
+        <div class="form-group">
+          <input type="text" class="text-ipt" name="username" placeholder="请输入ID" required autocomplete="off">
+        </div>
+        <div class="form-group">
+          <input type="password" class="text-ipt" name="password" placeholder="请输入密码" required autocomplete="off">
+        </div>
+        <div class="form-group">
+          <input type="text" class="text-ipt text-ipt-verify" id="veriCode" name="veriCode" placeholder="请输入验证码" required>
+          <img src="<{:U('verifyCode')}>" id="verify_img" class="verify-pic" width="138" height="44" alt="验证码">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="text-submit" value="登 录">
+        </div>       
+      </form>
+    </div>
+    <div class="otherList">一个让平民变富翁的游戏</div>
+  </div>
+</div>
+
+
+<script>var layerCssUrl = '__PUBLIC__/static/plugin/layer/';</script>
+<script src="__PUBLIC__/static/js/jquery.js"></script>
+<script src="__PUBLIC__/static/js/jquery.form.js"></script>
+<script src="__PUBLIC__/static/plugin/layer/layer.js"></script>
+<script src="__PUBLIC__/tpl/user/default/js/common.js"></script>
+<script>
+  $("#verify_img").on("click",function(){
+    var veriCodeUrl = "<{:U('verifyCode',array('randt'=>time()))}>?"+new Date().getTime();
+     $(".verify-pic").attr("src",veriCodeUrl);
+  })
+</script>
+</body>
+</html>

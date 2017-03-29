@@ -1,0 +1,59 @@
+<include file='Index:header'/>
+
+<div class="container ptb42">
+  <include file='index:aside'/>
+  <div class="w-md-8p">
+    <div class="areaR">
+      <div class="Tab">
+        <!-- Nav tabs -->
+        <ul id="myTabs" class="nav-tabs clearfix" role="tablist">
+          <li><a href="<{:U('order/index')}>">我的付款订单</a></li>
+          <li class="active"><a href="<{:U('order/indexpp')}>">我的收款订单</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+            <table class="Table" width="100%">
+              <thead>
+                <tr><th>订单编号</th><th>总金额</th><th class="hidden-sm hidden-xs">订单生成日期</th><th>订单过期时间</th><th>订单状态</th><th>明细备注</th><th>操作</th></tr>
+                </thead>
+              <tbody>
+              <volist name="rs" id="vo" empty="$empty">
+                <tr>
+                  <td><{$vo.tgno}></td>
+                  <td class="t-red"><{$vo.price}></td>
+                  <td class="hidden-sm hidden-xs t-green"><{:date('Y-m-d H:i',$vo['addtime'])}></td>
+                  <td class="hidden-sm hidden-xs t-red"><{:date('Y-m-d H:i',$vo['expiretime'])}></td>
+                  <td>
+                  <if condition="$vo['status'] eq 0">
+                      <span class="t-orange"><{$vo.status|orderStatus}></span>
+                  <elseif  condition="$vo['status'] eq 1"/>
+                      <span class="t-green"><{$vo.status|orderStatus}></span>
+                  <else/>
+                      <span class="t-red"><{$vo.status|orderStatus}></span>
+                  </if>
+                  </td>
+                  <td><{$vo.remark}></td>
+                  <td><div class="action-buttons">
+                    <if condition="$vo['status'] eq 0">
+                      <a href="javascript:;" onclick="orderAction('<{:U(\"order/comfirmDo\")}>','<{$vo.id}>','你确定收款吗？')" class="btn btn-minier btn-danger">确认收款</a>
+                    <elseif condition="$vo['status'] eq 1"/>
+                      <span class="btn btn-minier btn-success">已收款</span>
+                    <elseif condition="$vo['status'] eq 2"/>
+                      <a href="javascript:;" class="btn btn-minier btn-default">订单已过期</a>
+                    </if>
+                  </div></td>
+                </tr>
+              </volist>
+              </tbody>
+              <tfoot class="tfoot"><tr><td colspan="10"><div class="pageNav"><{$page}></div></td></tr></tfoot> 
+            </table>
+          </div>
+        </div>
+      </div> <!-- 选项卡 -->
+    </div>
+  </div>
+</div>
+
+<include file='Index:footer'/>

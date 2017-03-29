@@ -1,0 +1,52 @@
+<include file='Index:header'/>
+<div class="page">
+
+<div class="tab-box J_tab">
+  <ul class="nav nav-tabs">
+    <li class="active" data-target="editBank">修改银行资料</li>
+  </ul>
+  <div class="tab-content">
+    <div id="editBank" class="tab-pane tab-active">
+      <form class="ajaxForm form-horizontal" action="<{:U('sys/bankEditDo')}>" method="post">
+        <div class="form-items">
+          <label class="col-sm-2 control-label">是否设为默认收款：</label><div class="col-sm-10" style="padding-top:5px"><input name="isdefault" value="1"  <if condition="$rs.isdefault eq 1">checked</if> class="switch btn-flat" type="checkbox" /><span class="lbl"></span></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">持卡人姓名：</label>
+          <div class="col-sm-10"><input type="text" name="realname" class="input-text col-sm-5 col-xs-10" value="<{$rs.realname}>" placeholder="持卡人姓名" required></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">绑定手机号：</label>
+          <div class="col-sm-10"><input type="text" name="bindphone" class="input-text col-sm-5 col-xs-10" value="<{$rs.bindphone}>" placeholder="银行卡绑定手机号" required></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">银行卡类型：</label>
+          <div class="col-sm-10"><input type="text" class="input-text col-sm-5 col-xs-10" value="<{$rs.banktype|bankType}>" placeholder="银行卡类型" readonly>
+          </div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">银行卡号：</label>
+          <div class="col-sm-10"><input type="text" name="cardno" value="<{$rs.cardno}>" class="input-text col-sm-5 col-xs-10" placeholder="银行卡号" required></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">开户行地址：</label>
+          <div class="col-sm-10"><input type="text" name="bankaddress" value="<{$rs.bankaddress}>" class="input-text col-sm-5 col-xs-10" placeholder="银行卡开户行地址"></div>
+        </div>
+        <input type="hidden" name="id" value="<{$rs.id}>">
+        <div class="form-items">
+          <label class="col-sm-2">&nbsp;</label>
+          <div class="col-sm-10">
+            <button class="btn btn-success" type="submit"><i class="ace-icon icon-right"></i>确认添加</button>
+            <button class="btn btn-primary" type="reset"><i class="ace-icon icon-back"></i>重置</button>
+          </div>
+        </div>
+      </form>  
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+<include file='Index:footer'/>

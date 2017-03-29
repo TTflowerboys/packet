@@ -1,0 +1,568 @@
+/* CSS basic */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{ margin: 0; padding: 0; }
+fieldset,img{ border: 0; }
+:focus{ outline: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{ font-style: normal; font-weight: normal; }
+h1,h2,h3,h4,h5,h6{ font-size: 100%; font-weight: normal; font-family: "Microsoft YaHei"; }
+input,button,textarea,select{ *font-size: 100%; border:none;}
+body {font-family: "Microsoft Yahei";font-size: 12px;margin: 0;background: #efeff4;}
+ol,ul{ list-style: none; }
+table{ border-collapse: collapse; border-spacing: 0; }
+input,textarea {outline:none;}
+:link, :visited, ins{ text-decoration: none; }
+a{text-decoration: none;color: #3b7eb3;font-family: "Microsoft YaHei";}
+a:hover{color: #f90;transition : color 0.2s linear 0s,background-color 0.3 linear 0s;}
+.clearfix:after,.form-group:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix,.form-group{*zoom:1;}.fr{float: right;}.fl{float: left;}
+.mt10{margin-top: 10px;}.t-blue{color: #38ABE2}.t-green{color: #22b200;}
+.w-50p{width: 50%;float: left;}
+.p10 {padding: 10px!important;}.plr10{padding: 0 10px;}
+.t-red{color: red;}.t-orange{color: #f90;}
+.t-blue{color: #0880d7}.t-red2{color: #be3948;}
+.tac{text-align: center;}
+/* layer弹出层-手机样式 */
+.layui-layer-title{padding:0 42px 0 20px!important;}
+.layui-layer-dialog {min-width: 180px!important;}
+.rel{position: relative;}
+/* bar  */
+.mui-bar{background-color: #00d49a;}
+.mui-title,.mui-bar .mui-icon{color: #fff;}
+.mui-bar-tab{background-color: #fff;}
+.mui-bar-tab .mui-icon{color: #52e9c2;}
+
+/*Shadow Right*/
+.button-longshadow,.button-longshadow-right {overflow: hidden; }
+.button-longshadow.button-primary,.button-longshadow-right.button-primary {background: -webkit-gradient(linear, left top, left bottom, from(#34a5f8), to(#088ef0));
+    background: linear-gradient(#34a5f8, #088ef0);text-shadow: 0px 0px #0880d7, 1px 1px #0880d7, 2px 2px #0880d7, 3px 3px #0880d7, 4px 4px #0880d7, 5px 5px #0880d7, 6px 6px #0880d7, 7px 7px #0880d7, 8px 8px #0880d7, 9px 9px #0880d7, 10px 10px #0880d7, 11px 11px #0880d7, 12px 12px #0880d7, 13px 13px #0880d7, 14px 14px #0880d7, 15px 15px #0880d7, 16px 16px #0880d7, 17px 17px #0880d7, 18px 18px #0880d7, 19px 19px #0880d7, 20px 20px #0880d7, 21px 21px #0880d7, 22px 22px #0880d7, 23px 23px #0880d7, 24px 24px #0880d7, 25px 25px #0880d7, 26px 26px #0880d7, 27px 27px #0880d7, 28px 28px #0880d7, 29px 29px #0880d7, 30px 30px #0880d7, 31px 31px #0880d7, 32px 32px #0880d7, 33px 33px #0880d7, 34px 34px #0880d7, 35px 35px #0880d7, 36px 36px #0880d7, 37px 37px #0880d7, 38px 38px #0880d7, 39px 39px #0880d7, 40px 40px #0880d7, 41px 41px #0880d7, 42px 42px #0880d7, 43px 43px #0880d7, 44px 44px #0880d7, 45px 45px #0880d7, 46px 46px #0880d7, 47px 47px #0880d7, 48px 48px #0880d7, 49px 49px #0880d7, 50px 50px #0880d7, 51px 51px #0880d7, 52px 52px #0880d7, 53px 53px #0880d7, 54px 54px #0880d7, 55px 55px #0880d7, 56px 56px #0880d7, 57px 57px #0880d7, 58px 58px #0880d7, 59px 59px #0880d7, 60px 60px #0880d7, 61px 61px #0880d7, 62px 62px #0880d7, 63px 63px #0880d7, 64px 64px #0880d7, 65px 65px #0880d7, 66px 66px #0880d7, 67px 67px #0880d7, 68px 68px #0880d7, 69px 69px #0880d7, 70px 70px #0880d7, 71px 71px #0880d7, 72px 72px #0880d7, 73px 73px #0880d7, 74px 74px #0880d7, 75px 75px #0880d7, 76px 76px #0880d7, 77px 77px #0880d7, 78px 78px #0880d7, 79px 79px #0880d7, 80px 80px #0880d7, 81px 81px #0880d7, 82px 82px #0880d7, 83px 83px #0880d7, 84px 84px #0880d7, 85px 85px #0880d7; }
+.button-longshadow.button-primary:active, .button-longshadow.button-primary.active, .button-longshadow.button-primary.is-active,
+.button-longshadow-right.button-primary:active,.button-longshadow-right.button-primary.active,.button-longshadow-right.button-primary.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow.button-plain,.button-longshadow-right.button-plain {text-shadow: 0px 0px #e6e6e6, 1px 1px #e6e6e6, 2px 2px #e6e6e6, 3px 3px #e6e6e6, 4px 4px #e6e6e6, 5px 5px #e6e6e6, 6px 6px #e6e6e6, 7px 7px #e6e6e6, 8px 8px #e6e6e6, 9px 9px #e6e6e6, 10px 10px #e6e6e6, 11px 11px #e6e6e6, 12px 12px #e6e6e6, 13px 13px #e6e6e6, 14px 14px #e6e6e6, 15px 15px #e6e6e6, 16px 16px #e6e6e6, 17px 17px #e6e6e6, 18px 18px #e6e6e6, 19px 19px #e6e6e6, 20px 20px #e6e6e6, 21px 21px #e6e6e6, 22px 22px #e6e6e6, 23px 23px #e6e6e6, 24px 24px #e6e6e6, 25px 25px #e6e6e6, 26px 26px #e6e6e6, 27px 27px #e6e6e6, 28px 28px #e6e6e6, 29px 29px #e6e6e6, 30px 30px #e6e6e6, 31px 31px #e6e6e6, 32px 32px #e6e6e6, 33px 33px #e6e6e6, 34px 34px #e6e6e6, 35px 35px #e6e6e6, 36px 36px #e6e6e6, 37px 37px #e6e6e6, 38px 38px #e6e6e6, 39px 39px #e6e6e6, 40px 40px #e6e6e6, 41px 41px #e6e6e6, 42px 42px #e6e6e6, 43px 43px #e6e6e6, 44px 44px #e6e6e6, 45px 45px #e6e6e6, 46px 46px #e6e6e6, 47px 47px #e6e6e6, 48px 48px #e6e6e6, 49px 49px #e6e6e6, 50px 50px #e6e6e6, 51px 51px #e6e6e6, 52px 52px #e6e6e6, 53px 53px #e6e6e6, 54px 54px #e6e6e6, 55px 55px #e6e6e6, 56px 56px #e6e6e6, 57px 57px #e6e6e6, 58px 58px #e6e6e6, 59px 59px #e6e6e6, 60px 60px #e6e6e6, 61px 61px #e6e6e6, 62px 62px #e6e6e6, 63px 63px #e6e6e6, 64px 64px #e6e6e6, 65px 65px #e6e6e6, 66px 66px #e6e6e6, 67px 67px #e6e6e6, 68px 68px #e6e6e6, 69px 69px #e6e6e6, 70px 70px #e6e6e6, 71px 71px #e6e6e6, 72px 72px #e6e6e6, 73px 73px #e6e6e6, 74px 74px #e6e6e6, 75px 75px #e6e6e6, 76px 76px #e6e6e6, 77px 77px #e6e6e6, 78px 78px #e6e6e6, 79px 79px #e6e6e6, 80px 80px #e6e6e6, 81px 81px #e6e6e6, 82px 82px #e6e6e6, 83px 83px #e6e6e6, 84px 84px #e6e6e6, 85px 85px #e6e6e6; }
+.button-longshadow.button-plain:active, .button-longshadow.button-plain.active, .button-longshadow.button-plain.is-active,
+.button-longshadow-right.button-plain:active,.button-longshadow-right.button-plain.active,.button-longshadow-right.button-plain.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow.button-inverse,.button-longshadow-right.button-inverse {text-shadow: 0px 0px #090909, 1px 1px #090909, 2px 2px #090909, 3px 3px #090909, 4px 4px #090909, 5px 5px #090909, 6px 6px #090909, 7px 7px #090909, 8px 8px #090909, 9px 9px #090909, 10px 10px #090909, 11px 11px #090909, 12px 12px #090909, 13px 13px #090909, 14px 14px #090909, 15px 15px #090909, 16px 16px #090909, 17px 17px #090909, 18px 18px #090909, 19px 19px #090909, 20px 20px #090909, 21px 21px #090909, 22px 22px #090909, 23px 23px #090909, 24px 24px #090909, 25px 25px #090909, 26px 26px #090909, 27px 27px #090909, 28px 28px #090909, 29px 29px #090909, 30px 30px #090909, 31px 31px #090909, 32px 32px #090909, 33px 33px #090909, 34px 34px #090909, 35px 35px #090909, 36px 36px #090909, 37px 37px #090909, 38px 38px #090909, 39px 39px #090909, 40px 40px #090909, 41px 41px #090909, 42px 42px #090909, 43px 43px #090909, 44px 44px #090909, 45px 45px #090909, 46px 46px #090909, 47px 47px #090909, 48px 48px #090909, 49px 49px #090909, 50px 50px #090909, 51px 51px #090909, 52px 52px #090909, 53px 53px #090909, 54px 54px #090909, 55px 55px #090909, 56px 56px #090909, 57px 57px #090909, 58px 58px #090909, 59px 59px #090909, 60px 60px #090909, 61px 61px #090909, 62px 62px #090909, 63px 63px #090909, 64px 64px #090909, 65px 65px #090909, 66px 66px #090909, 67px 67px #090909, 68px 68px #090909, 69px 69px #090909, 70px 70px #090909, 71px 71px #090909, 72px 72px #090909, 73px 73px #090909, 74px 74px #090909, 75px 75px #090909, 76px 76px #090909, 77px 77px #090909, 78px 78px #090909, 79px 79px #090909, 80px 80px #090909, 81px 81px #090909, 82px 82px #090909, 83px 83px #090909, 84px 84px #090909, 85px 85px #090909; }
+.button-longshadow.button-inverse:active, .button-longshadow.button-inverse.active, .button-longshadow.button-inverse.is-active,
+.button-longshadow-right.button-inverse:active,.button-longshadow-right.button-inverse.active,.button-longshadow-right.button-inverse.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow.button-action,.button-longshadow-right.button-action {text-shadow: 0px 0px #8bc220, 1px 1px #8bc220, 2px 2px #8bc220, 3px 3px #8bc220, 4px 4px #8bc220, 5px 5px #8bc220, 6px 6px #8bc220, 7px 7px #8bc220, 8px 8px #8bc220, 9px 9px #8bc220, 10px 10px #8bc220, 11px 11px #8bc220, 12px 12px #8bc220, 13px 13px #8bc220, 14px 14px #8bc220, 15px 15px #8bc220, 16px 16px #8bc220, 17px 17px #8bc220, 18px 18px #8bc220, 19px 19px #8bc220, 20px 20px #8bc220, 21px 21px #8bc220, 22px 22px #8bc220, 23px 23px #8bc220, 24px 24px #8bc220, 25px 25px #8bc220, 26px 26px #8bc220, 27px 27px #8bc220, 28px 28px #8bc220, 29px 29px #8bc220, 30px 30px #8bc220, 31px 31px #8bc220, 32px 32px #8bc220, 33px 33px #8bc220, 34px 34px #8bc220, 35px 35px #8bc220, 36px 36px #8bc220, 37px 37px #8bc220, 38px 38px #8bc220, 39px 39px #8bc220, 40px 40px #8bc220, 41px 41px #8bc220, 42px 42px #8bc220, 43px 43px #8bc220, 44px 44px #8bc220, 45px 45px #8bc220, 46px 46px #8bc220, 47px 47px #8bc220, 48px 48px #8bc220, 49px 49px #8bc220, 50px 50px #8bc220, 51px 51px #8bc220, 52px 52px #8bc220, 53px 53px #8bc220, 54px 54px #8bc220, 55px 55px #8bc220, 56px 56px #8bc220, 57px 57px #8bc220, 58px 58px #8bc220, 59px 59px #8bc220, 60px 60px #8bc220, 61px 61px #8bc220, 62px 62px #8bc220, 63px 63px #8bc220, 64px 64px #8bc220, 65px 65px #8bc220, 66px 66px #8bc220, 67px 67px #8bc220, 68px 68px #8bc220, 69px 69px #8bc220, 70px 70px #8bc220, 71px 71px #8bc220, 72px 72px #8bc220, 73px 73px #8bc220, 74px 74px #8bc220, 75px 75px #8bc220, 76px 76px #8bc220, 77px 77px #8bc220, 78px 78px #8bc220, 79px 79px #8bc220, 80px 80px #8bc220, 81px 81px #8bc220, 82px 82px #8bc220, 83px 83px #8bc220, 84px 84px #8bc220, 85px 85px #8bc220; }
+.button-longshadow.button-action:active, .button-longshadow.button-action.active, .button-longshadow.button-action.is-active,
+.button-longshadow-right.button-action:active,.button-longshadow-right.button-action.active,.button-longshadow-right.button-action.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow.button-highlight,.button-longshadow-right.button-highlight {text-shadow: 0px 0px #e59501, 1px 1px #e59501, 2px 2px #e59501, 3px 3px #e59501, 4px 4px #e59501, 5px 5px #e59501, 6px 6px #e59501, 7px 7px #e59501, 8px 8px #e59501, 9px 9px #e59501, 10px 10px #e59501, 11px 11px #e59501, 12px 12px #e59501, 13px 13px #e59501, 14px 14px #e59501, 15px 15px #e59501, 16px 16px #e59501, 17px 17px #e59501, 18px 18px #e59501, 19px 19px #e59501, 20px 20px #e59501, 21px 21px #e59501, 22px 22px #e59501, 23px 23px #e59501, 24px 24px #e59501, 25px 25px #e59501, 26px 26px #e59501, 27px 27px #e59501, 28px 28px #e59501, 29px 29px #e59501, 30px 30px #e59501, 31px 31px #e59501, 32px 32px #e59501, 33px 33px #e59501, 34px 34px #e59501, 35px 35px #e59501, 36px 36px #e59501, 37px 37px #e59501, 38px 38px #e59501, 39px 39px #e59501, 40px 40px #e59501, 41px 41px #e59501, 42px 42px #e59501, 43px 43px #e59501, 44px 44px #e59501, 45px 45px #e59501, 46px 46px #e59501, 47px 47px #e59501, 48px 48px #e59501, 49px 49px #e59501, 50px 50px #e59501, 51px 51px #e59501, 52px 52px #e59501, 53px 53px #e59501, 54px 54px #e59501, 55px 55px #e59501, 56px 56px #e59501, 57px 57px #e59501, 58px 58px #e59501, 59px 59px #e59501, 60px 60px #e59501, 61px 61px #e59501, 62px 62px #e59501, 63px 63px #e59501, 64px 64px #e59501, 65px 65px #e59501, 66px 66px #e59501, 67px 67px #e59501, 68px 68px #e59501, 69px 69px #e59501, 70px 70px #e59501, 71px 71px #e59501, 72px 72px #e59501, 73px 73px #e59501, 74px 74px #e59501, 75px 75px #e59501, 76px 76px #e59501, 77px 77px #e59501, 78px 78px #e59501, 79px 79px #e59501, 80px 80px #e59501, 81px 81px #e59501, 82px 82px #e59501, 83px 83px #e59501, 84px 84px #e59501, 85px 85px #e59501; }
+.button-longshadow.button-highlight:active, .button-longshadow.button-highlight.active, .button-longshadow.button-highlight.is-active,
+.button-longshadow-right.button-highlight:active,.button-longshadow-right.button-highlight.active,.button-longshadow-right.button-highlight.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow.button-caution,.button-longshadow-right.button-caution {text-shadow: 0px 0px #ff1022, 1px 1px #ff1022, 2px 2px #ff1022, 3px 3px #ff1022, 4px 4px #ff1022, 5px 5px #ff1022, 6px 6px #ff1022, 7px 7px #ff1022, 8px 8px #ff1022, 9px 9px #ff1022, 10px 10px #ff1022, 11px 11px #ff1022, 12px 12px #ff1022, 13px 13px #ff1022, 14px 14px #ff1022, 15px 15px #ff1022, 16px 16px #ff1022, 17px 17px #ff1022, 18px 18px #ff1022, 19px 19px #ff1022, 20px 20px #ff1022, 21px 21px #ff1022, 22px 22px #ff1022, 23px 23px #ff1022, 24px 24px #ff1022, 25px 25px #ff1022, 26px 26px #ff1022, 27px 27px #ff1022, 28px 28px #ff1022, 29px 29px #ff1022, 30px 30px #ff1022, 31px 31px #ff1022, 32px 32px #ff1022, 33px 33px #ff1022, 34px 34px #ff1022, 35px 35px #ff1022, 36px 36px #ff1022, 37px 37px #ff1022, 38px 38px #ff1022, 39px 39px #ff1022, 40px 40px #ff1022, 41px 41px #ff1022, 42px 42px #ff1022, 43px 43px #ff1022, 44px 44px #ff1022, 45px 45px #ff1022, 46px 46px #ff1022, 47px 47px #ff1022, 48px 48px #ff1022, 49px 49px #ff1022, 50px 50px #ff1022, 51px 51px #ff1022, 52px 52px #ff1022, 53px 53px #ff1022, 54px 54px #ff1022, 55px 55px #ff1022, 56px 56px #ff1022, 57px 57px #ff1022, 58px 58px #ff1022, 59px 59px #ff1022, 60px 60px #ff1022, 61px 61px #ff1022, 62px 62px #ff1022, 63px 63px #ff1022, 64px 64px #ff1022, 65px 65px #ff1022, 66px 66px #ff1022, 67px 67px #ff1022, 68px 68px #ff1022, 69px 69px #ff1022, 70px 70px #ff1022, 71px 71px #ff1022, 72px 72px #ff1022, 73px 73px #ff1022, 74px 74px #ff1022, 75px 75px #ff1022, 76px 76px #ff1022, 77px 77px #ff1022, 78px 78px #ff1022, 79px 79px #ff1022, 80px 80px #ff1022, 81px 81px #ff1022, 82px 82px #ff1022, 83px 83px #ff1022, 84px 84px #ff1022, 85px 85px #ff1022; }
+.button-longshadow.button-caution:active, .button-longshadow.button-caution.active, .button-longshadow.button-caution.is-active,
+.button-longshadow-right.button-caution:active,.button-longshadow-right.button-caution.active,.button-longshadow-right.button-caution.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow.button-royal,.button-longshadow-right.button-royal {text-shadow: 0px 0px #5246e2, 1px 1px #5246e2, 2px 2px #5246e2, 3px 3px #5246e2, 4px 4px #5246e2, 5px 5px #5246e2, 6px 6px #5246e2, 7px 7px #5246e2, 8px 8px #5246e2, 9px 9px #5246e2, 10px 10px #5246e2, 11px 11px #5246e2, 12px 12px #5246e2, 13px 13px #5246e2, 14px 14px #5246e2, 15px 15px #5246e2, 16px 16px #5246e2, 17px 17px #5246e2, 18px 18px #5246e2, 19px 19px #5246e2, 20px 20px #5246e2, 21px 21px #5246e2, 22px 22px #5246e2, 23px 23px #5246e2, 24px 24px #5246e2, 25px 25px #5246e2, 26px 26px #5246e2, 27px 27px #5246e2, 28px 28px #5246e2, 29px 29px #5246e2, 30px 30px #5246e2, 31px 31px #5246e2, 32px 32px #5246e2, 33px 33px #5246e2, 34px 34px #5246e2, 35px 35px #5246e2, 36px 36px #5246e2, 37px 37px #5246e2, 38px 38px #5246e2, 39px 39px #5246e2, 40px 40px #5246e2, 41px 41px #5246e2, 42px 42px #5246e2, 43px 43px #5246e2, 44px 44px #5246e2, 45px 45px #5246e2, 46px 46px #5246e2, 47px 47px #5246e2, 48px 48px #5246e2, 49px 49px #5246e2, 50px 50px #5246e2, 51px 51px #5246e2, 52px 52px #5246e2, 53px 53px #5246e2, 54px 54px #5246e2, 55px 55px #5246e2, 56px 56px #5246e2, 57px 57px #5246e2, 58px 58px #5246e2, 59px 59px #5246e2, 60px 60px #5246e2, 61px 61px #5246e2, 62px 62px #5246e2, 63px 63px #5246e2, 64px 64px #5246e2, 65px 65px #5246e2, 66px 66px #5246e2, 67px 67px #5246e2, 68px 68px #5246e2, 69px 69px #5246e2, 70px 70px #5246e2, 71px 71px #5246e2, 72px 72px #5246e2, 73px 73px #5246e2, 74px 74px #5246e2, 75px 75px #5246e2, 76px 76px #5246e2, 77px 77px #5246e2, 78px 78px #5246e2, 79px 79px #5246e2, 80px 80px #5246e2, 81px 81px #5246e2, 82px 82px #5246e2, 83px 83px #5246e2, 84px 84px #5246e2, 85px 85px #5246e2; }
+.button-longshadow.button-royal:active, .button-longshadow.button-royal.active, .button-longshadow.button-royal.is-active,
+.button-longshadow-right.button-royal:active,.button-longshadow-right.button-royal.active,.button-longshadow-right.button-royal.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* Shadow Left */
+.button-longshadow-left {overflow: hidden; }
+.button-longshadow-left.button-primary {text-shadow: 0px 0px #0880d7, -1px 1px #0880d7, -2px 2px #0880d7, -3px 3px #0880d7, -4px 4px #0880d7, -5px 5px #0880d7, -6px 6px #0880d7, -7px 7px #0880d7, -8px 8px #0880d7, -9px 9px #0880d7, -10px 10px #0880d7, -11px 11px #0880d7, -12px 12px #0880d7, -13px 13px #0880d7, -14px 14px #0880d7, -15px 15px #0880d7, -16px 16px #0880d7, -17px 17px #0880d7, -18px 18px #0880d7, -19px 19px #0880d7, -20px 20px #0880d7, -21px 21px #0880d7, -22px 22px #0880d7, -23px 23px #0880d7, -24px 24px #0880d7, -25px 25px #0880d7, -26px 26px #0880d7, -27px 27px #0880d7, -28px 28px #0880d7, -29px 29px #0880d7, -30px 30px #0880d7, -31px 31px #0880d7, -32px 32px #0880d7, -33px 33px #0880d7, -34px 34px #0880d7, -35px 35px #0880d7, -36px 36px #0880d7, -37px 37px #0880d7, -38px 38px #0880d7, -39px 39px #0880d7, -40px 40px #0880d7, -41px 41px #0880d7, -42px 42px #0880d7, -43px 43px #0880d7, -44px 44px #0880d7, -45px 45px #0880d7, -46px 46px #0880d7, -47px 47px #0880d7, -48px 48px #0880d7, -49px 49px #0880d7, -50px 50px #0880d7, -51px 51px #0880d7, -52px 52px #0880d7, -53px 53px #0880d7, -54px 54px #0880d7, -55px 55px #0880d7, -56px 56px #0880d7, -57px 57px #0880d7, -58px 58px #0880d7, -59px 59px #0880d7, -60px 60px #0880d7, -61px 61px #0880d7, -62px 62px #0880d7, -63px 63px #0880d7, -64px 64px #0880d7, -65px 65px #0880d7, -66px 66px #0880d7, -67px 67px #0880d7, -68px 68px #0880d7, -69px 69px #0880d7, -70px 70px #0880d7, -71px 71px #0880d7, -72px 72px #0880d7, -73px 73px #0880d7, -74px 74px #0880d7, -75px 75px #0880d7, -76px 76px #0880d7, -77px 77px #0880d7, -78px 78px #0880d7, -79px 79px #0880d7, -80px 80px #0880d7, -81px 81px #0880d7, -82px 82px #0880d7, -83px 83px #0880d7, -84px 84px #0880d7, -85px 85px #0880d7; }
+.button-longshadow-left.button-primary:active, .button-longshadow-left.button-primary.active, .button-longshadow-left.button-primary.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow-left.button-plain {text-shadow: 0px 0px #e6e6e6, -1px 1px #e6e6e6, -2px 2px #e6e6e6, -3px 3px #e6e6e6, -4px 4px #e6e6e6, -5px 5px #e6e6e6, -6px 6px #e6e6e6, -7px 7px #e6e6e6, -8px 8px #e6e6e6, -9px 9px #e6e6e6, -10px 10px #e6e6e6, -11px 11px #e6e6e6, -12px 12px #e6e6e6, -13px 13px #e6e6e6, -14px 14px #e6e6e6, -15px 15px #e6e6e6, -16px 16px #e6e6e6, -17px 17px #e6e6e6, -18px 18px #e6e6e6, -19px 19px #e6e6e6, -20px 20px #e6e6e6, -21px 21px #e6e6e6, -22px 22px #e6e6e6, -23px 23px #e6e6e6, -24px 24px #e6e6e6, -25px 25px #e6e6e6, -26px 26px #e6e6e6, -27px 27px #e6e6e6, -28px 28px #e6e6e6, -29px 29px #e6e6e6, -30px 30px #e6e6e6, -31px 31px #e6e6e6, -32px 32px #e6e6e6, -33px 33px #e6e6e6, -34px 34px #e6e6e6, -35px 35px #e6e6e6, -36px 36px #e6e6e6, -37px 37px #e6e6e6, -38px 38px #e6e6e6, -39px 39px #e6e6e6, -40px 40px #e6e6e6, -41px 41px #e6e6e6, -42px 42px #e6e6e6, -43px 43px #e6e6e6, -44px 44px #e6e6e6, -45px 45px #e6e6e6, -46px 46px #e6e6e6, -47px 47px #e6e6e6, -48px 48px #e6e6e6, -49px 49px #e6e6e6, -50px 50px #e6e6e6, -51px 51px #e6e6e6, -52px 52px #e6e6e6, -53px 53px #e6e6e6, -54px 54px #e6e6e6, -55px 55px #e6e6e6, -56px 56px #e6e6e6, -57px 57px #e6e6e6, -58px 58px #e6e6e6, -59px 59px #e6e6e6, -60px 60px #e6e6e6, -61px 61px #e6e6e6, -62px 62px #e6e6e6, -63px 63px #e6e6e6, -64px 64px #e6e6e6, -65px 65px #e6e6e6, -66px 66px #e6e6e6, -67px 67px #e6e6e6, -68px 68px #e6e6e6, -69px 69px #e6e6e6, -70px 70px #e6e6e6, -71px 71px #e6e6e6, -72px 72px #e6e6e6, -73px 73px #e6e6e6, -74px 74px #e6e6e6, -75px 75px #e6e6e6, -76px 76px #e6e6e6, -77px 77px #e6e6e6, -78px 78px #e6e6e6, -79px 79px #e6e6e6, -80px 80px #e6e6e6, -81px 81px #e6e6e6, -82px 82px #e6e6e6, -83px 83px #e6e6e6, -84px 84px #e6e6e6, -85px 85px #e6e6e6; }
+.button-longshadow-left.button-plain:active, .button-longshadow-left.button-plain.active, .button-longshadow-left.button-plain.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow-left.button-inverse {text-shadow: 0px 0px #090909, -1px 1px #090909, -2px 2px #090909, -3px 3px #090909, -4px 4px #090909, -5px 5px #090909, -6px 6px #090909, -7px 7px #090909, -8px 8px #090909, -9px 9px #090909, -10px 10px #090909, -11px 11px #090909, -12px 12px #090909, -13px 13px #090909, -14px 14px #090909, -15px 15px #090909, -16px 16px #090909, -17px 17px #090909, -18px 18px #090909, -19px 19px #090909, -20px 20px #090909, -21px 21px #090909, -22px 22px #090909, -23px 23px #090909, -24px 24px #090909, -25px 25px #090909, -26px 26px #090909, -27px 27px #090909, -28px 28px #090909, -29px 29px #090909, -30px 30px #090909, -31px 31px #090909, -32px 32px #090909, -33px 33px #090909, -34px 34px #090909, -35px 35px #090909, -36px 36px #090909, -37px 37px #090909, -38px 38px #090909, -39px 39px #090909, -40px 40px #090909, -41px 41px #090909, -42px 42px #090909, -43px 43px #090909, -44px 44px #090909, -45px 45px #090909, -46px 46px #090909, -47px 47px #090909, -48px 48px #090909, -49px 49px #090909, -50px 50px #090909, -51px 51px #090909, -52px 52px #090909, -53px 53px #090909, -54px 54px #090909, -55px 55px #090909, -56px 56px #090909, -57px 57px #090909, -58px 58px #090909, -59px 59px #090909, -60px 60px #090909, -61px 61px #090909, -62px 62px #090909, -63px 63px #090909, -64px 64px #090909, -65px 65px #090909, -66px 66px #090909, -67px 67px #090909, -68px 68px #090909, -69px 69px #090909, -70px 70px #090909, -71px 71px #090909, -72px 72px #090909, -73px 73px #090909, -74px 74px #090909, -75px 75px #090909, -76px 76px #090909, -77px 77px #090909, -78px 78px #090909, -79px 79px #090909, -80px 80px #090909, -81px 81px #090909, -82px 82px #090909, -83px 83px #090909, -84px 84px #090909, -85px 85px #090909; }
+.button-longshadow-left.button-inverse:active, .button-longshadow-left.button-inverse.active, .button-longshadow-left.button-inverse.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow-left.button-action {text-shadow: 0px 0px #8bc220, -1px 1px #8bc220, -2px 2px #8bc220, -3px 3px #8bc220, -4px 4px #8bc220, -5px 5px #8bc220, -6px 6px #8bc220, -7px 7px #8bc220, -8px 8px #8bc220, -9px 9px #8bc220, -10px 10px #8bc220, -11px 11px #8bc220, -12px 12px #8bc220, -13px 13px #8bc220, -14px 14px #8bc220, -15px 15px #8bc220, -16px 16px #8bc220, -17px 17px #8bc220, -18px 18px #8bc220, -19px 19px #8bc220, -20px 20px #8bc220, -21px 21px #8bc220, -22px 22px #8bc220, -23px 23px #8bc220, -24px 24px #8bc220, -25px 25px #8bc220, -26px 26px #8bc220, -27px 27px #8bc220, -28px 28px #8bc220, -29px 29px #8bc220, -30px 30px #8bc220, -31px 31px #8bc220, -32px 32px #8bc220, -33px 33px #8bc220, -34px 34px #8bc220, -35px 35px #8bc220, -36px 36px #8bc220, -37px 37px #8bc220, -38px 38px #8bc220, -39px 39px #8bc220, -40px 40px #8bc220, -41px 41px #8bc220, -42px 42px #8bc220, -43px 43px #8bc220, -44px 44px #8bc220, -45px 45px #8bc220, -46px 46px #8bc220, -47px 47px #8bc220, -48px 48px #8bc220, -49px 49px #8bc220, -50px 50px #8bc220, -51px 51px #8bc220, -52px 52px #8bc220, -53px 53px #8bc220, -54px 54px #8bc220, -55px 55px #8bc220, -56px 56px #8bc220, -57px 57px #8bc220, -58px 58px #8bc220, -59px 59px #8bc220, -60px 60px #8bc220, -61px 61px #8bc220, -62px 62px #8bc220, -63px 63px #8bc220, -64px 64px #8bc220, -65px 65px #8bc220, -66px 66px #8bc220, -67px 67px #8bc220, -68px 68px #8bc220, -69px 69px #8bc220, -70px 70px #8bc220, -71px 71px #8bc220, -72px 72px #8bc220, -73px 73px #8bc220, -74px 74px #8bc220, -75px 75px #8bc220, -76px 76px #8bc220, -77px 77px #8bc220, -78px 78px #8bc220, -79px 79px #8bc220, -80px 80px #8bc220, -81px 81px #8bc220, -82px 82px #8bc220, -83px 83px #8bc220, -84px 84px #8bc220, -85px 85px #8bc220; }
+.button-longshadow-left.button-action:active, .button-longshadow-left.button-action.active, .button-longshadow-left.button-action.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow-left.button-highlight {text-shadow: 0px 0px #e59501, -1px 1px #e59501, -2px 2px #e59501, -3px 3px #e59501, -4px 4px #e59501, -5px 5px #e59501, -6px 6px #e59501, -7px 7px #e59501, -8px 8px #e59501, -9px 9px #e59501, -10px 10px #e59501, -11px 11px #e59501, -12px 12px #e59501, -13px 13px #e59501, -14px 14px #e59501, -15px 15px #e59501, -16px 16px #e59501, -17px 17px #e59501, -18px 18px #e59501, -19px 19px #e59501, -20px 20px #e59501, -21px 21px #e59501, -22px 22px #e59501, -23px 23px #e59501, -24px 24px #e59501, -25px 25px #e59501, -26px 26px #e59501, -27px 27px #e59501, -28px 28px #e59501, -29px 29px #e59501, -30px 30px #e59501, -31px 31px #e59501, -32px 32px #e59501, -33px 33px #e59501, -34px 34px #e59501, -35px 35px #e59501, -36px 36px #e59501, -37px 37px #e59501, -38px 38px #e59501, -39px 39px #e59501, -40px 40px #e59501, -41px 41px #e59501, -42px 42px #e59501, -43px 43px #e59501, -44px 44px #e59501, -45px 45px #e59501, -46px 46px #e59501, -47px 47px #e59501, -48px 48px #e59501, -49px 49px #e59501, -50px 50px #e59501, -51px 51px #e59501, -52px 52px #e59501, -53px 53px #e59501, -54px 54px #e59501, -55px 55px #e59501, -56px 56px #e59501, -57px 57px #e59501, -58px 58px #e59501, -59px 59px #e59501, -60px 60px #e59501, -61px 61px #e59501, -62px 62px #e59501, -63px 63px #e59501, -64px 64px #e59501, -65px 65px #e59501, -66px 66px #e59501, -67px 67px #e59501, -68px 68px #e59501, -69px 69px #e59501, -70px 70px #e59501, -71px 71px #e59501, -72px 72px #e59501, -73px 73px #e59501, -74px 74px #e59501, -75px 75px #e59501, -76px 76px #e59501, -77px 77px #e59501, -78px 78px #e59501, -79px 79px #e59501, -80px 80px #e59501, -81px 81px #e59501, -82px 82px #e59501, -83px 83px #e59501, -84px 84px #e59501, -85px 85px #e59501; }
+.button-longshadow-left.button-highlight:active, .button-longshadow-left.button-highlight.active, .button-longshadow-left.button-highlight.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow-left.button-caution {text-shadow: 0px 0px #ff1022, -1px 1px #ff1022, -2px 2px #ff1022, -3px 3px #ff1022, -4px 4px #ff1022, -5px 5px #ff1022, -6px 6px #ff1022, -7px 7px #ff1022, -8px 8px #ff1022, -9px 9px #ff1022, -10px 10px #ff1022, -11px 11px #ff1022, -12px 12px #ff1022, -13px 13px #ff1022, -14px 14px #ff1022, -15px 15px #ff1022, -16px 16px #ff1022, -17px 17px #ff1022, -18px 18px #ff1022, -19px 19px #ff1022, -20px 20px #ff1022, -21px 21px #ff1022, -22px 22px #ff1022, -23px 23px #ff1022, -24px 24px #ff1022, -25px 25px #ff1022, -26px 26px #ff1022, -27px 27px #ff1022, -28px 28px #ff1022, -29px 29px #ff1022, -30px 30px #ff1022, -31px 31px #ff1022, -32px 32px #ff1022, -33px 33px #ff1022, -34px 34px #ff1022, -35px 35px #ff1022, -36px 36px #ff1022, -37px 37px #ff1022, -38px 38px #ff1022, -39px 39px #ff1022, -40px 40px #ff1022, -41px 41px #ff1022, -42px 42px #ff1022, -43px 43px #ff1022, -44px 44px #ff1022, -45px 45px #ff1022, -46px 46px #ff1022, -47px 47px #ff1022, -48px 48px #ff1022, -49px 49px #ff1022, -50px 50px #ff1022, -51px 51px #ff1022, -52px 52px #ff1022, -53px 53px #ff1022, -54px 54px #ff1022, -55px 55px #ff1022, -56px 56px #ff1022, -57px 57px #ff1022, -58px 58px #ff1022, -59px 59px #ff1022, -60px 60px #ff1022, -61px 61px #ff1022, -62px 62px #ff1022, -63px 63px #ff1022, -64px 64px #ff1022, -65px 65px #ff1022, -66px 66px #ff1022, -67px 67px #ff1022, -68px 68px #ff1022, -69px 69px #ff1022, -70px 70px #ff1022, -71px 71px #ff1022, -72px 72px #ff1022, -73px 73px #ff1022, -74px 74px #ff1022, -75px 75px #ff1022, -76px 76px #ff1022, -77px 77px #ff1022, -78px 78px #ff1022, -79px 79px #ff1022, -80px 80px #ff1022, -81px 81px #ff1022, -82px 82px #ff1022, -83px 83px #ff1022, -84px 84px #ff1022, -85px 85px #ff1022; }
+.button-longshadow-left.button-caution:active, .button-longshadow-left.button-caution.active, .button-longshadow-left.button-caution.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-longshadow-left.button-royal {text-shadow: 0px 0px #5246e2, -1px 1px #5246e2, -2px 2px #5246e2, -3px 3px #5246e2, -4px 4px #5246e2, -5px 5px #5246e2, -6px 6px #5246e2, -7px 7px #5246e2, -8px 8px #5246e2, -9px 9px #5246e2, -10px 10px #5246e2, -11px 11px #5246e2, -12px 12px #5246e2, -13px 13px #5246e2, -14px 14px #5246e2, -15px 15px #5246e2, -16px 16px #5246e2, -17px 17px #5246e2, -18px 18px #5246e2, -19px 19px #5246e2, -20px 20px #5246e2, -21px 21px #5246e2, -22px 22px #5246e2, -23px 23px #5246e2, -24px 24px #5246e2, -25px 25px #5246e2, -26px 26px #5246e2, -27px 27px #5246e2, -28px 28px #5246e2, -29px 29px #5246e2, -30px 30px #5246e2, -31px 31px #5246e2, -32px 32px #5246e2, -33px 33px #5246e2, -34px 34px #5246e2, -35px 35px #5246e2, -36px 36px #5246e2, -37px 37px #5246e2, -38px 38px #5246e2, -39px 39px #5246e2, -40px 40px #5246e2, -41px 41px #5246e2, -42px 42px #5246e2, -43px 43px #5246e2, -44px 44px #5246e2, -45px 45px #5246e2, -46px 46px #5246e2, -47px 47px #5246e2, -48px 48px #5246e2, -49px 49px #5246e2, -50px 50px #5246e2, -51px 51px #5246e2, -52px 52px #5246e2, -53px 53px #5246e2, -54px 54px #5246e2, -55px 55px #5246e2, -56px 56px #5246e2, -57px 57px #5246e2, -58px 58px #5246e2, -59px 59px #5246e2, -60px 60px #5246e2, -61px 61px #5246e2, -62px 62px #5246e2, -63px 63px #5246e2, -64px 64px #5246e2, -65px 65px #5246e2, -66px 66px #5246e2, -67px 67px #5246e2, -68px 68px #5246e2, -69px 69px #5246e2, -70px 70px #5246e2, -71px 71px #5246e2, -72px 72px #5246e2, -73px 73px #5246e2, -74px 74px #5246e2, -75px 75px #5246e2, -76px 76px #5246e2, -77px 77px #5246e2, -78px 78px #5246e2, -79px 79px #5246e2, -80px 80px #5246e2, -81px 81px #5246e2, -82px 82px #5246e2, -83px 83px #5246e2, -84px 84px #5246e2, -85px 85px #5246e2; }
+.button-longshadow-left.button-royal:active, .button-longshadow-left.button-royal.active, .button-longshadow-left.button-royal.is-active {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+.button-primary, .button-primary-flat {background-color: #1B9AF7;border: 1px solid #1B9AF7;color: #FFF;}
+.button-highlight, .button-highlight-flat {background-color: #FEAE1B;border: 1px solid #FEAE1B;color: #FFF;}
+.button-action, .button-action-flat {background-color: #A5DE37;color: #FFF;border-color: #9ad824;background: -webkit-gradient(linear, left top, left bottom, from(#afe24d), to(#9ad824));background: linear-gradient(#afe24d, #9ad824);}
+.button-royal {border-color: #665ce6;background: -webkit-gradient(linear, left top, left bottom, from(#9088ec), to(#665ce6));background: linear-gradient(#9088ec, #665ce6);}
+.button-caution {border-color: #ff2939;background: -webkit-gradient(linear, left top, left bottom, from(#ff5c69), to(#ff2939));background: linear-gradient(#ff5c69, #ff2939);}
+.button-primary,.button-primary-flat {background-color: #1B9AF7;border-color: #1B9AF7;color: #FFF; }
+.button-primary:visited,.button-primary-flat:visited {color: #FFF; }
+.button-primary:hover, .button-primary:focus,.button-primary-flat:hover,.button-primary-flat:focus {background-color: #4cb0f9;border-color: #4cb0f9;color: #FFF; }
+.button-primary:active, .button-primary.active, .button-primary.is-active,.button-primary-flat:active,.button-primary-flat.active,.button-primary-flat.is-active {background-color: #2798eb;border-color: #2798eb;color: #0880d7; }
+.button-plain,.button-plain-flat {background-color: #FFF;border-color: #FFF;color: #1B9AF7; }
+.button-plain:visited,.button-plain-flat:visited {color: #1B9AF7; }
+.button-plain:hover, .button-plain:focus,.button-plain-flat:hover,.button-plain-flat:focus {background-color: white;border-color: white;color: #1B9AF7; }
+.button-plain:active, .button-plain.active, .button-plain.is-active,.button-plain-flat:active,.button-plain-flat.active,.button-plain-flat.is-active {background-color: white;border-color: white;color: #e6e6e6; }
+.button-inverse,.button-inverse-flat {background-color: #222;border-color: #222;color: #EEE; }
+.button-inverse:visited,.button-inverse-flat:visited {color: #EEE; }
+.button-inverse:hover, .button-inverse:focus,.button-inverse-flat:hover,.button-inverse-flat:focus {background-color: #3c3c3c;border-color: #3c3c3c;color: #EEE; }
+.button-inverse:active, .button-inverse.active, .button-inverse.is-active,.button-inverse-flat:active,.button-inverse-flat.active,.button-inverse-flat.is-active {background-color: #222222;border-color: #222222;color: #090909; }
+.button-action,.button-action-flat {background-color: #A5DE37;border-color: #A5DE37;color: #FFF; }
+.button-action:visited,.button-action-flat:visited {color: #FFF; }
+.button-action:hover, .button-action:focus,button-action-flat:hover,.button-action-flat:focus {background-color: #b9e563;border-color: #b9e563;color: #FFF; }
+.button-action:active, .button-action.active, .button-action.is-active,.button-action-flat:active,.button-action-flat.active,.button-action-flat.is-active {background-color: #a1d243;border-color: #a1d243;color: #8bc220; }
+.button-highlight,.button-highlight-flat {background-color: #FEAE1B;border-color: #FEAE1B;color: #FFF; }
+.button-highlight:visited,.button-highlight-flat:visited {color: #FFF; }
+.button-highlight:hover, .button-highlight:focus,.button-highlight-flat:hover,.button-highlight-flat:focus {background-color: #fec04e;border-color: #fec04e;color: #FFF; }
+.button-highlight:active, .button-highlight.active, .button-highlight.is-active,.button-highlight-flat:active,.button-highlight-flat.active,.button-highlight-flat.is-active {background-color: #f3ab26;border-color: #f3ab26;color: #e59501; }
+.button-caution,.button-caution-flat {background-color: #FF4351;border-color: #FF4351;color: #FFF; }
+.button-caution:visited,.button-caution-flat:visited {color: #FFF; }
+.button-caution:hover, .button-caution:focus,.button-caution-flat:hover,.button-caution-flat:focus {  background-color: #ff7680;  border-color: #ff7680;color: #FFF; }
+.button-caution:active, .button-caution.active, .button-caution.is-active,.button-caution-flat:active,.button-caution-flat.active,.button-caution-flat.is-active {background-color: #f64c59;border-color: #f64c59;color: #ff1022; }
+.button-royal,.button-royal-flat {background-color: #7B72E9;border-color: #7B72E9;color: #FFF; }
+.button-royal:visited,.button-royal-flat:visited {    color: #FFF; }
+.button-royal:hover, .button-royal:focus,.button-royal-flat:hover,.button-royal-flat:focus {background-color: #a49ef0;border-color: #a49ef0;color: #FFF; }
+.button-royal:active, .button-royal.active, .button-royal.is-active,.button-royal-flat:active,.button-royal-flat.active,.button-royal-flat.is-active {background-color: #827ae1;border-color: #827ae1;color: #5246e2; }
+
+/* 自定义长阴影 */
+.button-longshadow.button-1{border-color: #00aced;background: #00ACED;text-shadow: 0px 0px #0087ba, 1px 1px #0087ba, 2px 2px #0087ba, 3px 3px #0087ba, 4px 4px #0087ba, 5px 5px #0087ba, 6px 6px #0087ba, 7px 7px #0087ba, 8px 8px #0087ba, 9px 9px #0087ba, 10px 10px #0087ba, 11px 11px #0087ba, 12px 12px #0087ba, 13px 13px #0087ba, 14px 14px #0087ba, 15px 15px #0087ba, 16px 16px #0087ba, 17px 17px #0087ba, 18px 18px #0087ba, 19px 19px #0087ba, 20px 20px #0087ba, 21px 21px #0087ba, 22px 22px #0087ba, 23px 23px #0087ba, 24px 24px #0087ba, 25px 25px #0087ba, 26px 26px #0087ba, 27px 27px #0087ba, 28px 28px #0087ba, 29px 29px #0087ba, 30px 30px #0087ba, 31px 31px #0087ba, 32px 32px #0087ba, 33px 33px #0087ba, 34px 34px #0087ba, 35px 35px #0087ba, 36px 36px #0087ba, 37px 37px #0087ba, 38px 38px #0087ba, 39px 39px #0087ba, 40px 40px #0087ba;}
+.button-longshadow.button-2{border-color: #8fda7b;background: #8fda7b;text-shadow: 0px 0px #6d954e, 1px 1px #6d954e, 2px 2px #6d954e, 3px 3px #6d954e, 4px 4px #6d954e, 5px 5px #6d954e, 6px 6px #6d954e, 7px 7px #6d954e, 8px 8px #6d954e, 9px 9px #6d954e, 10px 10px #6d954e, 11px 11px #6d954e, 12px 12px #6d954e, 13px 13px #6d954e, 14px 14px #6d954e, 15px 15px #6d954e, 16px 16px #6d954e, 17px 17px #6d954e, 18px 18px #6d954e, 19px 19px #6d954e, 20px 20px #6d954e, 21px 21px #6d954e, 22px 22px #6d954e, 23px 23px #6d954e, 24px 24px #6d954e, 25px 25px #6d954e, 26px 26px #6d954e, 27px 27px #6d954e, 28px 28px #6d954e, 29px 29px #6d954e, 30px 30px #6d954e, 31px 31px #6d954e, 32px 32px #6d954e, 33px 33px #6d954e, 34px 34px #6d954e, 35px 35px #6d954e, 36px 36px #6d954e, 37px 37px #6d954e, 38px 38px #6d954e, 39px 39px #6d954e, 40px 40px #6d954e;}
+.button-longshadow.button-3{border-color: #DD4A3A;background: #DD4A3A;text-shadow: 0px 0px #c23122, 1px 1px #c23122, 2px 2px #c23122, 3px 3px #c23122, 4px 4px #c23122, 5px 5px #c23122, 6px 6px #c23122, 7px 7px #c23122, 8px 8px #c23122, 9px 9px #c23122, 10px 10px #c23122, 11px 11px #c23122, 12px 12px #c23122, 13px 13px #c23122, 14px 14px #c23122, 15px 15px #c23122, 16px 16px #c23122, 17px 17px #c23122, 18px 18px #c23122, 19px 19px #c23122, 20px 20px #c23122, 21px 21px #c23122, 22px 22px #c23122, 23px 23px #c23122, 24px 24px #c23122, 25px 25px #c23122, 26px 26px #c23122, 27px 27px #c23122, 28px 28px #c23122, 29px 29px #c23122, 30px 30px #c23122, 31px 31px #c23122, 32px 32px #c23122, 33px 33px #c23122, 34px 34px #c23122, 35px 35px #c23122, 36px 36px #c23122, 37px 37px #c23122, 38px 38px #c23122, 39px 39px #c23122, 40px 40px #c23122;}
+.button-longshadow.button-4{border-color: #007BB6;background: #007BB6;text-shadow: 0px 0px #005983, 1px 1px #005983, 2px 2px #005983, 3px 3px #005983, 4px 4px #005983, 5px 5px #005983, 6px 6px #005983, 7px 7px #005983, 8px 8px #005983, 9px 9px #005983, 10px 10px #005983, 11px 11px #005983, 12px 12px #005983, 13px 13px #005983, 14px 14px #005983, 15px 15px #005983, 16px 16px #005983, 17px 17px #005983, 18px 18px #005983, 19px 19px #005983, 20px 20px #005983, 21px 21px #005983, 22px 22px #005983, 23px 23px #005983, 24px 24px #005983, 25px 25px #005983, 26px 26px #005983, 27px 27px #005983, 28px 28px #005983, 29px 29px #005983, 30px 30px #005983, 31px 31px #005983, 32px 32px #005983, 33px 33px #005983, 34px 34px #005983, 35px 35px #005983, 36px 36px #005983, 37px 37px #005983, 38px 38px #005983, 39px 39px #005983, 40px 40px #005983;}
+.button-longshadow.button-5{border-color: #CB2026;background: #CB2026;text-shadow: 0px 0px #9f191e, 1px 1px #9f191e, 2px 2px #9f191e, 3px 3px #9f191e, 4px 4px #9f191e, 5px 5px #9f191e, 6px 6px #9f191e, 7px 7px #9f191e, 8px 8px #9f191e, 9px 9px #9f191e, 10px 10px #9f191e, 11px 11px #9f191e, 12px 12px #9f191e, 13px 13px #9f191e, 14px 14px #9f191e, 15px 15px #9f191e, 16px 16px #9f191e, 17px 17px #9f191e, 18px 18px #9f191e, 19px 19px #9f191e, 20px 20px #9f191e, 21px 21px #9f191e, 22px 22px #9f191e, 23px 23px #9f191e, 24px 24px #9f191e, 25px 25px #9f191e, 26px 26px #9f191e, 27px 27px #9f191e, 28px 28px #9f191e, 29px 29px #9f191e, 30px 30px #9f191e, 31px 31px #9f191e, 32px 32px #9f191e, 33px 33px #9f191e, 34px 34px #9f191e, 35px 35px #9f191e, 36px 36px #9f191e, 37px 37px #9f191e, 38px 38px #9f191e, 39px 39px #9f191e, 40px 40px #9f191e;}
+.button-longshadow.button-6{border-color: #70a0de;background: #70a0de;text-shadow: 0px 0px #587cac, 1px 1px #587cac, 2px 2px #587cac, 3px 3px #587cac, 4px 4px #587cac, 5px 5px #587cac, 6px 6px #587cac, 7px 7px #587cac, 8px 8px #587cac, 9px 9px #587cac, 10px 10px #587cac, 11px 11px #587cac, 12px 12px #587cac, 13px 13px #587cac, 14px 14px #587cac, 15px 15px #587cac, 16px 16px #587cac, 17px 17px #587cac, 18px 18px #587cac, 19px 19px #587cac, 20px 20px #587cac, 21px 21px #587cac, 22px 22px #587cac, 23px 23px #587cac, 24px 24px #587cac, 25px 25px #587cac, 26px 26px #587cac, 27px 27px #587cac, 28px 28px #587cac, 29px 29px #587cac, 30px 30px #587cac, 31px 31px #587cac, 32px 32px #587cac, 33px 33px #587cac, 34px 34px #587cac, 35px 35px #587cac, 36px 36px #587cac, 37px 37px #587cac, 38px 38px #587cac, 39px 39px #587cac, 40px 40px #587cac;}
+.button-longshadow.button-7{border-color: #e74771;background: #e74771;text-shadow: 0px 0px #ad3656, 1px 1px #ad3656, 2px 2px #ad3656, 3px 3px #ad3656, 4px 4px #ad3656, 5px 5px #ad3656, 6px 6px #ad3656, 7px 7px #ad3656, 8px 8px #ad3656, 9px 9px #ad3656, 10px 10px #ad3656, 11px 11px #ad3656, 12px 12px #ad3656, 13px 13px #ad3656, 14px 14px #ad3656, 15px 15px #ad3656, 16px 16px #ad3656, 17px 17px #ad3656, 18px 18px #ad3656, 19px 19px #ad3656, 20px 20px #ad3656, 21px 21px #ad3656, 22px 22px #ad3656, 23px 23px #ad3656, 24px 24px #ad3656, 25px 25px #ad3656, 26px 26px #ad3656, 27px 27px #ad3656, 28px 28px #ad3656, 29px 29px #ad3656, 30px 30px #ad3656, 31px 31px #ad3656, 32px 32px #ad3656, 33px 33px #ad3656, 34px 34px #ad3656, 35px 35px #ad3656, 36px 36px #ad3656, 37px 37px #ad3656, 38px 38px #ad3656, 39px 39px #ad3656, 40px 40px #ad3656;}
+.button-longshadow.button-8{border-color: #9ab44c;background: #9ab44c;text-shadow: 0px 0px #778b3e, 1px 1px #778b3e, 2px 2px #778b3e, 3px 3px #778b3e, 4px 4px #778b3e, 5px 5px #778b3e, 6px 6px #778b3e, 7px 7px #778b3e, 8px 8px #778b3e, 9px 9px #778b3e, 10px 10px #778b3e, 11px 11px #778b3e, 12px 12px #778b3e, 13px 13px #778b3e, 14px 14px #778b3e, 15px 15px #778b3e, 16px 16px #778b3e, 17px 17px #778b3e, 18px 18px #778b3e, 19px 19px #778b3e, 20px 20px #778b3e, 21px 21px #778b3e, 22px 22px #778b3e, 23px 23px #778b3e, 24px 24px #778b3e, 25px 25px #778b3e, 26px 26px #778b3e, 27px 27px #778b3e, 28px 28px #778b3e, 29px 29px #778b3e, 30px 30px #778b3e, 31px 31px #778b3e, 32px 32px #778b3e, 33px 33px #778b3e, 34px 34px #778b3e, 35px 35px #778b3e, 36px 36px #778b3e, 37px 37px #778b3e, 38px 38px #778b3e, 39px 39px #778b3e, 40px 40px #778b3e;}
+.button-longshadow.button-9{border-color: #f45e5d;background: #f45e5d;text-shadow: 0px 0px #bd4b4a, 1px 1px #bd4b4a, 2px 2px #bd4b4a, 3px 3px #bd4b4a, 4px 4px #bd4b4a, 5px 5px #bd4b4a, 6px 6px #bd4b4a, 7px 7px #bd4b4a, 8px 8px #bd4b4a, 9px 9px #bd4b4a, 10px 10px #bd4b4a, 11px 11px #bd4b4a, 12px 12px #bd4b4a, 13px 13px #bd4b4a, 14px 14px #bd4b4a, 15px 15px #bd4b4a, 16px 16px #bd4b4a, 17px 17px #bd4b4a, 18px 18px #bd4b4a, 19px 19px #bd4b4a, 20px 20px #bd4b4a, 21px 21px #bd4b4a, 22px 22px #bd4b4a, 23px 23px #bd4b4a, 24px 24px #bd4b4a, 25px 25px #bd4b4a, 26px 26px #bd4b4a, 27px 27px #bd4b4a, 28px 28px #bd4b4a, 29px 29px #bd4b4a, 30px 30px #bd4b4a, 31px 31px #bd4b4a, 32px 32px #bd4b4a, 33px 33px #bd4b4a, 34px 34px #bd4b4a, 35px 35px #bd4b4a, 36px 36px #bd4b4a, 37px 37px #bd4b4a, 38px 38px #bd4b4a, 39px 39px #bd4b4a, 40px 40px #bd4b4a;}
+.button-longshadow.button-10{border-color: #38afb6;background: #38afb6;text-shadow: 0px 0px #2d878d, 1px 1px #2d878d, 2px 2px #2d878d, 3px 3px #2d878d, 4px 4px #2d878d, 5px 5px #2d878d, 6px 6px #2d878d, 7px 7px #2d878d, 8px 8px #2d878d, 9px 9px #2d878d, 10px 10px #2d878d, 11px 11px #2d878d, 12px 12px #2d878d, 13px 13px #2d878d, 14px 14px #2d878d, 15px 15px #2d878d, 16px 16px #2d878d, 17px 17px #2d878d, 18px 18px #2d878d, 19px 19px #2d878d, 20px 20px #2d878d, 21px 21px #2d878d, 22px 22px #2d878d, 23px 23px #2d878d, 24px 24px #2d878d, 25px 25px #2d878d, 26px 26px #2d878d, 27px 27px #2d878d, 28px 28px #2d878d, 29px 29px #2d878d, 30px 30px #2d878d, 31px 31px #2d878d, 32px 32px #2d878d, 33px 33px #2d878d, 34px 34px #2d878d, 35px 35px #2d878d, 36px 36px #2d878d, 37px 37px #2d878d, 38px 38px #2d878d, 39px 39px #2d878d, 40px 40px #2d878d;}
+.button-longshadow.button-11{border-color: #00b7ee;background: #00b7ee;text-shadow: 0px 0px #008db8, 1px 1px #008db8, 2px 2px #008db8, 3px 3px #008db8, 4px 4px #008db8, 5px 5px #008db8, 6px 6px #008db8, 7px 7px #008db8, 8px 8px #008db8, 9px 9px #008db8, 10px 10px #008db8, 11px 11px #008db8, 12px 12px #008db8, 13px 13px #008db8, 14px 14px #008db8, 15px 15px #008db8, 16px 16px #008db8, 17px 17px #008db8, 18px 18px #008db8, 19px 19px #008db8, 20px 20px #008db8, 21px 21px #008db8, 22px 22px #008db8, 23px 23px #008db8, 24px 24px #008db8, 25px 25px #008db8, 26px 26px #008db8, 27px 27px #008db8, 28px 28px #008db8, 29px 29px #008db8, 30px 30px #008db8, 31px 31px #008db8, 32px 32px #008db8, 33px 33px #008db8, 34px 34px #008db8, 35px 35px #008db8, 36px 36px #008db8, 37px 37px #008db8, 38px 38px #008db8, 39px 39px #008db8, 40px 40px #008db8;}
+.button-longshadow.button-12{border-color: #cc5014;background: #cc5014;text-shadow: 0px 0px #9e410e, 1px 1px #9e410e, 2px 2px #9e410e, 3px 3px #9e410e, 4px 4px #9e410e, 5px 5px #9e410e, 6px 6px #9e410e, 7px 7px #9e410e, 8px 8px #9e410e, 9px 9px #9e410e, 10px 10px #9e410e, 11px 11px #9e410e, 12px 12px #9e410e, 13px 13px #9e410e, 14px 14px #9e410e, 15px 15px #9e410e, 16px 16px #9e410e, 17px 17px #9e410e, 18px 18px #9e410e, 19px 19px #9e410e, 20px 20px #9e410e, 21px 21px #9e410e, 22px 22px #9e410e, 23px 23px #9e410e, 24px 24px #9e410e, 25px 25px #9e410e, 26px 26px #9e410e, 27px 27px #9e410e, 28px 28px #9e410e, 29px 29px #9e410e, 30px 30px #9e410e, 31px 31px #9e410e, 32px 32px #9e410e, 33px 33px #9e410e, 34px 34px #9e410e, 35px 35px #9e410e, 36px 36px #9e410e, 37px 37px #9e410e, 38px 38px #9e410e, 39px 39px #9e410e, 40px 40px #9e410e;}
+
+
+
+.button-circle {border-radius: 100%;}
+/* 底部选项卡 */
+.tt-bar{position: fixed;z-index: 10;right: 0;left: 0;height: 44px;padding-right: 10px;padding-left: 10px;border-bottom: 0;background-color: #f7f7f7;box-shadow: 0 0 1px #d7d7d7;-webkit-backface-visibility: hidden;        backface-visibility: hidden;}
+.tt-bar-tab{bottom: 0;display: table;width: 100%;height: 50px;padding: 0;table-layout: fixed;border-top: 0;border-bottom: 0;-webkit-touch-callout: none;}
+.tt-bar-tab .tt-tab-item{display: table-cell;overflow: hidden;width: 1%;height: 50px;text-align: center;vertical-align: middle;white-space: nowrap;text-overflow: ellipsis;}
+.tt-bar-tab .tt-tab-item.mui-active{color: #007aff;}
+.tt-bar-tab .tt-tab-item .tt-icon{position: relative;z-index: 20;top: 3px;width: 24px;height: 24px;font-size: 22px;display: block;margin: 0 auto;}
+.tt-bar-tab .tt-tab-item .tt-icon ~ .tt-tab-label{font-size: 11px;display: block;overflow: hidden;text-overflow: ellipsis;}
+.tt-bar-tab .tt-tab-item .tt-icon:active{background: none;}
+.tt-bar-tab~.mui-content {padding-bottom: 60px;}
+.tt-bar-tab .tt-tab-active{color: #f90}
+.tt-bar .mui-icon {font-size: 24px;position: relative;z-index: 20;padding-top: 10px;padding-bottom: 10px;}
+/* copyright */
+.copyright{padding-top: 10px;line-height: 22px;color: #88b564;text-align: center;font-size: 14px;}
+/* login-footer */
+.login-footer{font-size: 12px;line-height: 20px;text-align: center;color: #fff;}
+.login-footer img{border: 1px solid #fff;border-radius: 10px;padding: 4px;}
+.login-footer span{font-size: 16px;display: block;}
+.login-footer p{margin: 25px auto 12px;}
+.login-footer-default{color: #189cfc;}
+.login-footer-default img{background-color: #1898fc;}
+.login-footer-default p{color: #999;}
+
+/* AsideUser */
+.AsideUser{height: 110px;padding: 30px 16px 22px 80px;}
+.AsideUser img{width: 56px;height: 56px;border:1px solid #fff;box-shadow: 0 0 3px rgba(225,225,225,.6); border-radius: 50%;margin-left: -70px;float: left;}
+.AsideUser .name{font: 15px/24px 'Microsoft Yahei';margin-top: 8px;display: block;white-space: nowrap;-ms-text-overflow: ellipsis;text-overflow: ellipsis; overflow: hidden;}
+.AsideUser .level{font-size: 12px;height: 18px;line-height: 18px;white-space: nowrap;-ms-text-overflow: ellipsis;text-overflow: ellipsis;overflow: hidden;}
+/**/
+.mui-off-canvas-left, .mui-off-canvas-right{background: -moz-linear-gradient(top,#fff,#e6f6ff);background: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6f6ff));}
+.AsideUserInfo{min-height: 300px; font: 13px/26px 'Microsoft YaHei';}
+.AsideUserInfo dl{display: block;height: 34px;padding: 4px 0;color:#4f4f4f;overflow: hidden;border-bottom: 1px solid #DEDEDE;border-top: 1px solid #fff;}
+.AsideUserInfo dt{width: 40%;padding-right: 10px;text-align: right;float: left;}
+.AsideUserInfo dd{float: left;font-size: 14px;color: red;}
+.AsideUserInfo dd b{color: #000;font-size: 12px;margin-left: 5px;}
+.AsideUserInfo dl:first-child{border-top: 0;}
+/* AsideBottom */
+.AsideBottom{font: 15px/24px 'Microsoft Yahei';padding: 12px 7% 12px 5%;color: #007aff}
+.AsideBottom a{color: #007aff;}
+.AsideBottom .loginout{float: right;}
+.AsideBottom .loginout .mui-icon{font-size: 18px;margin-right: 2px;width: 24px;height: 24px;text-align: center;display: inline-block;vertical-align: middle;}
+/* tt-action-off */
+.tt-action-off{padding: 6px 0 6px;height: 32px;}
+.tt-action-off img{border-radius: 50%;}
+
+/* tt-content-top */
+.tt-content-top{background: #00d49a;}
+/* my-id-pic */
+.my-id-pic{padding: 22px 12px 20px 92px;height: 122px;color: #fff;background: #396ecc  url('../images/topbg.jpg') center bottom repeat-x;}
+.my-id-pic .my-img{position: relative;float: left;width: 66px;height: 66px;margin-left: -82px;margin-bottom: 6px;border-radius: 50%;border: 2px solid #fff;display: block;}
+.my-id-pic .my-img img{width: 62px;height: 62px;border-radius: 50%;}
+.my-person-info{position: relative;}
+.my-person-info .LoginOut{position: absolute;top: 0;right: 0;z-index: 2;line-height: 22px;font-size: 15px;color: #fff;}
+.LoginOut i{font-size: 18px;margin-right: 4px;vertical-align: top;}
+.my-head-name{font-size: 15px;margin-bottom: 2px;}
+.my-head-type{font-size: 15px;color: #d7ecfc;}
+.tt-level{position: relative;display: inline-block;font-size:12px;height: 14px;line-height: 14px;padding: 0 8px;border-radius: 6px; background: #ffad10;color: #fff;margin-left: 5px;}
+/* moneyList */
+.moneyList{padding: 10px 0;overflow: hidden;background: #3b7eb3;color: #fff;text-align: center;}
+.moneyList li{position: relative;width: 33.33%;float: left;}
+.moneyList li:after{position: absolute;top: 50%;margin-top: -18px;left: -1px;content: "";width: 1px;height: 36px;background: #fff;}
+.moneyList .num{font-size: 16px;padding: 0 3px;overflow: hidden;white-space: normal;-ms-text-overflow: ellipsis;text-overflow: ellipsis;margin-top: 2px;height: 22px;line-height: 22px;display: block;}
+.moneyList .zn{font-size: 14px;
+    height: 18px;
+    line-height: 18px;
+    display: block;}
+/* mainAction */
+.mainAction{background: #fff;height: 42px;border-bottom: 1px solid #e9e9e9;color: #0b91ff;font: 16px/32px 'Microsoft Yahei';text-align: center;}
+.mainAction li{position: relative;width: 50%;float: left;height: 42px;}
+.mainAction li:after{position: absolute;top: 14px;left: -1px;content:'';width: 1px;height: 14px;background: #cbcbcb;display: block;}
+.mainAction li a{display: block;height: 42px;padding: 5px 0;color: #0b91ff;}
+/* tt-newsFocus */
+.tt-newsFocus{position: relative;background: #fff;padding: 5px 5px 5px 36px;height: 32px;font: 14px/22px 'Microsoft Yahei';color: #888;}
+.tt-newsFocus i{position: absolute;top: 5px;left: 8px;z-index: 2;font-size: 20px;color: #0fa5fa;background: #fff;}
+.focusNews{height: 22px;overflow: hidden;}
+.focusNews a{color: #fd6f27;overflow: hidden;display: block;white-space: nowrap;-ms-text-overflow: ellipsis;text-overflow: ellipsis;}
+
+/* tt-grid-view */
+.tt-grid-view{background-color: #fff;overflow: hidden;border-top: 1px solid #d7d7d7;}
+.tt-grid-view li{width: 33.3333%;overflow: hidden;text-align: center;float: left;border-right: 1px solid #d7d7d7;border-bottom: 1px solid #d7d7d7;}
+.tt-grid-view li:nth-child(3n) {border-right: 0;}
+.tt-grid-view li a{display: block;padding: 16px 0 4px;}
+.tt-grid-view i{font-size: 28px;width: 52px;height: 52px;line-height: 22px;padding: 12px;color: #fff!important;display: block;margin: 0 auto;}
+.tt-grid-view span{font-size: 14px;line-height: 32px;color: #8c8c8c;}
+
+
+
+/* 按钮 */
+.tt-login .mui-btn-blue1{background-color: #0077ba;}
+.tt-login .mui-btn-blue2{background-color: #3cb8ff;}
+.tt-login .login-btn{height: 40px;font: 400 16px/40px 'Microsoft YaHei';color: #fff;text-align: center;border:0;border-radius: 4px;}
+.tt-login .btn-block{display: block;width: 100%;padding: 0;margin-bottom: 15px;}
+/* 提现表单样式 */
+.tt-input-row-tx{padding-left: 38px;font-size: 15px;line-height: 40px;color: #828282}
+.tt-input-row-tx b{color: #22b200;font-weight: normal;margin-left: 22px;}
+.tt-input-group-tx .mui-show{color: #f25500;}
+.tt-input-group-tx input[type='password'],.tt-input-group-tx input[type='file'],.tt-input-group-tx input[type='number'],.tt-input-group-tx input[type='text']{padding-left: 38px;}
+/* 表单部分 */
+
+.mui-input-group{border-radius: 4px;margin-bottom: 12px;background-color: #fff;border: 1px solid #c8c7cc;overflow: hidden;}
+.mui-input-group:before,.mui-input-group:after{height: 0;}
+.mui-input-group .mui-input-row{margin-bottom: 0;}
+.mui-input-group .mui-input-row:after{left: 0;right: 0;}
+.mui-input-group .mui-input-row:last-child:after{height: 0}
+.mui-input-row .btncode {font: 13px/20px 'Microsoft YaHei';margin: 0px;position: absolute;right: 8px;padding: 4px 5px;top: 6px;border: 0px;background: #0babed;color: #fff;border-radius: 3px;}
+.mui-input-row .mui-input-verity,.mui-input-row .mui-input-verity2{padding-right: 110px;}
+.mui-bar .mui-btn-link{color: #fff;}
+.mui-show {font-size: 20px;position: absolute;z-index: 1;top: 10px;left: 0;width: 38px;height: 38px;text-align: center;color: #999;}
+.tt-input-group-tx input[type='password'], .tt-input-group-tx input[type='file'], .tt-input-group-tx input[type='number'], .tt-input-group-tx input[type='text'] {
+    padding-left: 38px;width: 100%;height: 40px; font-size: 15px;
+}
+.mui-input-row{position: relative;}
+.mui-input-row label {position: absolute;left: 0;top: 0;float: left;padding: 12px 15px;width: 80px;font-size: 14px;color: #f25500;}
+.mui-input-row label ~ input {width: 100%;float: right;padding: 10px;font-size: 15px;font-family: 'Microsoft YaHei';line-height: 21px;}
+/* 表单小提示 */
+.ipt-tips{padding: 10px 3px;font:14px/22px 'Microsoft Yahei';color: #999;}
+.ipt-tips b{font-weight: bold;color: red;}
+/* tt-checkbox */
+.tt-checkbox{font-size: 14px;color: #999}
+.tt-checkbox.mui-left label{padding: 10px 10px 10px 30px;line-height: 20px;}
+.tt-checkbox input[type='checkbox']{width: 22px;height: 22px;top: 8px;}
+.tt-checkbox.mui-left input[type='checkbox']{left: 2px;}
+.tt-checkbox input[type='checkbox']:before {font-size: 22px;}
+/* listItems 列表信息 */
+.listItems{position: relative;border-radius: 6px;margin-bottom: 12px;padding-bottom: 1px;background-color: #f6f8fb;color: #005982;border: 1px solid #bce8f1;display: block;}
+.listItems .type{font-size: 14px;line-height: 24px;padding: 6px 10px;color: #005982;background-color: #d9edf7;border-bottom: 1px solid #bce8f1;}
+.listItems .type .en{font-size: 16px;font-family: Consolas,"courier new";}
+.listItems .msg{text-indent: 2em;padding: 12px 18px 0;font:13px/20px 'Microsoft Yahei';}
+.listItems .pic{padding: 12px 18px 0;margin-bottom: 18px;max-height: 220px;overflow: hidden;}
+.listItems .desc{position: relative;font-size: 14px;line-height: 22px;padding: 8px 12px;color: #666;}
+.listItems .desc p{display: block;height: 22px;white-space: nowrap; text-overflow: ellipsis;overflow: hidden;}
+.listItems .desc .J_pop{position: absolute;right: 16px;top: 50%;margin-top: -24px;font-size: 48px;}
+.listItems .meta{position: relative;border-top: 1px solid #bce8f1;font-size: 14px;line-height: 20px;padding: 5px 10px;color: #8c8c8c;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.listItems .meta b{color: #fc4837;font-weight: normal;}
+.listItems .meta i{position: absolute;right: 6px;top: 2px;font-size: 28px;}
+.listItems .meta i.icon-yufu{color: #f3908a;}
+.listItems-error{border-top-color: #c6c6c6;}
+.listItems-error .type,.listItems-error .type span,.listItems-error .meta,.listItems-error .meta b,.listItems-error .desc,.listItems-error .desc span{color: #b2b2b2;}
+.listItems-ok{border-top-color: #20b589;}
+.listItems-ok .meta b,.listItems-ok .type span{color: #20b589;}
+/* xyListItems 需要列表信息 */
+.xyListItems{border-color: #ebccd1;}
+.xyListItems .type{border-color:#ebccd1;background-color: #f2dede;color: #7d0000;}
+.xyListItems .meta{border-color: #ebccd1;}
+.xyPpListItems,.tgPpListItems,.teamListItems,.financeListItems{margin-bottom: 10px;border-radius: 0;background-color: #fff;border-left-width: 5px;}
+.xyPpListItems {border-color: #bce8f1;}
+.tgPpListItems,.tgPpListItems .meta{border-color:#ebccd1;}
+.xyPpListItems .desc .J_pop{color: #bce8f1;text-shadow: 1px 1px 1px #00BCD4;}
+.tgPpListItems .desc .J_pop{color: #ebccd1;text-shadow: 1px 1px 1px #f3908a;}
+.teamListItems,.teamListItems .meta{border-color: #00d49a;}
+.financeListItems,.financeListItems .meta{border-color: #c2e2f5;}
+.financeListItems i{margin: 0 12px;font-size: 18px;}
+/* 弹窗信息 */
+
+
+
+.infoPop{ text-align: left; }
+.infoItems{border: 1px solid #20b589;margin-top: 8px;border-radius: 5px;font-size: 13px;line-height: 22px;color: #585858;}
+.infoItems h3{font: 14px/32px 'Microsoft Yahei';padding: 0 6px;height: 32px;border-bottom: 1px solid #ccc;color:#20b589;}
+.infoItems h3 b{color: #f00;float: right;}
+.infoItems .tel{height: 32px;line-height: 28px;border-top: 1px solid #ccc;padding: 2px 6px;}
+.infoItems .cont{padding:8px;}
+.db-w,.db-w-bt{overflow: hidden;height: 22px;}
+.db-w span,.db-w-bt span{display: block;width: 50%;float: left;white-space: normal;-ms-text-overflow: ellipsis;text-overflow: ellipsis; overflow: hidden;height: 22px;}
+.db-w-bt{padding-top: 6px;height: 28px;border-top: 1px solid #ccc;}
+.J_info{display: none;}
+
+/* tt-segmented-control 顶部选项卡 */
+.tt-segmented-control{width: 100%;font-size: 15px;font-weight: 400;position: relative;display: table;overflow: hidden;table-layout: fixed;border-bottom: 1px solid #d5dce0;background-color: #fff;-webkit-touch-callout: none;}
+.tt-segmented-control .tt-control-item{height: 38px;line-height: 38px;display: table-cell;overflow: hidden;width: 1%;-webkit-transition: background-color .1s linear;transition: background-color .1s linear;text-align: center;white-space: nowrap;text-overflow: ellipsis;}
+.tt-segmented-control .tt-control-item a{color: #2c3e50;padding: 0 12%;display: inline-block;border-bottom: 2px solid transparent;}
+.tt-segmented-control .tt-control-item .tt-active{color: #38ABE2;border-bottom-color: #38ABE2;}
+/* 无结果显示 */
+.resultEmpty,.bankEmpty{min-height: 360px;padding-top: 132px;font-size: 14px;line-height: 32px;text-align: center;display: block;color: #c8c8c8;}
+.resultEmpty i,.bankEmpty i{font-size: 52px;display: block;margin: 0 auto;}
+/* 排单币 */
+.paiItems{position: relative;margin-bottom: 12px;padding: 0 12px;font-size: 14px;color: #2c3e50;background: #fff;border-top: 3px solid #f45035;border-radius: 5px;}
+.paiItems .tit{border-bottom: 1px solid #d5dce0;padding: 5px 0;}
+.paiItems .tit b{color: #20b589;}
+.paiItems .info{position: relative;padding: 12px 0;}
+.paiItems .info i{position: absolute;right: 0;top: 50%;margin-top: -32px;font-size: 62px;color: rgba(244,80,53,.1);}
+.paiItems .info dl{position: relative;line-height: 20px;height: 20px;padding-left: 105px;clear: both;overflow: hidden;}
+.paiItems .info dt{float: left;width: 105px;margin-left: -105px;}
+.paiItems .info dd{color: #f45035;font-size: 12px;}
+.paiItems .info dd b{font-size: 20px;margin-left: 3px;}
+.paiItems .info b{color: #f45035;font-weight: normal;}
+.paiItems .meta{border-top: 1px solid #d5dce0;color: #949e9f;padding: 5px 0;}
+/* 银行卡 */
+.bankItems{position: relative;padding: 12px 6px 16px 36px;height: 120px;margin-bottom: 20px;border-radius: 8px;color: #fff;background: -moz-linear-gradient(left 30deg, #eb666f, #d95d84);background: -webkit-gradient(linear, 0 0, 100% 100%, from(#eb666f),to(#d95d84));background: -o-linear-gradient(30deg, #eb666f, #d95d84);}
+.bankItems .type{position: relative;padding-left: 26px;overflow: hidden;height: 54px;font: 18px/28px 'Microsoft Yahei';}
+.bankItems .type b{display: block;font-size: 16px;line-height: 22px;font-weight: normal;}
+.bankItems i{position: absolute;left: 8px;top: 15px;border-radius: 50%; font-size: 38px;width: 42px;height: 42px;text-align: center;line-height: 42px;}
+.bankItems .num{height: 32px;margin-top: 8px;font: 20px/32px 'Microsoft Yahei';overflow: hidden;white-space: nowrap;-ms-text-overflow: ellipsis;text-overflow: ellipsis;}
+.bankEmpty{font-size: 16px}
+.bankEmpty i{font-size: 72px;color: #c8c8c8;}
+.bankEmpty a{}
+/*中国工商*/
+.bankItems-ICBC{
+background: -moz-linear-gradient(left 30deg, #eb666f, #d95d84);
+background: -webkit-gradient(linear, 0 0, 100% 100%, from(#eb666f),to(#d95d84));
+background: -o-linear-gradient(30deg, #eb666f, #d95d84);
+}
+.bankItems-ICBC i{color: #e40000;background: #fff;}
+/* 建设银行 */
+.bankItems-CCB{
+background: -moz-linear-gradient(left 30deg, #5085c0, #3d5ea9);
+background: -webkit-gradient(linear, 0 0, 100% 100%, from(#5085c0),to(#3d5ea9));
+background: -o-linear-gradient(30deg, #5085c0, #3d5ea9);
+}
+.bankItems-CCB i{color: #003a8f;background: #fff;}
+/* 农业银行 */
+.bankItems-ABC{
+background: -moz-linear-gradient(left 30deg, #1bb28e, #089ab4);
+background: -webkit-gradient(linear, 0 0, 100% 100%, from(#1bb28e),to(#089ab4));
+background: -o-linear-gradient(30deg, #1bb28e, #089ab4);    
+}
+.bankItems-ABC i{color: #009987;background: #fff;}
+/* 招商银行 */
+.bankItems-CMB{
+background: -moz-linear-gradient(left 30deg, #C84E53, #9B0101);
+background: -webkit-gradient(linear, 0 0, 100% 100%, from(#C84E53),to(#9B0101));
+background: -o-linear-gradient(30deg, #C84E53, #9B0101);    
+}
+.bankItems-CMB i{color: #C84E53;background: #fff;}
+/* 支付宝 */
+.bankItems-alipay{
+background: -moz-linear-gradient(left 30deg, #03A9F4, #38ABE2);
+background: -webkit-gradient(linear, 0 0, 100% 100%, from(#03A9F4),to(#38ABE2));
+background: -o-linear-gradient(30deg, #03A9F4, #38ABE2); 
+}
+.bankItems-alipay i{color:#00AAEF;background:#fff;}
+/* 用户中心 */
+.tt-table-view .tt-navigate-right{position: relative;padding-left: 42px!important;}
+.tt-table-view .tt-navigate-right i{color: #fd6f27;position: absolute;left: 12px;top: 10px;border-radius: 50%; font-size: 20px;width: 26px;height: 26px;}
+
+.tt-table-view{position: relative;background-color: #fff;margin-top: 16px;font-size: 14px;color: #666;}
+.tt-table-view:before {position: absolute;top: 0;right: 0;left: 0;height: 1px;content: '';-webkit-transform: scaleY(.5);transform: scaleY(.5);background-color: #c8c7cc;}
+.tt-table-view-cell {position: relative;overflow: hidden;padding: 11px 15px;-webkit-touch-callout: none;}
+.tt-table-view-cell a{position: relative;display: block;overflow: hidden;margin: -11px -15px;padding: inherit;white-space: nowrap;text-overflow: ellipsis;color: inherit;}
+.tt-table-view-cell:after {position: absolute;right: 0;bottom: 0;left: 0;height: 1px;content: '';-webkit-transform: scaleY(.5);transform: scaleY(.5);background-color: #c8c7cc;}
+.tt-navigate-right:after, .tt-push-left:after, .tt-push-right:after {font-family: Muiicons;font-size: inherit;line-height: 1;position: absolute;top: 50%;display: inline-block;-webkit-transform: translateY(-50%);transform: translateY(-50%);text-decoration: none;color: #bbb;-webkit-font-smoothing: antialiased;}
+.tt-navigate-right:after, .tt-push-right:after {right: 15px;content: '\e583';}
+/* 邮箱 */
+.tt-emailItems{display: block;padding: 8px 12px;margin-bottom: 12px;font-size: 14px;line-height: 22px;color: #333; border-radius: 5px; background: #fff;border-top: 5px solid #0ae;}
+.tt-emailItems-old{border-color: #c6c6c6}
+.tt-emailItems .tit{position: relative;color: #333;font-size: 18px;}
+.tt-emailItems .tit-cut{height: 22px;padding-right: 32px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.tt-emailItems .tit i{position: absolute;right: 0;top: 0;font-size: 22px;width: 22px;height: 22px;border-radius: 50%; background: #0ae;color: #fff;}
+.tt-emailItems .meta{margin-top: 12px;position: relative;line-height: 20px;height: 26px;padding-top: 6px;border-top: 1px solid #e1e1e1;}
+.tt-emailItems .meta i{position: absolute;right: 0;top: 5px;font-size: 22px;color: #cccccc;}
+.tt-emailItems .time{color: #8d8d8d;height: 36px;padding: 10px 0;}
+.tt-emailItems .desc{max-height: 44px;overflow: hidden;line-height: 22px;}
+/* 重新改造侧边导航 */
+.navMask {width: 100%;height: 100%;position: fixed;top: 0;display: none;background: #000;opacity: 0.7;z-index: 13;}
+#J_nav{width:224px;height: 100%;position:fixed;top:0;left:0;z-index:15;
+transform: rotate(90deg);-o-transform: rotate(180deg);-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);transform-origin: left top 0px;-o-transform-origin: left top 0px;-webkit-transform-origin: left top 0px;-moz-transform-origin: left top 0px;display:none;background: -moz-linear-gradient(top,#fff,#e6f6ff);background: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6f6ff));}
+#J_close {width: 26px;height: 26px;line-height: 26px;border: 1px solid #0fa5fa;border-radius: 50%;display: block;position: absolute;top: 2px;right: 2px;font-size: 15px;text-align: center;z-index: 15;color: #0fa5fa;}
+.result-stauts{color: green;font-size: 52px;display: block;margin: 10px auto;}
+/* userItmes 直推会员列表 */
+.userItmes{margin-top: 10px;border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;border-left:3px solid #22b200;background: #fff;}
+.userItmes .meta{height: 28px;line-height: 28px;padding: 0 10px;border-top: 1px dashed #ccc;color: #888;}
+.userItmes .line{line-height: 28px;padding: 0 10px;border-top: 1px dashed #ccc;color: #888;overflow: hidden;}
+.userItmes .line div{overflow: hidden;-ms-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;}
+.userItmes .user{padding: 10px 10px 6px;color: #000;}
+.userItmes .user .tel{margin-left: 5%;}
+
+/* 分页样式 pageNav */
+.pageNav{margin: 6px auto;border-radius: 4px;text-align: center;clear:both;}
+.pageNav div{overflow: hidden;display: inline-block;*display: inline;*zoom: 1;vertical-align: top;}
+.pageNav a,.pageNav span{position: relative;display: block;float: left;vertical-align: top;font-size: 12px;color: #777;padding: 6px 12px;margin-left: -1px;line-height: 18px;color: #337ab7;text-decoration: none;background-color: #fff;border: 1px solid #ddd;}
+.pageNav a:hover{z-index:3;color:#23527c;background-color:#eee;border-color:#ddd}
+.pageNav .current{cursor: not-allowed; z-index:2;color:#fff;cursor:default;background-color:#5a98de;border-color:#5a98de;cursor: not-allowed;}
+.pageNav .prev{margin-left: 0;padding: 6px;border-radius: 4px 0 0 4px;}
+.pageNav .next{padding: 6px;border-radius: 0 4px 4px 0;}
+#orderListPage a,#orderListPage span{float: none;display: inline-block;}
+
+/*分享*/
+.share{position: fixed;background: rgba(0,0,0,0.2);height:100%;width:100%;top:0;left:0;z-index: 1000;}
+.share .jiathis_style_24x24{position: fixed;width:220px;left:50%;margin: -110px 0 0 -110px;background: #fff;height:220px;top:50%;-webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);-webkit-border-radius: 3px;-webkit-tap-highlight-color: rgba(255, 255, 255, 0);background: #fff;}
+.share .jiathis_style_24x24 a{display: block;border-top: 1px solid #ededed;height: 44px;line-height: 24px;padding: 10px 15px;font-size: 17px;color: #232323;}  
+.share .jiathis_style_24x24 .jiathis_txt{font-size: 18px;font-family: arial, sans-serif;}
+
+
+.whiteBox {background: #fff;border-top: 1px solid #e3e3e3;border-bottom: 1px solid #e3e3e3;margin-top: 10px;}
+/* helpList */
+.helpList{overflow: hidden;padding: 12px;background: #fff;border-bottom: 1px solid #e3e3e3;}
+.helpList a{width: 48%;height: 48px;line-height: 48px;font-size: 16px;border-radius: 5px;display: block;text-align: center;color: #fff;}
+.helpList a i{font-size: 28px;margin-right: 5px;vertical-align: top;}
+/* 弹窗 */
+.form-group{position: relative;margin-bottom: 10px;}
+.popCont{padding: 16px 12px;border-radius: 0 0 5px 5px;background: #fff;}
+.form-group-bottom{padding: 10px;border-top: 1px solid #e5e5e5;}
+.popCont .form-group{margin-bottom: 15px;line-height: 36px;}
+.popCont .form-group-last{margin-bottom: 0;}
+.popCont .form-group .label{white-space: nowrap;font-size: 14px;width: 32%;height: 36px;line-height: 36px;padding-right: 12px;color: #333;float: left;text-align: right;}
+.popCont .label2{height: 36px;line-height: 36px;float: left;text-align: center;background: #ccc;}
+.popCont .text-ipt,.popCont .input-group-ipt{width: 100%;color: #7f7f7f; height: 36px;box-sizing: border-box; font-weight: 400;font-size: 14px;padding: 0 12px;border-radius: 5px;border: 2px solid #e6e6e6!important;font-family: 'Microsoft Yahei',Consolas,"courier new",Verdana,Arial, sans-serif;-webkit-transition: border-color ease-in-out 0.15s;-o-transition: border-color ease-in-out 0.15s;transition: border-color ease-in-out 0.15s;}
+.popCont .text-ipt-half{width: 60%;margin-bottom: 0;float: left;}
+.popCont .text-submit{width: 46%;}
+.popCont .msg{position: relative;margin: 0 16px;font: 16px/24px 'Microsoft yahei';color: #908d96;}
+.popCont .msgHd{height: 56px;margin-bottom: 26px;text-align: center;font: normal 24px/56px 'Microsoft yahei';color: #333;}
+.popCont .msgBd{text-align: center;color: #f00;}
+.popCont .msgHd i{font-size: 56px;color: #00A281;vertical-align: middle;margin-right: 12px;}
+.popCont .msgHd i.icon-lost{color: #aaa;}
+.popTit{font: bold 14px/22px 'Microsoft yahei';color: #f00;}
+.tips{position: relative;padding-left: 32px;color: #FEAE1B;font-size: 14px;line-height: 24px;}
+.tips i{position: absolute;top: 0;left: 6px;font-size: 22px;}
+.popInfo{position: relative;display: block;padding: 6px 12px;color: #666;font-size: 14px; background: #f6f8fb;border-top: 1px solid #bce8f1;border-bottom: 1px solid #bce8f1;}
+.popInfo i{font-size: 22px;/* color: #005982 */}
+.popInfoIcon{background: #f6f8fb;position: relative;min-height: 76px;min-width: 276px;border-radius: 3px; border: 1px solid #bce8f1;margin: 12px 15px;}
+.popInfoIcon .titIcon{position: absolute;top: 50%;right: 0;width: 82px;text-align: center;color: #20b589;font-size: 14px;text-shadow: 0 0 1px #fff; margin-top: -32px;}
+.popInfoIcon .titIcon i{font-size: 36px;margin-bottom: 2px;color: #20b589;display: block;}
+
+.text-ipt[disabled], .text-ipt[readonly], fieldset[disabled] .text-ipt {background-color: #eee;opacity: 1;border-color:#ddd;cursor: not-allowed;}
+
+.btn-disable{background: #EEE !important;border-color: #DDD !important;color: #c3c3c3 !important;cursor: default!important;}
+.popCont .popLink{display: block;width: 80%;margin: 0 auto;text-shadow: 1px 1px 1px #009688;}
+.popCont .popLink i{font-size: 20px;margin-right: 5px;}
+/*分享*/
+.share{position: fixed;background: rgba(0,0,0,0.2);height:100%;width:100%;top:0;left:0;z-index: 1000;}
+.share .jiathis_style_24x24{position: fixed;width:220px;left:50%;margin: -110px 0 0 -110px;background: #fff;height:220px;top:50%;-webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);-webkit-border-radius: 3px;-webkit-tap-highlight-color: rgba(255, 255, 255, 0);background: #fff;}
+.share .jiathis_style_24x24 a{display: block;border-top: 1px solid #ededed;height: 44px;line-height: 24px;padding: 10px 15px;font-size: 17px;color: #232323;}  
+.share .jiathis_style_24x24 .jiathis_txt{font-size: 18px;font-family: arial, sans-serif;}
+/* NoInfo */
+.NoInfo{background: #fdfdfd;padding:12px;margin: 10px;color: #aaa;text-align: center;font-size: 14px;border: 1px dashed #ccc;border-radius: 8px;}
+.NoInfo .tit{font-size: 18px;line-height: 48px;white-space: nowrap;}
+.NoInfo .tit i{font-size: 38px;margin-right: 10px;line-height: 48px;}
+
+
+.areaRcont{padding: 44px 16px 16px;background: #fff;}
+/* 表单样式 */
+.form-group{position: relative;margin-bottom: 10px;}
+.form-group .label{line-height: 22px;height: 22px;display: block;}
+.form-group .label span{color: #f00}
+.text-ipt{width: 100%;color: #7f7f7f; height: 42px;box-sizing: border-box; font-weight: 400;font-size: 14px;padding: 0 12px;border-radius: 5px;border: 2px solid #e6e6e6;font-family: 'Microsoft Yahei',Consolas,"courier new",Verdana,Arial, sans-serif;-webkit-transition: border-color ease-in-out 0.15s;-o-transition: border-color ease-in-out 0.15s;transition: border-color ease-in-out 0.15s;}
+.text-ipt-half{width: 60%;margin-right: 6px;float: left;}
+.text-ipt:focus{border-color: #52d3aa;}
+.text-ipt[disabled], .text-ipt[readonly], fieldset[disabled] .text-ipt {background-color: #eee;opacity: 1;border-color:#ddd;cursor: not-allowed; }
+.text-submit,.text-reset{padding: 0 32px;display: inline-block;height: 38px;border-radius: 5px;cursor: pointer; opacity: .8;filter: alpha(opacity=80);font: 16px/38px 'Microsoft Yahei';text-align: center;background-color: #3b7eb3;color: #fff;}
+.text-reset{background-color: #1B9AF7;}
+.text-submit:hover,.text-submit:focus,.text-reset:hover,.text-reset:focus{opacity: 1;filter: alpha(opacity=100);color: #fff;}
+.verify-pic{position: absolute;bottom: 2px;right: 2px;width: 126px;height: 36px;border-radius: 4px; border:1px solid #e6e6e6;float: right;cursor: pointer;}
+
+/* 头部 header */
+.header{background-color: #00d49a;}
+.InnerPage{padding: 64px 10px;}
+.InnerPagetop{padding: 54px 0;}
+/* Tab选项卡 */
+.headerTab{position: fixed;top: 0;left: 0;right: 0;z-index: 10;padding: 10px;background-color: #3b7eb3;}
+.Tab-control{background: #fff;font-size: 14px;font-weight: 400;position: relative;display: table;overflow: hidden;width: 100%;table-layout: fixed;border: 1px solid #fff;border-radius: 3px;background-color: transparent;-webkit-touch-callout: none;}
+.Tab-control a{line-height: 32px;display: table-cell;overflow: hidden;width: 1%;
+	-webkit-transition: background-color .1s linear;
+	transition: background-color .1s linear;
+	text-align: center;white-space: nowrap;
+	text-overflow: ellipsis;color: #fff;border-color: #fff;border-left: 1px solid #fff;}
+.Tab-control a.tt-tab-active{color: #3b7eb3;background-color: #fff;}
+.Tab-control a:first-child {border-left-width: 0;}
+
+/* 推荐图谱 tjtree */
+.tjtree{line-height: 16px;}
+.tjtree img{vertical-align: middle;border-radius: 50%;margin-left: -42px;display: block;float: left;}
+.tjtree .first{margin-bottom: 12px;padding-left: 42px;}
+.tjtree .second{margin-bottom: 10px;padding-left: 42px;}
+.tjtree .second a{margin-bottom: 10px;display: block;}
+.tjtree span{display: block;}
+
+/* 留言 */
+.newsItems{padding: 8px 12px;border-bottom: 1px solid #ccc;color: #818181;font-size: 14px;background: #fff;}
+.newsItems .title{font: 16px/22px 'Microsoft yahei';color: #2b2b2b;}
+.newsItems img{max-width: 100%;max-height: 82px}
+
+
+
+/* 上传支付宝图片 */
+.alipay{overflow: hidden;}
+.alipaypic{width: 38px;height: 38px;vertical-align: top;margin-left: 12px;display: inline-block;border: 1px solid rgb(223, 227, 230);}
+.addImgBtn{position: relative;vertical-align: top;width: 150px;margin: 0 12px;line-height: 38px;height: 38px;display: inline-block;text-align: center;}
+.addImgBtn input{position: absolute;left: 0;top: 0;opacity: 0;filter: alpha(opacity=0); width: 100%;height: 100%;}
+
+/* ipt-url */
+.ipt-url{border: 1px solid #c6c8ce;border-radius: 3px;width: 100%;padding: 0 5px;color: #818080;font: 14px/20px Consolas,"courier new",'Microsoft yahei';}
+/*  */
+.copyBox{position: relative;padding-right: 42px;}
+.ipt-url{}
+#clip_button{position: absolute;right: 0;top: 0;width: 38px;border-radius: 5px; text-align: center;}
+
+
+
+/* 过渡效果 */
+.loadding{width:100%;height:100%;position: fixed;top:0;left:0;background-color: rgba(0,0,0,0.4);z-index: 998}
+.loadBox{position: fixed;top:50%;left:50%;margin-left: -25px;margin-top: -25px;z-index: 999}.circle {background-color: rgba(0,0,0,0);border:5px solid rgba(255,255,255,1);opacity:.9;border-right:5px solid rgba(0,0,0,0);border-left:5px solid rgba(0,0,0,0);border-radius:50px;box-shadow: 0 0 35px #fff;width:50px;height:50px;margin:0 auto;-moz-animation:spinPulse 1s infinite ease-in-out;-webkit-animation:spinPulse 1s infinite linear;}
+.circle1 {background-color: rgba(0,0,0,0);border:5px solid rgba(255,255,255,1);opacity:.9;border-left:5px solid rgba(0,0,0,0);border-right:5px solid rgba(0,0,0,0);border-radius:50px;box-shadow: 0 0 15px #fff; width:30px;height:30px;margin:0 auto;position:relative;top:-40px;-moz-animation:spinoffPulse 1s infinite linear;-webkit-animation:spinoffPulse 1s infinite linear;      }
+@-moz-keyframes spinPulse {0% { -moz-transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #fff;}50% { -moz-transform:rotate(145deg); opacity:1; }100% { -moz-transform:rotate(-320deg); opacity:0; }}
+@-moz-keyframes spinoffPulse {0% { -moz-transform:rotate(0deg); }100% { -moz-transform:rotate(360deg);  }}
+@-webkit-keyframes spinPulse {0% { -webkit-transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #fff; }50% { -webkit-transform:rotate(145deg); opacity:1;}100% { -webkit-transform:rotate(-320deg); opacity:0; }      }
+@-webkit-keyframes spinoffPulse {0% { -webkit-transform:rotate(0deg); }100% { -webkit-transform:rotate(360deg); }      }
+
+.mui-preview-image.mui-fullscreen {position: fixed;z-index: 20000000;background-color: #000;}
+.mui-preview-header,.mui-preview-footer {position: absolute;width: 100%;left: 0;z-index: 10;}
+.mui-preview-header {height: 44px;top: 0;}
+.mui-preview-footer {height: 50px;bottom: 0px;}
+.mui-preview-header .mui-preview-indicator {display: block;line-height: 25px;color: #fff;text-align: center;margin: 15px auto 4px;background-color: rgba(0, 0, 0, 0.4);border-radius: 12px;font-size: 16px;}
+.mui-preview-image {display: none;-webkit-animation-duration: 0.5s;animation-duration: 0.5s;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
+.mui-preview-image.mui-preview-in {-webkit-animation-name: fadeIn;animation-name: fadeIn;}
+.mui-preview-image.mui-preview-out {background: none;-webkit-animation-name: fadeOut;animation-name: fadeOut;}
+.mui-preview-image.mui-preview-out .mui-preview-header,.mui-preview-image.mui-preview-out .mui-preview-footer {display: none;}
+.mui-zoom-scroller {position: absolute;display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;left: 0;right: 0;bottom: 0;top: 0;width: 100%;height: 100%;margin: 0;-webkit-backface-visibility: hidden;}
+.mui-zoom {-webkit-transform-style: preserve-3d;transform-style: preserve-3d;}
+.mui-slider .mui-slider-group .mui-slider-item img {width: auto;height: auto;max-width: 100%;max-height: 100%;}
+.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {width: 100%;}
+.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+display: inline-table;}
+.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {display: table-cell;vertical-align: middle;}
+.mui-preview-loading {position: absolute;width: 100%;height: 100%;top: 0;left: 0;display: none;}
+.mui-preview-loading.mui-active {display: block;}
+.mui-preview-loading .mui-spinner-white {position: absolute;top: 50%;left: 50%;margin-left: -25px;margin-top: -25px;height: 50px;width: 50px;}
+.mui-preview-image img.mui-transitioning {-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;transition: transform 0.5s ease, opacity 0.5s ease;}
+@-webkit-keyframes fadeIn {0% {opacity: 0;}100% {opacity: 1;}}
+@keyframes fadeIn {0% {opacity: 0;}100% {opacity: 1;}}
+@-webkit-keyframes fadeOut {0% {opacity: 1;}100% {opacity: 0;}}
+@keyframes fadeOut {0% {opacity: 1;}100% {opacity: 0;}}
+
+
+
+/* AsideUser
+.AsideUser{height: 102px;padding: 22px 16px 22px 80px}
+.AsideUser img{width: 56px;height: 56px;border:1px solid #fff;box-shadow: 0 0 3px rgba(225,225,225,.6); border-radius: 50%;margin-left: -70px;float: left;}
+.AsideUser .name{font: 15px/24px 'Microsoft Yahei';margin-top: 8px;display: block;white-space: nowrap;-ms-text-overflow: ellipsis;text-overflow: ellipsis; overflow: hidden;}
+.AsideUser .level{font-size: 12px;height: 18px;line-height: 18px;white-space: nowrap;-ms-text-overflow: ellipsis;text-overflow: ellipsis;overflow: hidden;}
+
+.mui-off-canvas-left, .mui-off-canvas-right{background: -moz-linear-gradient(top,#fff,#e6f6ff);background: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6f6ff));}
+.AsideUserInfo{min-height: 420px; font: 13px/26px 'Microsoft YaHei';}
+.AsideUserInfo dl{display: block;height: 34px;padding: 4px 0;color:#4f4f4f;overflow: hidden;border-bottom: 1px solid #DEDEDE;border-top: 1px solid #fff;}
+.AsideUserInfo dt{width: 36%;padding-right: 10px;text-align: right;float: left;}
+.AsideUserInfo dd{float: left;font-size: 14px;color: red;}
+.AsideUserInfo dd b{color: #000;font-size: 12px;margin-left: 5px;}
+.AsideUserInfo dl:first-child{border-top: 0;}
+AsideBottom
+.AsideBottom{font: 15px/24px 'Microsoft Yahei';padding: 12px 7% 12px 5%;color: #007aff}
+.AsideBottom a{color: #007aff;}
+.AsideBottom .loginout{float: right;}
+.AsideBottom .loginout .mui-icon{font-size: 18px;margin-right: 2px;width: 24px;height: 24px;text-align: center;display: inline-block;vertical-align: middle;}
+tt-action-off
+.tt-action-off{padding: 6px 0 6px;height: 32px;}
+.tt-action-off img{border-radius: 50%;}
+ */

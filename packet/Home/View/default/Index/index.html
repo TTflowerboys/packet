@@ -1,0 +1,41 @@
+<include file='Index:header'/>
+
+<div class="container ptb42">
+    <include file='Index:aside'/>
+    <div class="w-md-8p">
+        <div class="areaR">
+        	<div class="newMsg"><if condition="$rsmsg eq ''">没有最新消息<else /><strong>您有最新消息：</strong>关于<a href="<{:U('message/index')}>"><{$rsmsg.remark}></a></if>！</div>
+        	  <!-- <div class="row bussinessAll">
+			    <div class="w-md-4 w-xs-1">
+			      <div class="BussinessItems animated-panel zoomIn" style="-webkit-animation-delay: 0.2s;">
+			        <h2 class="title"><{:C("PriceType.1")}></h2>
+			        <div class="meta">可用：<b class="t-red"><{$price.price}></b>元</div>
+			        <a href="javascript:;" onclick="winopen('本金提现', '<{:U(\"bussiness/xy2\",array(\"ptype\"=>C(\"typeval.price\")))}>', '460px')" class="button button-royal button-circle button-longshadow" title="本金提现"><i class="icon-qian3"></i></a>
+			      </div>
+			    </div>
+			    <div class="w-md-4 w-xs-1">
+			      <div class="BussinessItems animated-panel zoomIn" style="-webkit-animation-delay: 0.4s;">
+			        <h2 class="title"><{:C("PriceType.2")}></h2>
+			        <div class="meta">可用：<b class="t-red"><{$price.lxprice}></b>元</div>
+			        <a href="javascript:;" onclick="winopen('利息提现', '<{:U(\"bussiness/xy2\",array(\"ptype\"=>C(\"typeval.lxprice\")))}>', '460px')" class="button button-action button-circle button-longshadow" title="利息提现"><i class="icon-lixi"></i></a>
+			      </div>      
+			    </div>
+			    <div class="w-md-4 w-xs-1">
+			      <div class="BussinessItems animated-panel zoomIn" style="-webkit-animation-delay: 0.6s;">
+			        <h2 class="title"><{:C("PriceType.7")}></h2>
+			        <div class="meta">可用：<b class="t-red"><{$price.ztprice}></b>元</div>
+			        <a href="javascript:;" onclick="winopen('直推奖提现', '<{:U(\"bussiness/xy2\",array(\"ptype\"=>C(\"typeval.ztprice\")))}>', '460px')" class="button button-highlight button-circle button-longshadow" title="奖金提现"><i class="icon-jiangjin"></i></a>
+			      </div>
+			    </div>
+			    <div class="w-md-4 w-xs-1">
+			      <div class="BussinessItems animated-panel zoomIn" style="-webkit-animation-delay: 0.8s;">
+			        <h2 class="title"><{:C("PriceType.8")}></h2>
+			        <div class="meta">可用：<b class="t-red"><{$price.glprice}></b>元</div>
+			        <a href="javascript:;" onclick="winopen('管理奖提现', '<{:U(\"bussiness/xy2\",array(\"ptype\"=>C(\"typeval.glprice\")))}>', '460px')" class="button button-caution button-circle button-longshadow" title="奖金提现"><i class="icon-cunqian2"></i></a>
+			      </div>
+			    </div>
+			  </div> --> <!-- 提供操作按钮-->
+        </div>
+    </div>
+</div>
+<include file='Index:footer'/>

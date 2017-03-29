@@ -1,0 +1,30 @@
+
+<div class="popInfo popInfoIcon">
+  <div class="titIcon"><i class="icon-order2"></i>帐单信息</div>
+  
+  <volist name="list" id="vo">
+    <if condition='$vo["status"] eq 1'>
+      <div class="order order-ok clearfix">      
+    <else/>
+      <div class="order clearfix">
+    </if>
+        付款金额：<span class="t-red"><{$vo.price}></span> 元<br>
+        收款人姓名：<{$vo.xycarduser}><br>
+        绑定手机号：<{$vo.xycardphone}><br>
+        <span style="white-space: nowrap;">银行卡号：<span class="t-green"><{$vo.xycardno}></span></span><br>
+        开户银行卡：<{$vo.xybanktype|bankType}><br>
+        开户行地址：<{$vo.xybankaddress}><br>
+    </div>
+  </volist>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="__PUBLIC__/tpl/user/default/js/common.js"></script>

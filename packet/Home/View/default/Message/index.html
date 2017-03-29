@@ -1,0 +1,65 @@
+<include file='Index:header'/>
+<link rel="stylesheet" href="__PUBLIC__/tpl/email/css/style.css">
+<!-- <link href="http://mimg.127.net/xm/webmail/app-service/1604191555/css/app_service.css" rel="stylesheet" type="text/css"> -->
+<div class="container ptb42">
+    <include file='Index:aside'/>
+    <div class="w-md-8p">
+        <div class="areaR">
+        	
+
+<div class="APP_EMAIL">
+    <div class="APP_Logo">
+        <img src="__PUBLIC__/tpl/user/default/images/logo2.png" height="50">
+    </div>
+    <div class="APP_Content">
+        <if condition="$rs eq ''">
+            <{:C('empty')}>
+        <else />
+        	<h1 class="title">您有一条最新消息</h1>
+        	<p class="welcome">尊敬的 <strong class="t-green"><{:C('rsuser.username')}></strong>，您好：</p>
+        	<p class="secondTitle">欢迎加入 <b class="t-red"><{:C('config.webname')}></b>，这是一封关于<code><{$rs.remark}></code>的信息，详细如下：</p>
+        	<blockquote><{$rs.message}></blockquote>
+        	<p class="secondTitle"><strong>帐单信息，详细如下：</strong></p>
+            <div class="APP-service-item APP-service-itemBank">
+                <div class="Header">
+                    <img src="__PUBLIC__/tpl/email/images/logo/banklogo_1.gif" class="logo" alt="招商银行">
+                    <span class="desc">银行卡</span>
+                    <div class="info">
+	                    <button type="button" class="cardButton"  onclick="winopen('付款明细', '<{:U(\"order/tgDetails\",array(\"id\"=>$rs[tgid]))}>', '620px')" class="btn btn-minier btn-success">查看订单</button>
+	                </div>
+                </div>
+                <div class="Content">
+                    <div class="formTableWp">
+                        <table class="formTable">
+                            <tbody>
+                                <tr>
+                                    <th>本期应付款：</th>
+                                    <td class="amount"><strong>RMB <span><{$rs.price}></span></strong></td>
+                                </tr>
+                                <tr>
+                                    <th>未完成金额：</th>
+                                    <td class="amount"><strong>RMB <span><{$rs.price2}></span></strong></td>
+                                </tr>
+                                <tr class="last">
+                                    <th>订单过期时间：</th>
+                                    <td class="time"><{:date('Y/m/d H:i',$rs['expiretime'])}></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </if>
+        <!-- <p>
+                如果您有任何疑问，发留言给我们 <a href="<{:U('message/send')}>"><{:C('config.webname')}></a>。我们将第一时间内帮您解决!
+                </p>
+                <p>Cheers,<br>The team at <span class="il"><{:C('config.webname')}></span></p> -->
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</div>
+<include file='Index:footer'/>

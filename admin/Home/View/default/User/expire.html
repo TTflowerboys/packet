@@ -1,0 +1,52 @@
+<include file='Index:header'/>
+  
+  <div class="page">
+    <div class="maintop text-c">
+    <form action="">
+      会员编号：<input type="text" class="input-text" name="username" value="<{$valuser}>" style="width:120px">
+      接点人：<input type="text" class="input-text" name="parentuser" value="<{$valparent}>" style="width:120px">
+      推荐人：<input type="text" class="input-text" name="tjuser" value="<{$valtjuser}>" style="width:120px">      
+      <input type="submit" class="btn btn-success" value="查询">
+    </form>
+  
+  
+  
+    </div>
+<form id="J_alldel" action="<{:U('delalldo')}>" method="post" >
+    <table class="Table" width="100%">
+      <thead><tr><th>会员编号</th><th>接点人</th><th>推荐人</th><th>会员状态</th><th class="hidden-sm hidden-xs">注册时间</th><th class="hidden-sm hidden-xs">过期时间</th></tr></thead>
+      <tbody>
+      <volist name="list" id="vo">
+        <tr>
+          <td><a class="link" href="<{:U('user/enterhysys',array('id'=>$vo['id']))}>" target="_blank"><{$vo.username}></a></td>
+          <td><b class="t-orange"><if condition="$vo.parentuser eq ''"><{:C('wenanArr.platform')}><else/><{$vo.parentuser}></if></b></td>
+          <td><{$vo.tjuser}></td>
+          <td>
+            <if condition="$vo.status eq 0">
+                <span class="btn btn-minier btn-danger">等待激活</span>
+            <elseif condition="$vo.status eq 2"/>
+                <span class="btn btn-minier btn-danger">激活超时</span>
+            <else/>
+                <if condition="$vo.rank eq 0">
+                  <span class="btn btn-minier btn-success"><{$vo.rank|getRank}></span>
+                <elseif condition="$vo.rank eq 1"/>
+                  <span class="btn btn-minier btn-secondary"><{$vo.rank|getRank}></span>
+                <elseif condition="$vo.rank eq 2"/>
+                  <span class="btn btn-minier btn-warning"><{$vo.rank|getRank}></span>
+                </if>
+            </if>
+          </td>
+          <td class="hidden-sm hidden-xs"><{$vo.addtime|date="Y-m-d H:i",###}></td>
+          <td class="hidden-sm hidden-xs"><{$vo.expiretime|date="Y-m-d H:i",###}></td>
+        </tr>
+      </volist>
+      </tbody>
+      <tfoot class="tfoot"><tr>
+        <!-- <td><input type="submit" value="删除" class="btn btn-minier btn-warning"></td> -->
+        <td colspan="12"><div class="pageNav"><{$page}></div></td>
+      </tr></tfoot>
+    </table>
+</form>
+  </div>
+
+<include file='Index:footer'/>

@@ -1,0 +1,80 @@
+<include file='Index:header'/>
+<div class="page">
+
+<div class="tab-box J_tab">
+  <ul class="nav nav-tabs">
+    <li class="active" data-target="addBank">添加平台银行帐户</li>
+    <li data-target="showBank">查看平台银行帐户</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="addBank" class="tab-pane tab-active">
+      <form class="ajaxForm form-horizontal" action="<{:U('sys/bankAddDo')}>" method="post">
+        <div class="form-items">
+            <label class="col-sm-2 control-label">设为默认：</label><div class="col-sm-10" style="padding-top:5px"><input name="isdefault" value="1" class="switch btn-flat" type="checkbox" /><span class="lbl"></span></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">持卡人姓名：</label>
+          <div class="col-sm-10"><input type="text" name="realname" class="input-text col-sm-5 col-xs-10" placeholder="持卡人姓名" required></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">绑定手机号：</label>
+          <div class="col-sm-10"><input type="text" name="bindphone" class="input-text col-sm-5 col-xs-10" placeholder="银行卡绑定手机号" required></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">银行卡类型：</label>
+          <div class="col-sm-10">
+          <select name="banktype" class="input-text col-sm-5 col-xs-10" requried>
+            <option value="">--请选择银行卡类型--</option>
+            <?php
+              foreach(C('bankType') as $key=>$value){
+                echo "<option value=".$key.">".$value."</option>";
+              }
+            ?>
+          </select>
+          </div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">银行卡号：</label>
+          <div class="col-sm-10"><input type="text" name="cardno" class="input-text col-sm-5 col-xs-10" placeholder="银行卡号" required></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2 control-label">开户行地址：</label>
+          <div class="col-sm-10"><input type="text" name="bankaddress" class="input-text col-sm-5 col-xs-10" placeholder="银行卡开户行地址"></div>
+        </div>
+        <div class="form-items">
+          <label class="col-sm-2">&nbsp;</label>
+          <div class="col-sm-10">
+            <button class="btn btn-success" type="submit"><i class="ace-icon icon-right"></i>确认添加</button>
+            <button class="btn btn-primary" type="reset"><i class="ace-icon icon-back"></i>重置</button>
+          </div>
+        </div>
+      </form>  
+    </div>
+    <div id="showBank" class="tab-pane">
+        <table class="Table" width="100%">
+            <thead><tr><th>编号</th><th>持卡人</th><th style="width: 132px">绑定手机号</th><th style="width: 132px">银行类型</th><th style="width: 200px;">银行卡号</th><th style="width: 82px;">默认收款</th><th class="hidden-xs">开户行地址</th><th class="hidden-sm hidden-xs"  style="width: 152px">添加时间</th><th>操作</th></tr></thead>
+            <tbody>
+                <volist name="list" id="vo">
+                  <tr>
+                    <td><{$vo.id}></td>
+                    <td><{$vo.realname}></td>
+                    <td><{$vo.bindphone}></td>
+                    <td><b class="green"><{$vo.banktype|bankType}></b></td>
+                    <td><b class="blue"><{$vo.cardno}></b></td>
+                    <td><if condition="$vo.isdefault eq 1 "><span class="btn btn-minier btn-success">默认卡</span><else/><span class="btn btn-minier btn-default">备用卡</span></if></td>
+                    <td class="hidden-xs"><{$vo.bankaddress}></td>                    
+                    <td class="hidden-sm hidden-xs"><{$vo.addtime|date="Y-m-d H:m",###}></td>
+                    <td><div class="action-buttons"><a href="<{:U('sys/bankedit',array('id'=>$vo['id']))}>" class="green" title="编辑"><i class="icon-edit"></i></a><a href="<{:U('sys/bankDelDo',array('id'=>$vo['id']))}>" class="red J_confirm-rst-url-btn" data-info="你确定要删除吗？" title="删除"><i class="icon-del"></i></a></div></td>
+                  </tr>
+                </volist>
+            </tbody>
+            <tfoot class="tfoot"><tr><td colspan="9"><div class="pageNav"><{$page}></div></td></tr></tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<include file='Index:footer'/>

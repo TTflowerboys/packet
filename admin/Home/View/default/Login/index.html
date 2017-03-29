@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title><{$webname}></title>
+  <link rel="stylesheet" href="__PUBLIC__/tpl/admin/default/css/login.css">
+  <script>
+  var veriCodeUrl = "<{:U('verifyCode',array('randt'=>time()))}>?"+new Date().getTime(),
+    mainUrl = "<{:U('index/index')}>",
+    layerCssUrl = '__PUBLIC__/static/plugin/layer/';
+</script>
+</head>
+<body>
+  <div id="signin" class="m-winmark" >
+    <div class="m-wincont">
+      <img class="login-img" id="login-img" src="http://static.flowerboys.cn/loginGif/beforelogin.gif" alt="">
+      <div class="fLogin" id="fLogin">
+        <input class="fLogin-text" tabindex="1" type="text" id="username" placeholder="邮箱/手机号" autocomplete="off">
+        <input class="fLogin-text" tabindex="2" type="password" id="password" placeholder="密码" autocomplete="off">
+        <div class="clearfix">
+          <input class="fLogin-text fLogin-verify" tabindex="3" type="text" id="veriCode" placeholder="验证码" autocomplete="off"><img class="verify-pic" src="<{:U('verifyCode')}>" alt=""><a href="javascript:;" class="verify-btn">换一张</a>
+        </div>
+        <a class="fLogin-btn" id="signin-btn" href="<{:U('loginCheckDo')}>">登录</a>
+      </div>
+      <div class="login-copyright">&copy;2000-2016 <{$webname}> 版权所有</div>
+    </div>
+  </div>
+
+
+<script src="__PUBLIC__/static/js/jquery.js"></script>
+<script src="__PUBLIC__/static/plugin/layer/layer.js"></script>
+<script src="__PUBLIC__/tpl/admin/default/js/login.js"></script>
+</body>
+</html>

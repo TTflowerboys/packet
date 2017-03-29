@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="layer/layer.js"></script>
+</head>
+<body>
+<a href="javascript:;" onclick="winopen('你好', '/index.php')">点击</a>
+<script src="http://lei.com/Public/static/js/jquery.js"></script>
+	<script>
+$(function(){
+	//$('a').on('click',function(){
+	/*layer.open({
+	    title: [
+	        '我是标题',
+	        'background-color:#8DCE16; color:#fff;'
+	    ],
+	    content: '标题风格任你定义。。'
+	    
+	});*/
+	//winopen('你好', 'http://www.baidu.com')
+		/*$.post(url, {}, function(str){
+	      layer.open({
+	        type: 1,
+	        title: title,
+	        area: width,
+	        content: str
+	      });
+	    });*/
+	//})
+})
+
+
+
+
+function winopen(title, url) {
+    $.post(url, {}, function(str){
+      layer.open({
+        title: title,
+        content: str
+      });
+    });
+}
+	</script>
+</body>
+</html>

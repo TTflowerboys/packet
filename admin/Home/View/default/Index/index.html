@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <title><{$webname}>_后台管理中心</title>
+   <link rel="stylesheet" href="__PUBLIC__/tpl/admin/default/css/admin.css">
+   <script>
+   	var layerCssUrl = '__PUBLIC__/static/plugin/layer/';
+    var loginUrl = "<{:U('login')}>",logexitUrl="<{:U('logexit')}>";
+   </script>   
+</head>
+<body style="margin: 0px;" scroll="no">
+<table style="width: 100%;" id="frametable" height="100%" width="100%" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="2" height="100" class="mainhd">
+      	<div class="layout-header">
+      		<h1 class="logo"><a href="<{:U('index/index')}>"><img src="__PUBLIC__/tpl/admin/default/images/logo.jpg" alt="<{$webname}>" width="196" style="margin-top:8px"/></a></h1>
+      		<div class="asideTit">管理目录</div>
+      		<h2 class="mainTit"><{$webname}></h2>
+      		<div class="topnav">
+      			<span class="userImg">
+      				<img src="__PUBLIC__/tpl/admin/default/images/user.jpg" alt="<{$webname}>" />
+      			</span>
+      			<p class="userInfo fl">尊敬的<b class="user"><{$rs.username}></b>，您好！</p>
+				    <a href="javascript:;" class="logout fl" id="J_logexit"></a>
+      		</div>
+      		<div class="loca">
+      			<strong>当前位置：</strong>
+      			<div class="crumbs"><span><{$webname}></span><span class="arrow">&gt;</span><span>欢迎使用</span></div>
+      		</div>
+      	</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="menutd" valign="top" width="216">
+        <div class="main-menu">
+          <dl>
+            <dt><i>1</i><strong>会员管理</strong></dt>
+            <dd>
+            <a target="workspace" href="<{:U('user/index')}>">会员列表</a>
+            <a target="workspace" href="<{:U('user/expire')}>">过期会员</a>
+            <a target="workspace" href="<{:U('user/team')}>">会员图谱</a>
+          </dd>
+          <!-- <dt><i>2</i><strong>消息中心</strong></dt>
+          <dd>
+            <a href="<{:U('news/index')}>" target="workspace">新闻公告</a>
+            <a href="<{:U('msg/index')}>" target="workspace">会员留言</a>
+          </dd> -->
+          <dt><i>2</i><strong>财务中心</strong></dt>
+          <dd>
+            <a href="<{:U('business/index')}>" target="workspace">平台收款列表</a>
+            <a href="<{:U('business/pay')}>" target="workspace">汇款列表汇总</a>
+            <a href="<{:U('business/income')}>" target="workspace">收款列表汇总</a>
+          </dd>
+          <dt><i>3</i><strong>系统设置</strong></dt>
+          <dd>
+            <a href="<{:U('sys/index')}>" target="workspace">奖金设置</a>
+            <!-- <a href="<{:U('sys/bank')}>" target="workspace">银行卡设置</a>
+            <a href="<{:U('sys/db')}>" target="workspace">数据库备份/还原</a> -->
+          </dd>
+          <!-- <dt><i>5</i><strong>管理员操作</strong></dt>
+                   <dd>
+                     <a href="<{:U('admin/add')}>" target="workspace">添加管理员</a>
+                     <a href="<{:U('admin/index')}>" target="workspace">管理员列表</a>
+                   </dd> -->         
+		    </dl>
+      	</div>
+      </td>
+      <td valign="top" width="100%" class="bgf6">
+      	<iframe src="<{:U('index/welcome')}>" id="workspace" name="workspace" style="overflow: visible;" frameborder="0" width="100%" height="100%" scrolling="yes" ></iframe>
+      </td>
+    </tr>
+  </tbody>
+</table>
+   
+<script src="__PUBLIC__/static/js/jquery.js"></script>
+<script src="__PUBLIC__/static/plugin/layer/layer.js"></script>
+<script src="__PUBLIC__/tpl/admin/default/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<include file='Index:header'/>
+<div class="container ptb42">
+    <include file='Index:aside'/>
+    <div class="w-md-8p">
+        <div class="areaR">
+            <div id="tree_panel" class="panel-body panel-border">
+                <div id="tree" class="tree">
+                    <ul id="tree_ul" class="clearfix">
+                      <li id="tree_li">
+                        <{$tree}>
+                      </li>
+                    </ul>
+                </div>                
+            </div>
+            <div class="position-info-list clearfix">
+                <div class="blank"><span>注册新会员</span></div>
+                <div class="status-0"><span>未激活</span></div>
+                <div class="user-type-up"><span>提示升级</span></div>
+                <div class="user-type-1"><span>A级会员</span></div>
+                <div class="user-type-2"><span>B级会员</span></div>
+                <div class="user-type-3"><span>C级会员</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file='Index:footer'/>
+
+<script>
+
+function show_sun(uid){
+  var uid = uid;
+  var url = '<{:U("user/teamDo")}>';
+  var curDOM = $('#cur_id_'+uid);
+  $.post(url, {uid:uid},function (data){
+    if(data.status==1){     
+      curDOM.html(data.info);
+    }else{
+      layer.msg('获取数据失败！', {icon: 5});
+    }
+  }, "json");
+
+
+  var panelWidth = $('#tree_panel').innerWidth();
+  var tree = $('#tree');
+  var liOuterWidth = $('#tree_li').outerWidth()
+  if ($('#tree_ul').innerHeight()>220 || $('#tree_li').innerWidth()>899) {
+    $('#tree').removeClass('J_tree');
+    tree.innerWidth(liOuterWidth+132)
+  }
+
+}
+$(function(){
+    $('#tree').addClass('J_tree');
+})
+</script>

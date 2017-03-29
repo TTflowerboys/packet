@@ -1,0 +1,70 @@
+<include file='Index:header'/>
+  
+  <div class="page">
+    <div class="maintop text-c">
+    <form action="">
+      会员编号：<input type="text" class="input-text" name="username" value="<{$valuser}>" style="width:120px">
+      接点人：<input type="text" class="input-text" name="parentuser" value="<{$valparent}>" style="width:120px">
+      推荐人：<input type="text" class="input-text" name="tjuser" value="<{$valtjuser}>" style="width:120px">      
+      会员级别：<select name="rank" >
+      <option value="">--请选择--</option>
+        <?php
+        $rankdata = explode(",",C('config.rankarr'));
+        foreach($rankdata as $k=>$v){
+          echo "<option value=".$k.">".$v."</option>";
+        }
+        ?>
+      </select>
+      <input type="submit" class="btn btn-success" value="查询">
+    </form>
+  
+  
+  
+    </div>
+<form id="J_alldel" action="<{:U('delalldo')}>" method="post" >
+    <table class="Table" width="100%">
+      <thead><tr><!-- <th><div class="checkBeauty J_checkBeautyAll"><input type="checkbox" class="checkall"></div></th> --><th>会员编号</th><th>接点人</th><th>左区</th><th>右区</th><th>推荐人</th><th>推荐人数</th><th>会员级别</th><th class="hidden-sm hidden-xs">注册时间</th><th>操作</th></tr></thead>
+      <tbody>
+      <volist name="list" id="vo">
+        <tr>
+          <!-- <td><div class="checkBeauty J_checkBeauty"><input class="checkBnt" check="navid"  name="checkitem[]" type="checkbox" value="<{$vo.id}>"></div></td> -->
+          <td><a class="link" href="<{:U('user/enterhysys',array('id'=>$vo['id']))}>" target="_blank"><{$vo.username}></a></td>
+          <td><b class="t-orange"><if condition="$vo.parentuser eq ''"><{:C('wenanArr.platform')}><else/><{$vo.parentuser}></if></b></td>
+          <td>
+            <if condition="$vo.left eq ''">
+              <a class="btn btn-minier btn-danger" href="<{:U('user/reg',array('ParentId'=>$vo['id'],'ParentWhere'=>1))}>"><span>注册会员</span></a>
+            <else/>
+              <span class="btn btn-minier btn-success">左区已满</span>
+            </if>
+          </td>
+          <td><if condition="$vo.right eq ''"><a class="btn btn-minier btn-danger" href="<{:U('user/reg',array('ParentId'=>$vo['id'],'ParentWhere'=>2))}>"><span>注册会员</span></a><else/><span class="btn btn-minier btn-success">右区已满</span></if></td>
+          <td><if condition="$vo.tjuser eq ''"><{:C('wenanArr.platform')}><else/><{$vo.tjuser}></if></td>
+          <td><{$vo.tjnum}></td>
+          <td>
+            <if condition="$vo.status eq 0">
+                <span class="btn btn-minier btn-danger">等待激活</span>
+            <else/>
+                <if condition="$vo.rank eq 0">
+                  <span class="btn btn-minier btn-success"><{$vo.rank|getRank}></span>
+                <elseif condition="$vo.rank eq 1"/>
+                  <span class="btn btn-minier btn-secondary"><{$vo.rank|getRank}></span>
+                <elseif condition="$vo.rank eq 2"/>
+                  <span class="btn btn-minier btn-warning"><{$vo.rank|getRank}></span>
+                </if>
+            </if>
+          </td>
+          <td class="hidden-sm hidden-xs"><{$vo.addtime|date="Y-m-d H:i",###}></td>
+          <!-- <td><a href="<{:U('user/statusDo')}>" data-id="<{$vo.id}>" class="J_open-btn" id="zt<{$vo.id}>"><if condition="$vo.isstop eq 0 "><span class="btn btn-minier btn-success">已启用</span><else /><span class="btn btn-minier btn-danger">已封号</span></if></a></td> -->
+          <td><div class="action-buttons"><a href="<{:U('user/edit',array('id'=>$vo['id']))}>" class="green" title="编辑"><i class="icon-edit"></i></a><!-- <a href="<{:U('user/delDo',array('id'=>$vo['id']))}>" class="red J_confirm-rst-url-btn" data-info="你确定要删除吗？" title="删除"><i class="icon-del"></i></a> --></div></td>
+        </tr>
+      </volist>
+      </tbody>
+      <tfoot class="tfoot"><tr>
+        <!-- <td><input type="submit" value="删除" class="btn btn-minier btn-warning"></td> -->
+        <td colspan="12"><div class="pageNav"><{$page}></div></td>
+      </tr></tfoot>
+    </table>
+</form>
+  </div>
+
+<include file='Index:footer'/>

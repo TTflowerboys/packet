@@ -1,0 +1,1386 @@
+.APP_EMAIL{
+	width: 100%;
+    font-size: 17px;
+    color: #373737;
+    padding: 32px 0;
+    background: #f9f9f9 url(/Public/tpl/email/images/unnamed.png) center bottom repeat-x;
+    background-size: auto 5px;
+}
+.APP_Logo{text-align: center;}
+.APP_Content{width: 578px;padding: 32px;margin: 0 auto;background: #fff;}
+.APP_Content .empty{height: 56px;margin-bottom: 26px;text-align: center;font: normal 24px/56px 'Microsoft yahei';color: #333;}
+.APP_Content .empty i{width: 56px;height: 56px;display: inline-block;*display: inline;*zoom: 1;font-size: 56px;color: #00A281;vertical-align: middle;margin-right: 12px;}
+.APP_Content p{font-size: 16px;line-height: 22px;margin-bottom: 22px;}
+.APP_Content .title{font-size: 24px;color: #2ab27b;margin-bottom: 22px;text-align: center;}
+.APP_Content .welcome{font-size: 16px;line-height: 22px;margin-bottom: 10px;}
+.APP_Content .secondTitle{text-indent: 2em;font-size: 15px;line-height: 22px;margin-bottom: 12px;}
+.cardButton{line-height: 32px;min-height: 32px;min-width: 70px;padding: 1px 15px;cursor: pointer;background-color: #4285f4;border: solid 1px #dfdfdf;border-radius: 3px;color: #fff;display: inline-block;font-size: 14px;font-weight: 500;text-decoration: none;}
+
+.APP-service-single {
+    clear: both;
+    text-align: center
+}
+
+.APP-service-single .APP-service-item {
+    float: none;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left
+}
+
+.APP-service {
+    padding: 5px 7px
+}
+
+.APP-service .f-clear:after,.APP-service .f-clear:before {
+    content: ".";
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+    overflow: hidden;
+    display: block
+}
+
+.APP-service .f-clear {
+    *zoom:1;+zoom:1}
+
+.aBtn {
+    display: block;
+    width: 79px;
+    height: 27px;
+    text-decoration: none;
+    line-height: 28px;
+    overflow: hidden;
+    background-color: #F8F8F8;
+    border: #999 1px solid;
+    border-radius: 3px;
+    text-align: center;
+    color: #555
+}
+
+.aBtn:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2)
+}
+
+.aBtn-main {
+    background-color: #68B855;
+    color: #fff;
+    font-weight: 700;
+    border: #459830 1px solid
+}
+
+.aBtn-main:hover {
+    background-color: #72C25F
+}
+
+.APP-service-item {
+    width: 489px;
+    border: #E4E4E4 1px solid;
+    margin: 0 auto 15px;
+    border-radius: 5px
+}
+
+.APP-service-item .Header {
+    border-bottom: #E4E4E4 1px solid;
+    white-space: nowrap;
+    background-color: #AEAEAE;
+    overflow: hidden;
+    position: relative
+}
+
+.APP-service-item .Content {
+    padding: 10px 20px 5px 20px
+}
+
+.APP-service-item .formTableWp {
+    zoom:1;width: 100%;
+    margin-bottom: 10px
+}
+
+.APP-service-item .formTable {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse
+}
+
+.APP-service-item .formTable tr {
+    border-bottom: dotted 1px #e4e4e4
+}
+
+.APP-service-item .formTable tr.last {
+    border-bottom: none
+}
+
+.APP-service-item .formTable th {
+    width: 80px;
+    font-size: 13px;
+    color: #aeaeae;
+    text-align: left;
+    font-weight: 400
+}
+
+.APP-service-item .formTable td {
+    width: auto;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 4px 0;
+    color: #444;
+    word-wrap: break-word;
+    word-break: break-all
+}
+
+.APP-service-item .operation {
+    height: 30px;
+    overflow: hidden;
+    margin-bottom: 10px
+}
+
+.APP-service-item .operation .aBtn {
+    float: left;
+    margin-right: 9px
+}
+
+.APP-service-itemAirTicket .header {
+    background-color: #f8f8f8;
+    height: 54px;
+    line-height: 54px;
+    color: #444;
+    border-radius: 5px
+}
+
+.APP-service-itemAirTicket .header .name {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 10px 0 19px
+}
+
+.APP-service-itemAirTicket .header .type,.APP-service-itemAirTicket .header .number {
+    margin-right: 4px;
+    font-size: 14px;
+    color: #aeaeae
+}
+
+.APP-service-itemAirTicket .content {
+    padding: 20px 15px 0 15px
+}
+
+.APP-service-itemAirTicket .planInfo {
+    width: 100%;
+    overflow: hidden;
+    height: 40px;
+    margin-bottom: 20px;
+    position: relative
+}
+
+.APP-service-itemAirTicket .planInfo .logo {
+    height: 36px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.APP-service-itemAirTicket .planInfo .flt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 36px;
+    text-align: right
+}
+
+.APP-service-itemAirTicket .planInfo .flt .no {
+    font-size: 18px;
+    line-height: 18px;
+    color: #444
+}
+
+.APP-service-itemAirTicket .planInfo .flt .type {
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 4px;
+    color: #aeaeae
+}
+
+.APP-service-itemAirTicket .planInfo .flt.noType .no {
+    line-height: 36px
+}
+
+.APP-service-itemAirTicket .operation {
+    margin-top: 10px;
+    margin-bottom: 20px
+}
+
+.APP-service-itemAirTicket .planDetail {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px
+}
+
+.APP-service-itemAirTicket .planDetail.international {
+    margin-top: 36px;
+    margin-bottom: 56px;
+    _margin-top: 10px;
+    _margin-bottom: 30px
+}
+
+.APP-service-itemAirTicket .planDetail .box {
+    position: relative
+}
+
+.APP-service-itemAirTicket .planDetail .box.down {
+    position: relative;
+    margin-top: 2px
+}
+
+.APP-service-itemAirTicket .planDetail .from {
+    float: left;
+    width: 170px
+}
+
+.APP-service-itemAirTicket .planDetail .to {
+    float: right;
+    width: 170px;
+    text-align: right
+}
+
+.APP-service-itemAirTicket .planDetail .location {
+    font-size: 16px;
+    color: #444;
+    line-height: 18px
+}
+
+.APP-service-itemAirTicket .planDetail .time {
+    font-size: 40px;
+    color: #444;
+    line-height: 40px;
+    margin: 5px 0
+}
+
+.APP-service-itemAirTicket .planDetail .date,.APP-service-itemAirTicket .planDetail .cost {
+    font-size: 14px;
+    line-height: 14px;
+    color: #aeaeae
+}
+
+.APP-service-itemAirTicket .planDetail .stop {
+    position: absolute;
+    top: 0;
+    left: 170px;
+    width: 118px;
+    text-align: center;
+    color: #aeaeae;
+    font-size: 14px
+}
+
+.APP-service-itemAirTicket .planDetail .flt {
+    position: absolute;
+    top: 0;
+    left: 170px;
+    width: 118px;
+    text-align: center;
+    font-size: 18px;
+    color: #444;
+    line-height: 18px
+}
+
+.APP-service-itemAirTicket .planDetail .arrow {
+    position: absolute;
+    top: 8px;
+    left: 215px;
+    width: 33px;
+    height: 34px;
+    background: url(../img/glb.png) 0 0 no-repeat;
+    _background-image: url(../img/glb_ie6.png)
+}
+
+.APP-service-itemAirTicket .route {
+    line-height: 12px;
+    color: #999;
+    text-align: center;
+    font-size: 12px;
+    width: 459px;
+    margin-top: -10px;
+    margin-bottom: 20px
+}
+
+.APP-service-itemAirTicket .route.international {
+    margin-top: -32px;
+    _margin-top: 0
+}
+
+.APP-service-itemAirTicket .interHolder {
+    height: 14px
+}
+
+.APP-service-itemAirTicket .hrLine {
+    border-top: #bcbcbc 1px dotted;
+    margin-top: 19px;
+    height: 19px;
+    overflow: hidden
+}
+
+.APP-service-itemHotel .header {
+    height: 69px;
+    color: #fff;
+    background-color: #286FDB;
+    border-radius: 5px
+}
+
+.APP-service-itemHotel .header .logo {
+    float: left;
+    margin: 16px 19px
+}
+
+.APP-service-itemHotel .header .desc {
+    float: left;
+    height: 69px;
+    line-height: 69px;
+    font-size: 18px
+}
+
+.APP-service-itemHotel .hotelInfo {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 0 0 5px 5px;
+    border-bottom: solid 1px #e4e4e4
+}
+
+.APP-service-itemHotel .hotelInfo .name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #444;
+    line-height: 29px
+}
+
+.APP-service-itemHotel .hotelInfo .loc {
+    font-size: 14px;
+    color: #acacac;
+    line-height: 20px
+}
+
+.APP-service-itemHotel .formTable td {
+    padding: 8px 0;
+    border-bottom: dotted 1px #e4e4e4
+}
+
+.APP-service-itemHotel .formTable th {
+    padding: 8px 0;
+    border-bottom: dotted 1px #e4e4e4
+}
+
+.APP-service-itemHotel .formTable .last td {
+    border-bottom: none
+}
+
+.APP-service-itemHotel .formTable .last th {
+    border-bottom: none
+}
+
+.APP-service-itemBank .Header {
+    height: 69px;
+    color: #fff;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    position: relative
+}
+
+.APP-service-itemBank .Header .logo {
+    float: left;
+    margin: 19px
+}
+
+.APP-service-itemBank .Header .desc {
+    float: left;
+    height: 69px;
+    line-height: 69px;
+    font-size: 16px;
+    color: #aeaeae
+}
+
+.APP-service-itemBank .Header .info {
+    text-align: right;
+    position: absolute;
+    top: 15px;
+    right: 19px
+}
+
+.APP-service-itemBank .Header .noCardNo {
+    top: 22px
+}
+
+.APP-service-itemBank .Header .singleLine {
+    top: 22px
+}
+
+.APP-service-itemBank .Header .info .name {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #444
+}
+
+.APP-service-itemBank .Header .info .cardNo {
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    color: #aeaeae
+}
+
+.APP-service-itemBank .Header .info .onlyCardNo {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #444
+}
+
+.APP-service-itemBank .Header .info .onlyCardNo .hd {
+    font-weight: 400;
+    color: #aeaeae
+}
+
+.APP-service-itemBank .formTable td {
+    font-size: 13px;
+    padding: 7px 0;
+    border-bottom: dotted 1px #e4e4e4
+}
+
+.APP-service-itemBank .formTable th {
+    padding: 7px 8px 7px 0;
+    border-bottom: dotted 1px #e4e4e4;
+    width: 98px;
+    text-align: right;
+}
+
+.APP-service-itemBank .formTable .last td {
+    border-bottom: none
+}
+
+.APP-service-itemBank .formTable .last th {
+    border-bottom: none
+}
+
+.APP-service-itemBank .formTable .period {
+    font-size: 13px;
+    color: #444
+}
+
+.APP-service-itemBank .formTable .time {
+    font-size: 16px;
+    color: #444
+}
+
+.APP-service-itemBank .formTable .time.timeout {
+    font-size: 16px;
+    color: #D90000
+}
+
+.APP-service-itemBank .formTable .amount {
+    font-size: 16px;
+    color: #444;
+    line-height: 16px;
+    padding: 10px 0
+}
+
+.APP-service-itemBank .formTable .amount strong {
+    font-weight: 700
+}
+
+.APP-service-itemBank .formTable .amount span {
+    padding-left: 2px
+}
+
+.APP-service-bill-welcomeTip {
+    padding-bottom: 11px;
+    font-size: 14px;
+    color: #666
+}
+
+.APP-service-itemBank .detail-bill {
+    padding: 5px 0 0 0;
+    font-size: 13px;
+    color: #444
+}
+
+.APP-service-itemBank .detail-bill .title {
+    padding-bottom: 16px;
+    font-size: 14px
+}
+
+.APP-service-itemBank .bill {
+    padding-bottom: 14px
+}
+
+.APP-service-itemBank .bill-item {
+    position: relative
+}
+
+.APP-service-itemBank .bill-item span {
+    display: block
+}
+
+.APP-service-itemBank .bill-item .time {
+    float: left;
+    padding: 0 15px 0 0;
+    color: #aeaeae
+}
+
+.APP-service-itemBank .bill-item .icon-dot {
+    position: absolute;
+    top: 9px;
+    left: 47px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: url(../img/glb.png) -15px -42px no-repeat;
+    _background-image: url(../img/glb_ie6.png);
+    left: 51px\9;
+    *left: 51px;
+    _left: 46px
+}
+
+.APP-service-itemBank .bill-item-first .icon-dot {
+    top: 0;
+    border-top: 9px #fff solid
+}
+
+.APP-service-itemBank .bill-item-last .icon-dot {
+    border-bottom: 44px #fff solid
+}
+
+.APP-service-itemBank .bill-item-onlyOne .icon-dot {
+    top: 0;
+    border-top: 9px #fff solid;
+    border-bottom: 44px #fff solid
+}
+
+.APP-service-itemBank .bill-item .info {
+    float: left;
+    padding: 0 0 16px 10px;
+    border-left: 1px solid #eee
+}
+
+.APP-service-itemBank .bill-item .cost {
+    padding-left: 6px;
+    font-size: 19px;
+    line-height: 21px
+}
+
+.APP-service-itemBank .bill-item .cost .unit {
+    display: inline;
+    padding-right: 4px
+}
+
+.APP-service-itemBank .bill-item .place {
+    padding-left: 5px;
+    font-size: 12px;
+    color: #aeaeae
+}
+
+.APP-service-itemBank .line {
+    font-size: 13px;
+    line-height: 36px;
+    border-top: 1px dotted #ddd
+}
+
+.APP-service-itemBank .line .hd {
+    padding-right: 14px;
+    color: #aeaeae
+}
+
+.APP-service-itemBank .line .bd {
+    font-size: 15px;
+    font-weight: 700
+}
+
+.APP-service-itemBank .line .unit {
+    padding-right: 2px
+}
+
+.APP-service-billCollection {
+    padding: 10px 18px;
+    clear: both;
+    background-color: #f9f9f9
+}
+
+.APP-service-billCollection p {
+    font-size: 14px;
+    color: #aeaeae
+}
+
+.APP-service-billCollection .separator {
+    padding: 0 4px
+}
+
+.APP-service-billCollection .item .bd {
+    font-size: 19px;
+    color: #444
+}
+
+.APP-service-billCollection .item .unit {
+    padding-right: 2px
+}
+
+.APP-service-express {
+    width: 805px;
+    margin: 20px auto 0 auto
+}
+
+.APP-service-itemExpress {
+    width: 800px
+}
+
+.APP-service-itemExpress .header {
+    height: 69px;
+    color: #fff;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    position: relative
+}
+
+.APP-service-itemExpress .header .logo {
+    float: left;
+    margin: 15px 28px 15px 19px
+}
+
+.APP-service-itemExpress .header .orderHd {
+    display: block;
+    float: left;
+    height: 69px;
+    line-height: 69px;
+    font-size: 16px;
+    color: #aeaeae
+}
+
+.APP-service-itemExpress .header .orderNo {
+    display: block;
+    float: left;
+    height: 69px;
+    line-height: 69px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #555
+}
+
+.APP-service-itemExpress .intro {
+    border-bottom: dotted 1px #e4e4e4;
+    height: 43px
+}
+
+.APP-service-itemExpress .intro .status {
+    float: left;
+    color: #fd9801;
+    font-size: 20px;
+    font-weight: 700
+}
+
+.APP-service-itemExpress .intro .location {
+    float: right;
+    margin: 3px -3px 0 0;
+    _margin-right: 0;
+    color: #444;
+    font-size: 18px
+}
+
+.APP-service-itemExpress .intro .ico-express-arrow {
+    vertical-align: middle;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;overflow: hidden;
+    width: 68px;
+    height: 10px;
+    margin: 0 5px 6px 6px;
+    background: url(../img/glb.png) -46px 0 no-repeat;
+    _background-image: url(../img/glb_ie6.png)
+}
+
+.APP-service-itemExpress .detail {
+    margin-bottom: 16px
+}
+
+.APP-service-itemExpress .detail .item {
+    border-bottom: dotted 1px #e4e4e4
+}
+
+.APP-service-itemExpress .detail .item .hd {
+    display: block;
+    float: left;
+    color: #aeaeae;
+    width: 80px;
+    font-size: 13px
+}
+
+.APP-service-itemExpress .detail .item .bd {
+    display: block;
+    float: left;
+    color: #444;
+    font-size: 15px
+}
+
+.APP-service-itemExpress .detail .now {
+    color: #aeaeae;
+    font-size: 16px;
+    line-height: 36px
+}
+
+.APP-service-itemExpress .detail .now .time {
+    color: #444;
+    font-size: 15px;
+    padding-right: 5px
+}
+
+.APP-service-itemExpress .detail .now .location {
+    color: #444;
+    font-size: 16px;
+    padding-left: 3px;
+    padding-right: 4px
+}
+
+.APP-service-itemExpress .detail .time {
+    line-height: 40px
+}
+
+.APP-service-itemExpress .detail .person {
+    line-height: 40px
+}
+
+.APP-service-itemExpress .detail .photo {
+    line-height: 40px
+}
+
+.APP-service-itemExpress .detail .receive-time {
+    line-height: 40px
+}
+
+.APP-service-itemExpress .detail .no-border {
+    border-bottom: none
+}
+
+.APP-service-itemExpress .detail .postman {
+    height: 95px;
+    padding-left: 19px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9
+}
+
+.APP-service-itemExpress .detail .postman .avatar {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-top: 25px
+}
+
+.APP-service-itemExpress .detail .postman .info {
+    float: left;
+    margin: 12px 0 0 20px
+}
+
+.APP-service-itemExpress .detail .postman .name span {
+    display: block
+}
+
+.APP-service-itemExpress .detail .postman .name .hd {
+    color: #aeaeae;
+    font-size: 13px
+}
+
+.APP-service-itemExpress .detail .postman .name .bd {
+    color: #444;
+    font-size: 16px
+}
+
+.APP-service-itemExpress .detail .postman .rank {
+    margin-top: 4px
+}
+
+.APP-service-itemExpress .detail .postman .rank-value {
+    display: inline-block;
+    width: 86px;
+    height: 14px;
+    font-size: 0;
+    line-height: 0;
+    background: url(../img/glb.png) -150px -20px no-repeat;
+    _background-image: url(../img/glb_ie6.png)
+}
+
+.APP-service-itemExpress .detail .postman .rank-value em {
+    display: inline-block;
+    width: 86px;
+    height: 14px;
+    background: url(../img/glb.png) -150px 0 no-repeat;
+    _background-image: url(../img/glb_ie6.png)
+}
+
+.APP-service-itemExpress .detail .postman .rank-value-0 em {
+    width: 0
+}
+
+.APP-service-itemExpress .detail .postman .rank-value-1 em {
+    width: 16px
+}
+
+.APP-service-itemExpress .detail .postman .rank-value-2 em {
+    width: 35px
+}
+
+.APP-service-itemExpress .detail .postman .rank-value-3 em {
+    width: 52px
+}
+
+.APP-service-itemExpress .detail .postman .rank-value-4 em {
+    width: 70px
+}
+
+.APP-service-itemExpress .detail .postman .rank-value-5 em {
+    width: 86px
+}
+
+.APP-service-itemExpress .operation {
+    height: 32px;
+    padding-top: 4px;
+    margin-bottom: 13px
+}
+
+.APP-service-itemExpress .operation .aBtn {
+    width: 90px
+}
+
+.APP-service-itemExpress .operation .aBtn-main {
+    margin-right: 18px;
+    width: 100px
+}
+
+.APP-service-itemExpress .operation .aLinkBtn {
+    float: right;
+    line-height: 30px;
+    font-size: 13px
+}
+
+.APP-service-itemTrain {
+    color: #444
+}
+
+.APP-service-itemTrain .header {
+    height: 55px;
+    color: #fff;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    position: relative
+}
+
+.APP-service-itemTrain .header img {
+    display: block;
+    float: left;
+    margin: 16px 0 0 19px
+}
+
+.APP-service-itemTrain .header .customer {
+    float: right;
+    margin: 12px 19px 0 0;
+    line-height: 33px;
+    color: #444
+}
+
+.APP-service-itemTrain .header .customer label {
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #999
+}
+
+.APP-service-itemTrain .header .customer .name {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.APP-service-itemTrain .content {
+    font-size: 14px;
+    padding: 16px 20px 22px 20px
+}
+
+.APP-service-itemTrain .box {
+    display: block;
+    float: left
+}
+
+.APP-service-itemTrain .box label {
+    display: block;
+    font-size: 14px;
+    color: #aeaeae
+}
+
+.APP-service-itemTrain .box span {
+    display: block
+}
+
+.APP-service-itemTrain .information {
+    font-size: 18px
+}
+
+.APP-service-itemTrain .information .entry {
+    float: right;
+    text-align: right
+}
+
+.APP-service-itemTrain .train {
+    margin-top: 10px
+}
+
+.APP-service-itemTrain .train .number {
+    font-size: 30px
+}
+
+.APP-service-itemTrain .train .seat {
+    float: right;
+    margin-top: 3px;
+    color: #acacac;
+    text-align: right
+}
+
+.APP-service-itemTrain .train .seat .car {
+    font-size: 16px;
+    line-height: 22px
+}
+
+.APP-service-itemTrain .train .seat .type {
+    line-height: 16px
+}
+
+.APP-service-itemTrain .location {
+    position: relative;
+    font-size: 20px;
+    margin-top: 11px
+}
+
+.APP-service-itemTrain .location .ico-train {
+    position: absolute;
+    top: 10px;
+    left: 205px;
+    width: 39px;
+    height: 16px;
+    text-indent: -9999px;
+    background: url(../img/glb.png) -33px -13px no-repeat;
+    _background-image: url(../img/glb_ie6.png)
+}
+
+.APP-service-itemTrain .location .to {
+    float: right;
+    text-align: right
+}
+
+.APP-service-zhaoPin {
+    width: 805px;
+    margin: 20px auto 0 auto
+}
+
+.APP-service-itemZhaoPin {
+    width: 799px;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 9px
+}
+
+.APP-service-itemZhaoPin .header {
+    height: 69px;
+    color: #fff;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    position: relative
+}
+
+.APP-service-itemZhaoPin .header .logo {
+    float: left;
+    margin: 15px 28px 15px 19px
+}
+
+.APP-service-itemZhaoPin .content {
+    padding: 13px 16px 5px 20px;
+    text-align: left
+}
+
+.APP-service-itemZhaoPin .job {
+    position: relative;
+    padding-bottom: 14px;
+    border-bottom: 1px dotted #e4e4e4
+}
+
+.APP-service-itemZhaoPin .job .company {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.APP-service-itemZhaoPin .job .intro {
+    margin-top: 4px
+}
+
+.APP-service-itemZhaoPin .job .salary {
+    color: #acacac;
+    padding-left: 5px
+}
+
+.APP-service-itemZhaoPin .job .location {
+    position: absolute;
+    right: 0;
+    top: 37px;
+    color: #acacac
+}
+
+.APP-service-itemZhaoPin .job .city {
+    vertical-align: middle
+}
+
+.APP-service-itemZhaoPin .job .ico-service-location {
+    display: inline-block;
+    vertical-align: middle;
+    width: 9px;
+    height: 16px;
+    padding-right: 5px;
+    background: url(../img/glb.png) 0 -41px no-repeat;
+    _background-image: url(../img/glb_ie6.png)
+}
+
+.APP-service-itemZhaoPin .status {
+    margin-top: 13px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f90
+}
+
+.APP-service-itemZhaoPin .item {
+    line-height: 38px;
+    border-top: 1px dotted #e4e4e4
+}
+
+.APP-service-itemZhaoPin .item span {
+    display: block;
+    float: left
+}
+
+.APP-service-itemZhaoPin .item .hd {
+    color: #acacac
+}
+
+.APP-service-itemZhaoPin .item-first {
+    border-top: none
+}
+
+.APP-service-itemZhaoPin .detail {
+    margin-top: 4px;
+    margin-bottom: 6px
+}
+
+.APP-service-itemZhaoPin .detail .hd {
+    width: 140px;
+    *width: 140px
+}
+
+.APP-service-itemZhaoPin .detail-interview {
+    margin-top: 12px;
+    margin-bottom: 11px;
+    padding-top: 6px;
+    border-top: 1px dotted #e4e4e4
+}
+
+.APP-service-itemZhaoPin .detail-interview .hd {
+    width: 80px;
+    font-size: 13px
+}
+
+.APP-service-itemZhaoPin .detail-interview .bd {
+    font-size: 15px
+}
+
+.APP-service-itemZhaoPin .operation {
+    height: 30px;
+    padding-top: 20px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    border-top: 1px dotted #e4e4e4
+}
+
+.APP-service-itemZhaoPin .operation .service-btn-contact {
+    width: 137px;
+    margin-right: 20px
+}
+
+.APP-service-itemZhaoPin .operation .service-btn-accept {
+    width: 88px;
+    margin-right: 20px
+}
+
+.APP-service-itemZhaoPin .operation .service-btn-disagree {
+    width: 88px;
+    margin-right: 20px
+}
+
+.APP-service-itemZhaoPin .operation .service-btn-more {
+    width: 109px
+}
+
+.APP-service-itemZhaoPin .operation .service-btn-postDetail {
+    width: 88px;
+    margin-right: 20px
+}
+
+.APP-service-itemZhaoPin .operation .service-btn-unsubscribe {
+    display: block;
+    float: right;
+    line-height: 30px;
+    font-size: 13px
+}
+
+.APP-service-hr {
+    position: relative;
+    height: 19px;
+    margin-bottom: 40px;
+    overflow: visible;
+    border-bottom: #EEE 1px solid;
+    clear: both
+}
+
+.APP-service-hr .desc {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    padding: 0 10px;
+    margin-left: -140px;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #fff;
+    color: #777
+}
+
+.APP-service-hr .split {
+    margin: 0 6px
+}
+
+.APP-service-hr .change a {
+    color: #0f6099;
+    text-decoration: none;
+    cursor: pointer
+}
+
+.APP-service-hr .alert {
+    position: relative;
+    padding-left: 13px
+}
+
+.APP-service-hr .alert .ico-clock {
+    position: absolute;
+    top: 3px;
+    _top: 0;
+    left: -4px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 13px;
+    height: 13px;
+    overflow: hidden;
+    background: url(../img/glb.png) -33px 0 no-repeat;
+    _background-image: url(../img/glb_ie6.png)
+}
+
+.APP-service-hr .alert a {
+    color: #0f6099;
+    text-decoration: none
+}
+
+.APP-service-hr .content {
+    margin-left: -3px
+}
+
+.APP-service-promotion {
+    clear: both
+}
+
+.APP-service-promotion a {
+    color: #0f6099;
+    text-decoration: none
+}
+
+.APP-service-promotion .dashi {
+    float: left;
+    font-size: 14px;
+    color: #777
+}
+
+.APP-service-promotion .dashi a {
+    padding-left: 4px
+}
+
+.APP-service-promotion .money {
+    color: #666;
+    padding-bottom: 14px
+}
+
+.APP-service-promotion .suggestion {
+    display: block;
+    float: right
+}
+
+.APP-service-assistBlock {
+    padding: 8px 18px;
+    font-size: 12px;
+    color: #666;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #ffffe1;
+    margin-bottom: 20px
+}
+
+.APP-service-assistBlock a {
+    color: #0f6099;
+    text-decoration: none
+}
+
+.APP-service-msgbox {
+    position: relative
+}
+
+.APP-service-msgbox .f-clear:after,.APP-service-msgbox .f-clear:before {
+    content: ".";
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+    overflow: hidden;
+    display: block
+}
+
+.APP-service-msgbox .f-clear {
+    *zoom:1;+zoom:1}
+
+.APP-service-msgbox .operation {
+    position: relative;
+    height: 45px;
+    border-top: 1px solid #E1E1E1
+}
+
+.APP-service-msgbox .btns {
+    position: absolute;
+    right: 0;
+    top: 7px
+}
+
+.APP-service-msgbox .btn {
+    float: left;
+    margin-right: 8px;
+    text-align: center;
+    height: 26px;
+    line-height: 26px;
+    width: 50px;
+    border-radius: 3px;
+    border: 1px solid #999;
+    background-image: url(../images/btns.png)
+}
+
+.APP-service-msgbox .btn-main {
+    background-position: 0 0;
+    color: #fff
+}
+
+.APP-service-msgbox .btn-main:hover {
+    background-position: 0 -28px
+}
+
+.APP-service-msgbox .btn-other {
+    background-position: 0 -56px
+}
+
+.APP-service-msgbox .btn-other:hover {
+    background-position: 0 -84px
+}
+
+.APP-service-msgbox .btn-text {
+    padding: 0 12px;
+    cursor: pointer
+}
+
+.APP-service-msgbox .btn:focus .btn-text {
+    box-shadow: 0 0 2px #fff inset
+}
+
+.APP-service-msgbox-unsubscribe {
+    padding: 20px 36px 22px 36px
+}
+
+.APP-service-msgbox-unsubscribe .header {
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 18px
+}
+
+.APP-service-msgbox-unsubscribe .header .logo {
+    display: block;
+    float: left
+}
+
+.APP-service-msgbox-unsubscribe .header .orderHd {
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #aeaeae;
+    margin-left: 29px
+}
+
+.APP-service-msgbox-unsubscribe .header .orderNo {
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #555
+}
+
+.APP-service-msgbox-unsubscribe .header .title {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 29px
+}
+
+.APP-service-msgbox-unsubscribe .header .title.question {
+    color: #c30
+}
+
+.APP-service-msgbox-unsubscribe .header .title.success {
+    color: #3d882d
+}
+
+.APP-service-msgbox-unsubscribe .content .tip {
+    font-size: 13px;
+    color: #999;
+    margin-top: 20px;
+    margin-bottom: 6px
+}
+
+.APP-service-msgbox-unsubscribe .content .item {
+    line-height: 36px
+}
+
+.APP-service-msgbox-unsubscribe .content .item .chk {
+    position: relative;
+    zoom:1;cursor: default;
+    outline: 0
+}
+
+.APP-service-msgbox-unsubscribe .content .item .chk-symbol {
+    margin-right: 8px;
+    vertical-align: middle;
+    float: left;
+    margin-top: 12px;
+    _margin-top: 7px
+}
+
+.APP-service-msgbox-unsubscribe .content .item .chk-text {
+    font-size: 14px;
+    color: #555
+}

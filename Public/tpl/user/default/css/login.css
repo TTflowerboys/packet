@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS basic */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{ margin: 0; padding: 0; }
+fieldset,img{ border: 0; }
+:focus{ outline: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{ font-style: normal; font-weight: normal; }
+h1,h2,h3,h4,h5,h6{ font-size: 100%; font-weight: normal; font-family: "Microsoft YaHei"; }
+input,button,textarea,select{ *font-size: 100%; border:none;}
+body {font-family: "Microsoft Yahei";font-size: 12px;margin: 0;background:#1c77ac url(../images/light.png) center top no-repeat;}
+ol,ul{ list-style: none; }
+table{ border-collapse: collapse; border-spacing: 0; }
+input,textarea {outline:none;}
+:link, :visited, ins{ text-decoration: none; }
+a{text-decoration: none;color: #3f89ec;font-family: "Microsoft YaHei";}
+a:hover{color: #0a1de9;transition : color 0.2s linear 0s,background-color 0.3 linear 0s;}
+.clearfix:after,.form-group:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix,.form-group{*zoom:1;}
+.fl{float: left;}.fr{float: right;}.rel{position: relative;}.abs{position: absolute;}
+i,b,em{font-weight: normal;font-style: normal;}
+.clear{clear: both;}
+.w{width: 1200px;margin: 0 auto;}
+/* HTML5 SEMANTIC ELEMENTS*/
+header, section, footer, aside, nav, main, article, figure{display: block;}
+/*cloud*/
+#mainBody {position: absolute;top: 0;left: 0;bottom: 0;right: 0;z-index: 1;width:100%;height:100%;}
+.cloud {position:absolute;top:0px;left:0px;width:100%;height:100%;background:url(../images/cloud.png) no-repeat;z-index:1;opacity:0.5;}
+#cloud2 {z-index:2;}
+.rotate { position: absolute; left: 10px; top: 10px; width: 30px; height: 30px; background-size: 100% 100%; background-image: url(../images/music_off.png); -webkit-animation: rotating 1.2s linear infinite; -moz-animation: rotating 1.2s linear infinite; -o-animation: rotating 1.2s linear infinite; animation: rotating 1.2s linear infinite;}
+@-webkit-keyframes rotating{from{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(360deg)}}@keyframes rotating{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@-moz-keyframes rotating{from{-moz-transform:rotate(0deg)}to{-moz-transform:rotate(360deg)}}
+.off{background-image:url(../images/music_off.png);background-size:30px 30px;background-repeat:no-repeat;background-position:center center}
+#audio_btn {position: absolute; right: 10px; top: 10px; z-index: 1000; width: 50px; height: 50px;}
+
+.main {position: relative;width: 380px;margin:100px auto;
+  padding: 32px;background: rgba(255,255,255,0.85);}
+
+.appPic{display: none;width: 226px;height: 226px;margin: 0 auto;}
+.login-switch {width: 52px;height: 52px;z-index: 500;line-height: 52px;position: absolute;right: 10px;top: 15px;-moz-user-select: none;}
+.login-switch i{font-size: 52px; cursor: pointer; display: none; color: #f40;}
+.login-switch .quick{display: block;}
+.module-quick .ajaxForm3,.module-quick .quick{display: none!important;}
+.module-quick .static,.module-quick .appPic{display: block;}
+.loginBox{height: 227px;}
+
+
+.form-group{margin-bottom: 15px;position: relative;}
+
+.login-form{position: relative;z-index: 100;}
+.login-form h1{text-align: center;margin-bottom: 22px;}
+.login-form h1 img{max-height: 120px;}
+.text-ipt{width: 352px;color: #7f7f7f; height: 42px;font-weight: 400;font-size: 14px;padding: 0 12px;border-radius: 5px;border: 2px solid #e6e6e6;font-family: 'Microsoft Yahei',Consolas,"courier new",Verdana,Arial, sans-serif;-webkit-transition: border-color ease-in-out 0.15s;-o-transition: border-color ease-in-out 0.15s;transition: border-color ease-in-out 0.15s;}
+.text-ipt-verify{width: 200px;float: left;}
+.text-ipt:focus{border-color: #52d3aa;}
+.text-submit{display: block;width: 100%;height: 44px;border-radius: 5px;cursor: pointer; opacity: .8;filter: alpha(opacity=80);font: 18px/44px 'Microsoft Yahei';text-align: center;background: #52d3aa;color: #fff;}
+.text-submit:hover,.text-submit:focus{opacity: 1;filter: alpha(opacity=100);color: #fff;}
+.verify-pic{width: 138px;height: 42px;border-radius: 4px; border:1px solid #e6e6e6;float: right;cursor: pointer;}
+.otherList{height: 22px;margin: 22px auto 0;font: 14px/22px 'Microsoft Yahei';text-align: center;}
+.otherList a{color: #8f8f8f;}
+.otherList a:hover{color: #52d3aa;}
+.otherList .line{display: inline-block;*display: inline;*zoom: 1;width: 1px;height: 12px;margin: 0 16px;background: #8f8f8f;}
+.btn-blue{background: #2ea4d6;}
+
+#getsmscode {position: absolute;top: 6px;right: 6px; height: 32px;font-size: 14px;
+    line-height: 32px;
+    padding: 0 12px;
+    border: 1px solid #8bc5a8;
+    background: #e0f0e8;
+    color: #009d67;
+    cursor: pointer;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+}

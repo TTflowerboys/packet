@@ -1,0 +1,33 @@
+<include file='Index:header'/>
+
+<div class="container ptb42">
+    <include file='Index:aside'/>
+    <div class="w-md-8p">
+        <div class="areaR" style="border: 1px solid #ccc;">
+            <h2 class="asideDt">修改密码</h2>
+            <div class="areaRcont">
+                <form class="ajaxForm" action="<{:U('user/changepwdDo')}>" method="post">
+
+                    <div class="form-group">
+                        <label class="label">原密码<span>（此处必须填写!）</span></label>
+                        <input type="password" placeholder="原密码" class="text-ipt" name="oldpassword">
+                    </div>
+                    <div class="form-group">
+                        <label class="label">新密码<span>（此处必须填写!）</span></label>
+                        <input type="password" placeholder="原密码" class="text-ipt" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label class="label">确认新密码<span>（此处必须填写!）</span></label>
+                        <input type="password" placeholder="原密码" class="text-ipt" name="cpassword">
+                    </div>
+                    <div class="form-group-bottom clearfix tac">
+                        <button type="submit" class="text-submit"><i class="ace-icon icon-right"></i>提交修改</button>
+                        <button class="text-reset" type="reset"><i class="ace-icon icon-back"></i>重置</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<include file='Index:footer'/>

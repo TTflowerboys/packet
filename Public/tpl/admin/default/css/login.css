@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS basic */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{ margin: 0; padding: 0; }
+fieldset,img{ border: 0; }
+:focus{ outline: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{ font-style: normal; font-weight: normal; }
+h1,h2,h3,h4,h5,h6{ font-size: 100%; font-weight: normal; font-family: "Microsoft YaHei"; }
+input,button,textarea,select{ *font-size: 100%; border:none;}
+body {font-family: "Microsoft Yahei";font-size: 12px;margin: 0;background: #3f7bba url(../images/loginBg.png) repeat;}
+ol,ul{ list-style: none; }
+table{ border-collapse: collapse; border-spacing: 0; }
+input,textarea {outline:none;}
+:link, :visited, ins{ text-decoration: none; }
+a{text-decoration: none;color: #3f89ec;font-family: "Microsoft YaHei";}
+a:hover{color: #0a1de9;transition : color 0.2s linear 0s,background-color 0.3 linear 0s;}
+.clearfix:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+.fl{float: left;}.rel{position: relative;}.abs{position: absolute;}
+i,b,em{font-weight: normal;font-style: normal;}
+.clear{clear: both;}
+/* HTML5 SEMANTIC ELEMENTS*/
+header, section, footer, aside, nav, main, article, figure{display: block;}
+
+.m-winmark{position: fixed;left: 50%;top: 50%;width: 412px;/* height: 374px; */font-family: 'Microsoft YaHei';padding-top: 20px;background: #fff;margin: -196px 0 0 -206px;box-shadow: 0px 2px 18px #444;}
+.fLogin{padding: 0 32px 22px;}
+/* m-winclose 关闭按钮 */
+.m-winclose{position: absolute;right: 0;top: 0;cursor: pointer;width: 30px;height: 30px;background-color: transparent;line-height: 30px;font-size: 22px;color: #383838;display: block;overflow: hidden;text-align: center;}
+.m-winclose:hover{color: #3f89ec;background: #f4f4f4;}
+.m-winclose:active{color: #383838;background: #e9e9e9;}
+/* fLogin-text 文本表单 */
+.fLogin-text{width: 330px;height: 24px;margin-bottom: 16px;background: #fafafa;padding: 6px 8px;font: 14px/24px 'Microsoft YaHei';border: 1px solid #dfdfdf;transition : all 0.3s linear 0s;}
+.fLogin-verify{width: 160px;float: left;}
+.fLogin-text:focus{border-color: #3f89ec;}
+.f-check{float: left;height: 22px;color: #999;cursor: pointer;}
+.f-check input{vertical-align: middle;}
+.fLogin-btn{height: 38px;width: 100%;margin: 10px 0;display: block;cursor: pointer;font: 16px/38px 'Microsoft YaHei';color: #fff;border-radius: 3px;background: #3f89ec;text-align: center;transition : all 0.3s linear 0s;}
+.fLogin-btn:hover{background: #4490f7;color: #fff}
+/* 链接 */
+.u-forget,.u-reglink{float: right;color: #3f89ec;}
+.u-forget:hover,.u-reglink:hover{color: #2e7fdb;text-decoration: underline;}
+/* login-img 登录图片-萌你一脸** */
+.login-img{display: block;margin: 0 auto;height: 90px;}
+.login-copyright{font:13px/20px 'Microsoft Yahei';text-align: center;color: #738fb4;padding: 10px 22px;border-top: 1px solid #dfdfdf;}
+.verify-pic{height: 36px;width: 98px;margin: 0 10px;vertical-align: top;border:1px solid #dfdfdf;}
+.verify-btn{line-height: 38px;}

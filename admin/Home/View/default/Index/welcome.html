@@ -1,0 +1,59 @@
+<include file='Index:header'/>
+<div class="page">
+  <div class="w-full">
+    <div class="widget-box">
+      <div class="widget-header"><h2 class="widget-title"><span>系统提示</span></h2></div>
+      <div class="widget-body">
+        <div class="widget-main">
+        <!-- <ul class="dataList">
+           <li>
+             <div class="nLi-1"><div class="dataListHd">会员总数</div><div class="dataListBd"><span class="num"><{$usernum}></span><i class="icon-link"></i></div></div>
+             </li>
+           <li>
+             <div class="nLi-2"><div class="dataListHd">进账总额</div><div class="dataListBd"><span class="num"><{$jinzhang}> <small style="font-size: 14px;">RMB</small></span><i class="icon-coin-yen"></i></div></div>
+           </li>
+           <li>
+             <div class="nLi-3"><div class="dataListHd">活动金额</div><div class="dataListBd"><span class="num"><{$totalprice}> <small style="font-size: 14px;">RMB</small></span><i class="icon-credit-card"></i></div></div>
+           </li>
+               <li>
+             <div class="nLi-4"><div class="dataListHd">冻结金额</div><div class="dataListBd"><span class="num"><{$totalprice1}> <small style="font-size: 14px;">RMB</small></span><i class="icon-credit-card"></i></div></div>
+           </li>
+           <li>
+             <div class="nLi-5"><div class="dataListHd">当天注册次数</div><div class="dataListBd"><span class="num"><{$newusernum}> <small style="font-size: 14px;">人</small></span><i class="icon-ticket"></i></div></div>
+           </li>
+         </ul> --> <!-- dataList end -->
+        </div>
+      </div>
+     </div>
+  </div>
+  <div class="clearfix">
+    <div class="w-half">
+      <div class="widget-box">
+        <div class="widget-header"><h2 class="widget-title"><span>框架&系统信息</span></h2></div>
+        <div class="widget-body">
+          <div class="widget-main">
+            <p class="alert alert-info">
+            TTCMS版本：V1.0.0<br>框架版本：ThinkPHP <{$Think.version}><br>系统版本：<{$_SERVER["SERVER_SOFTWARE"]}><br></p>
+          </div>
+        </div>
+      </div>  <!-- widget-box end -->
+    </div> <!-- w-half end -->
+    <div class="w-half">
+      <div class="widget-box">
+        <div class="widget-header">
+          <h2 class="widget-title"><span>登录信息</span></h2>
+        </div>
+        <div class="widget-body">
+          <div class="widget-main">
+            <p class="alert alert-success">
+             <{$rs.username}>，欢迎回来！<br>
+            上次登录信息：<{$rs.lasttime|date="Y-m-d H:i:s",###}> （<b class="red"><{$rs.lastip}></b>）<br>
+            本次登录信息：<{$rs.logintime|date="Y-m-d H:i:s",###}> （<b class="red"><{$rs.ip}></b>）<br></p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- w-half end -->
+  </div>
+</div>
+
+<include file='Index:footer'/>
