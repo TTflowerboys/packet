@@ -43,7 +43,7 @@ class CommandController extends Controller {
         $find['_string']='('.$time.'-expiretime)>0'; #这里非常巧妙
         $userlist = $user->where($find)->select();
 
-        //$user->startTrans();
+        $user->startTrans();
        
         foreach($userlist as $key=>$val){
             if($user->where(array('id'=>$val['id']))->setField(array('status'=>2))===false){
@@ -58,6 +58,21 @@ class CommandController extends Controller {
             if($user->where(array('id'=>$val['parentid']))->setField($userup)===false){
                 $user->rollback();
                 $this->error('未激活会员超时,更新接点人点位失败!');
+            }
+        }
+
+        ###############################################
+        # 根据付款订单，处理超时升级的会员                  #
+        # @user.status=3,方便平台对超时升级会员进行复活处理 #
+        ##############################################         
+        $data['status']= 0;
+        $data['type'] = 1;
+        $data['_string']= '('.$time.'-expiretime)>0';
+        $outuptglist = $tgmx->where($data)->select();
+        foreach($outuptglist as $key=>$val){
+            if($user->where(array('id'=>$val['uid']))->setField(array('status'=>3))===false){
+                $user->rollback();
+                $this->error('超时升级会员,处理失败!');
             }
         }
 
@@ -83,5 +98,6 @@ class CommandController extends Controller {
         }
 
 
+        $user->commit();
     }
 }

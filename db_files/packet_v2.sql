@@ -162,7 +162,7 @@ CREATE TABLE `pk_user` (
   `bankaddress` varchar(255) DEFAULT NULL COMMENT '银行卡地址',
   `phone` varchar(20) DEFAULT NULL COMMENT '手机号',
   `rank` tinyint(2) unsigned DEFAULT '0' COMMENT '级别',
-  `status` tinyint(2) DEFAULT '0' COMMENT '账号状态（0,未激活；1,已激活；2,激活失败）',
+  `status` tinyint(2) DEFAULT '0' COMMENT '账号状态（0,未激活；1,已激活；2,激活失败;3,超时升级）',
   `addtime` int(10) DEFAULT NULL COMMENT '生成时间',
   `logintime` int(10) DEFAULT NULL COMMENT '登录时间',
   `lasttime` int(10) DEFAULT NULL COMMENT '上次登录时间',
