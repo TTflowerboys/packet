@@ -62,6 +62,22 @@ class BusinessController extends CommandController {
         $this->display();
     }
 
+    public function upOrderDo(){
+        if (!IS_POST) {E('页面不存在！');}
+        $id = trim(I('post.id'));
+        $user = M('user');
+        if (empty($id) || !is_numeric($id)) { $this->error('参数不合法，请稍后再试！'); }
+        $rs = $user->where(array('id'=>$id,'status'=>3))->find();
+        if (!$rs) {$this->error('会员不存在，请稍后再试！');}
+        $user->startTrans();
+        $this->financeDo($rs['id']);
+        if ($user->where(array('id'=>$rs['id']))->save(array('status'=>1)) === false) {
+            $user->error('会员更新失败!');
+        }
+        $user->commit();
+        $this->success('操作成功！');
+    }
+
     public function comfirmDo(){
         //if (!IS_POST) {E('页面不存在！');}
         $id = trim(I('get.id'));

@@ -55,7 +55,15 @@
           </td>
           <td class="hidden-sm hidden-xs"><{$vo.addtime|date="Y-m-d H:i",###}></td>
           <!-- <td><a href="<{:U('user/statusDo')}>" data-id="<{$vo.id}>" class="J_open-btn" id="zt<{$vo.id}>"><if condition="$vo.isstop eq 0 "><span class="btn btn-minier btn-success">已启用</span><else /><span class="btn btn-minier btn-danger">已封号</span></if></a></td> -->
-          <td><div class="action-buttons"><a href="<{:U('user/edit',array('id'=>$vo['id']))}>" class="green" title="编辑"><i class="icon-edit"></i></a><!-- <a href="<{:U('user/delDo',array('id'=>$vo['id']))}>" class="red J_confirm-rst-url-btn" data-info="你确定要删除吗？" title="删除"><i class="icon-del"></i></a> --></div></td>
+          <td>
+            <div class="action-buttons">
+              <if condition="$vo.status eq 3">
+                  <a href="javascript:;" onclick="orderAction('<{:U(\"business/upOrderDo\")}>','<{$vo.id}>','你确定复活吗？')" class="btn btn-minier btn-danger">升级复活</a>
+              <else/>
+                  <a href="<{:U('user/edit',array('id'=>$vo['id']))}>" class="green" title="编辑"><i class="icon-edit"></i></a>
+              </if>
+            </div>
+          </td>
         </tr>
       </volist>
       </tbody>
