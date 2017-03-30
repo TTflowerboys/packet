@@ -43,6 +43,10 @@ $array1 = array(
         1 => '订单完成',
         2 => '交易失败'
     ),
+    'orderType' => array(
+        0 => '激活订单',
+        1 => '升级订单'
+    ),
     'wenanArr' => array(
         'jh'=>'激活帐户',
         'fee'=>'服务费',
