@@ -28,7 +28,8 @@ $array1 = array(
     'userStatusArr' => array(
     	0 => '未激活',
     	1 => '正常',
-    	2 => '账号已冻结'
+    	2 => '激活失败',
+        3 => '超时升级'
     ),
     'userAreaArr' => array(
     	1 => '左区',

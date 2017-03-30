@@ -5,13 +5,17 @@ class UserController extends CommandController {
     
     public function index(){
         $user = M('user');
-        $map['id']=array('gt',0);
+        $status = trim(I('get.status'));
         $valuser = trim(I('get.username'));
         $valtjuser = trim(I('get.tjuser'));
         $valparent = trim(I('get.parentuser'));
         $rank = I('get.rank');
 
-        $map['status']=array('in',array(0,1));
+        if ($status && is_numeric($status)) {
+            $map['status'] = $status;
+        }else{
+            $map['status'] = array('in',array(0,1));
+        }
 
         if($valuser){$map['username']=$valuser;}
         if ($valtjuser) {$map['tjuser']=$valtjuser;}
@@ -24,29 +28,6 @@ class UserController extends CommandController {
         $this->assign('valuser',$valuser);
         $this->assign('valtjuser',$valtjuser);
         $this->assign('valparent',$valparent);
-        $this->assign('page', $Page->show());
-        $this->assign('list', $list);
-        $this->display();
-    }
-
-    public function expire(){
-        $user = M('user');
-        $map['id']=array('gt',0);
-        $valuser = trim(I('get.username'));
-        $valtjuser = trim(I('get.tjuser'));
-        
-
-        $map['status']=array('eq',2);
-
-        if($valuser){$map['username']=$valuser;}
-        if ($valtjuser) {$map['tjuser']=$valtjuser;}
-        
-        $listcount = $user->where($map)->field('id')->count();
-        $Page = new \Think\Page($listcount, 20);
-        $list = $user->where($map)->order('id desc')->limit($Page->firstRow . ',' . $Page->listRows)->select();        
-        
-        $this->assign('valuser',$valuser);
-        $this->assign('valtjuser',$valtjuser);
         $this->assign('page', $Page->show());
         $this->assign('list', $list);
         $this->display();
