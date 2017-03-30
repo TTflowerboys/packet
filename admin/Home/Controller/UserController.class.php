@@ -228,6 +228,7 @@ class UserController extends CommandController {
         $tgData['remark'] = '会员【<b class="t-green">'.$rs1['username'].'</b>】，'.C('wenanArr.jh');        
         $tgData['addtime']= $time;
         $tgData['expiretime'] = $time+60*60*C("config.jhhour");
+        $tgData['type'] = 0;
 
         ## 生成激活红包 ##
         $tgid = $tgmx->add($tgData);

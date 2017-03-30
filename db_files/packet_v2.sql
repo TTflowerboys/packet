@@ -137,6 +137,7 @@ CREATE TABLE `pk_tgmx` (
   `price2` double(12,2) DEFAULT '0.00' COMMENT '未付金额(price - price1)',
   `status` tinyint(2) DEFAULT NULL COMMENT '付款状态（0,等待付款；1,完成付款；2,付款失败）',
   `remark` varchar(255) DEFAULT NULL,
+  `type` tinyint(2) DEFAULT NULL COMMENT '0-激活订单；1-升级订单',
   `addtime` int(10) DEFAULT NULL COMMENT '订单生成时间',
   `comfirmtime` int(10) DEFAULT NULL COMMENT '完成时间',
   `expiretime` int(10) DEFAULT NULL COMMENT '订单过期时间',

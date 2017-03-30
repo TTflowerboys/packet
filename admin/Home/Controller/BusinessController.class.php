@@ -209,6 +209,7 @@ class BusinessController extends CommandController {
         $upTgData['uid'] = $ppRs['id'];
         $upTgData['username'] = $ppRs['username'];
         $upTgData['price'] = $upTgData['price2'] = $totlePrice;
+        $upTgData['type'] = 1;
         $upPpData['price1'] = $upTgData['price1'] = 0;
         $upPpData['status'] = $upTgData['status'] = 0;
         $upPpData['remark'] = $upTgData['remark'] = "会员【<b class='t-green'>".$ppRs['username']."</b>】，".C('wenanArr.up')."<code>".$setUserRank."</code>";
