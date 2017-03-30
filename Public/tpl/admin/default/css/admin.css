@@ -60,6 +60,11 @@ input[readonly] {color: #939192;background: #F5F5F5!important;cursor: default;}
 .main-menu dd a{display: block;width: 155px;padding-left: 60px;height: 32px;line-height: 32px;color:#4f4f4f;overflow: hidden;background-position: 0 -74px;}
 .main-menu dd a:hover{color: #000;}
 .main-menu dd a.current{background-position: 0 -106px;color: #000;}
+/* NoInfo */
+.NoInfo{background: #fdfdfd;width: 48%;padding:32px 0;margin: 32px auto;color: #aaa;text-align: center;font-size: 14px;border: 1px dashed #ccc;border-radius: 8px;}
+.NoInfo .tit{font-size: 18px;line-height: 48px;white-space: nowrap;}
+.NoInfo .tit i{font-size: 38px;margin-right: 10px;line-height: 48px;}
+.NoInfo + .Table{display: none;}
 
 /* 基础样式 */
 
