@@ -30,7 +30,7 @@
         <tr><th>订单编号</th><th>付款方</th><th>总金额</th><th>实付款金额</th><th>订单状态</th><th class="hidden-sm hidden-xs">订单生成日期</th><th>订单过期时间</th><th>明细备注</th><th>操作</th></tr>
         </thead>
       <tbody>
-          <volist name="rs" id="vo">
+          <volist name="rs" id="vo" empty="$empty">
             <tr>
               <td><strong><{$vo.no}></strong></td>
               <td><{$vo.username}></td>

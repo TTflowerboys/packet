@@ -16,12 +16,26 @@ class BusinessController extends CommandController {
     }
     public function pay(){
         $tgmx = M('tgmx');
-        $listcount = $tgmx->field('id')->count();
+        $orderNo = trim(I('get.no'));
+        $orderUser = trim(I('get.username'));
+        $orderType = trim(I('get.type'));
+        $orderStatus =  trim(I('get.status'));
+        if($orderNo){$map['no']=$orderNo;}
+        if ($orderUser) {$map['username']=$orderUser;}
+        if ($orderType) { $map['type'] = $orderType; }
+        if ($orderStatus) {$map['status']=$orderStatus;}
+
+        $listcount = $tgmx->where($map)->field('id')->count();
         $Page = new \Think\Page($listcount, 15);
-        $rs = $tgmx->order('status,expiretime DESC')->limit($Page->firstRow . ',' . $Page->listRows)->select();
+        $rs = $tgmx->where($map)->order('status,expiretime DESC')->limit($Page->firstRow . ',' . $Page->listRows)->select();
         $this->assign('page', $Page->show());
         $this->assign('rs',$rs);
-
+        $empty = "<div class='NoInfo'><div class='tit'><i class='icon-lost'></i>空空如也～</div>抱歉，暂时还未搜索到<b class='t-green'>付款订单</b>相关信息！</div>";
+        $this->assign('empty',$empty);
+        $this->assign('orderNo',$orderNo);
+        $this->assign('orderUser',$orderUser);
+        $this->assign('orderType',$orderType);
+        $this->assign('orderStatus',$orderStatus);
         $this->display();
     }
     public function income(){
