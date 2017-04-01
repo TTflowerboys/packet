@@ -25,13 +25,13 @@
     <table class="Table" width="100%">
       <thead><tr><!-- <th><div class="checkBeauty J_checkBeautyAll"><input type="checkbox" class="checkall"></div></th> --><th>会员编号</th><th>接点人</th><th>左区</th><th>右区</th><th>推荐人</th><th>推荐人数</th><th>会员级别</th><th class="hidden-sm hidden-xs">注册时间</th><th>操作</th></tr></thead>
       <tbody>
-      <volist name="list" id="vo">
+      <volist name="list" id="vo" empty="$empty">
         <tr>
           <!-- <td><div class="checkBeauty J_checkBeauty"><input class="checkBnt" check="navid"  name="checkitem[]" type="checkbox" value="<{$vo.id}>"></div></td> -->
           <td><a class="link" href="<{:U('user/enterhysys',array('id'=>$vo['id']))}>" target="_blank"><{$vo.username}></a></td>
           <td><b class="t-orange"><if condition="$vo.parentuser eq ''"><{:C('wenanArr.platform')}><else/><{$vo.parentuser}></if></b></td>
           <td>
-            <if condition="$vo.left eq ''">
+            <if condition="($vo.left eq '') or ($vo.left eq 0)">
               <a class="btn btn-minier btn-danger" href="<{:U('user/reg',array('ParentId'=>$vo['id'],'ParentWhere'=>1))}>"><span>注册会员</span></a>
             <else/>
               <span class="btn btn-minier btn-success">左区已满</span>

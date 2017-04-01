@@ -5,13 +5,14 @@ class BusinessController extends CommandController {
     public function index(){
         $ppmx = M('ppmx');
         $data['xyuid'] = 0;
-        $data['status'] = array('in',array(0,1));
+        $data['status'] = array('in',array(0));
         $listcount = $ppmx->where($data)->field('id')->count();
         $Page = new \Think\Page($listcount, 15);
         $rs = $ppmx->where($data)->order('status,expiretime DESC')->limit($Page->firstRow . ',' . $Page->listRows)->select();
         $this->assign('page', $Page->show());
         $this->assign('rs',$rs);
-
+        $empty = "<div class='NoInfo'><div class='tit'><i class='icon-lost'></i>空空如也～</div>抱歉，暂时还未搜索到<b class='t-green'>收款订单</b>相关信息！</div>";
+        $this->assign('empty',$empty);
         $this->display();
     }
     public function pay(){
@@ -23,7 +24,7 @@ class BusinessController extends CommandController {
         if($orderNo){$map['no']=$orderNo;}
         if ($orderUser) {$map['username']=$orderUser;}
         if ($orderType) { $map['type'] = $orderType; }
-        if ($orderStatus) {$map['status']=$orderStatus;}
+        if ($orderStatus) {$map['status']=$orderStatus;}else{ $map['status']=0; }
 
         $listcount = $tgmx->where($map)->field('id')->count();
         $Page = new \Think\Page($listcount, 15);
@@ -40,13 +41,28 @@ class BusinessController extends CommandController {
     }
     public function income(){
         $ppmx = M('ppmx');
-        $data['xyuid'] = array('neq',0);
-        $data['status'] = array('in',array(0,1));
+        // $data['xyuid'] = array('neq',0);
+        $orderNo = trim(I('get.no'));
+        $orderTgUser = trim(I('get.tguser'));
+        $orderUser = trim(I('get.xyuser'));
+        $orderStatus =  trim(I('get.status'));
+        if($orderNo){$data['no']=$orderNo;}
+        if ($orderUser) { $data['xyuser']=$orderUser; }
+        if ($orderTgUser) { $data['tguser']=$orderTgUser; }
+        if ($orderStatus) { $data['status']=$orderStatus;}else{ $data['status']=0; }
+
         $listcount = $ppmx->where($data)->field('id')->count();
         $Page = new \Think\Page($listcount, 15);
         $rs = $ppmx->order('status,expiretime DESC')->where($data)->limit($Page->firstRow . ',' . $Page->listRows)->select();
         $this->assign('page', $Page->show());
         $this->assign('rs',$rs);
+        $empty = "<div class='NoInfo'><div class='tit'><i class='icon-lost'></i>空空如也～</div>抱歉，暂时还未搜索到<b class='t-green'>收款订单</b>相关信息！</div>";
+        $this->assign('empty',$empty);
+        $this->assign('orderNo',$orderNo);
+        $this->assign('orderUser',$orderUser);
+        $this->assign('orderTgUser',$orderTgUser);
+        $this->assign('orderType',$orderType);
+        $this->assign('orderStatus',$orderStatus);
         $this->display();
     }
     public function tgDetails(){

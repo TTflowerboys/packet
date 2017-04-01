@@ -24,7 +24,8 @@ class UserController extends CommandController {
         $listcount = $user->where($map)->field('id')->count();
         $Page = new \Think\Page($listcount, 20);
         $list = $user->where($map)->order('id desc')->limit($Page->firstRow . ',' . $Page->listRows)->select();        
-        
+        $empty = "<div class='NoInfo'><div class='tit'><i class='icon-lost'></i>空空如也～</div>抱歉，暂时还未搜索到<b class='t-green'>升级失败会员</b>相关信息！</div>";
+        $this->assign('empty',$empty);
         $this->assign('valuser',$valuser);
         $this->assign('valtjuser',$valtjuser);
         $this->assign('valparent',$valparent);
@@ -104,7 +105,7 @@ class UserController extends CommandController {
         # 接点人，是否激活
         $rsparent1 = $user->where(array('id' => $rsparent['id'], 'status' => 1))->find();
         if (!$rsparent1) {
-            $this->error('接点人未激活国，暂时不能注册，请稍后再试！');
+            $this->error('接点人未激活，暂时不能注册，请稍后再试！');
         }
         # 接点人，点位['左区','右区']
         # 1. 点位已满
@@ -470,14 +471,14 @@ class UserController extends CommandController {
     # 当前账户
     public function dis_thistree($see_num){
         $user = M('user');
-        $see_num = is_null($see_num) ? session('UserId') : $see_num;
+        $see_num = is_null($see_num) ? 1 : $see_num;
         $rs = $user->where(array('id'=>$see_num))->find();
         $isUp = $rs['upgrade'];
         switch ($rs['status']) {
-            case 0:
+            case 0:#未激活
                 $status_class = 'status-0';
                 break;
-            case 1:
+            case 1:#已激活
                 switch ($rs['rank']) {
                     case 0:
                         $status_class = $isUp ? 'user-type-up' : 'user-type-1';
@@ -489,6 +490,9 @@ class UserController extends CommandController {
                         $status_class = $isUp ? 'user-type-up' : 'user-type-3';
                         break;
                 }
+                break;
+            case 3: #超时升级
+                $status_class = 'status-2';
                 break;
         }
 

@@ -713,6 +713,7 @@ input[type=radio].ace:checked+.lbl::before {display: inline-block;content: '\e97
 .tree li>a.blank{background-color: #d0cfcf; color: #40b079;}
 .tree li>a.blank:hover{background-color: #fff;}
 .tree li>a.status-0,.position-info-list div.status-0{background-color: #e15353;border-color: #e15353;}
+.tree li>a.status-2,.position-info-list div.status-2{color: #fff;box-shadow: 0 0 0 3px #d0bbff;background: linear-gradient(45deg,#a177ff,#02ceff);}
 .tree li>a.user-type-3,.position-info-list div.user-type-3{background-color: #ffeb68;border-color: #d0c26b;color: #40b079;}
 .tree li>a.user-type-2,.position-info-list div.user-type-2{background-color: #2b74de;border-color: #2b74de;}
 .tree li>a.user-type-1,.position-info-list div.user-type-1{background-color: #5cb85c;border-color: #4cae4c;}

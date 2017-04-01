@@ -16,12 +16,13 @@
           <div role="tabpanel" class="tab-pane active" id="home">
             <table class="Table" width="100%">
               <thead>
-                <tr><th>订单编号</th><th>总金额</th><th class="hidden-sm hidden-xs">订单生成日期</th><th>订单过期时间</th><th>订单状态</th><th>明细备注</th><th>操作</th></tr>
+                <tr><th>订单编号</th><th>付款方</th><th>总金额</th><th class="hidden-sm hidden-xs">订单生成日期</th><th>订单过期时间</th><th>订单状态</th><th>明细备注</th><th>操作</th></tr>
                 </thead>
               <tbody>
               <volist name="rs" id="vo" empty="$empty">
                 <tr>
                   <td><{$vo.tgno}></td>
+                  <td><{$vo.tguser}></td>
                   <td class="t-red"><{$vo.price}></td>
                   <td class="hidden-sm hidden-xs t-green"><{:date('Y-m-d H:i',$vo['addtime'])}></td>
                   <td class="hidden-sm hidden-xs t-red"><{:date('Y-m-d H:i',$vo['expiretime'])}></td>

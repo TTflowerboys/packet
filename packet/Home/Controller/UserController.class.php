@@ -89,7 +89,7 @@ class UserController extends CommandController {
         # 接点人，是否激活
         $rsparent1 = $user->where(array('id' => $rsparent['id'], 'status' => 1))->find();
         if (!$rsparent1) {
-            $this->error('接点人未激活国，暂时不能注册，请稍后再试！');
+            $this->error('接点人未激活，暂时不能注册，请稍后再试！');
         }
         # 接点人，点位['左区','右区']
         # 1. 点位已满
@@ -410,6 +410,9 @@ class UserController extends CommandController {
                         $status_class = $isUp ? 'user-type-up' : 'user-type-3';
                         break;
                 }
+                break;
+            case 3: #超时升级
+                $status_class = 'status-2';
                 break;
         }
 

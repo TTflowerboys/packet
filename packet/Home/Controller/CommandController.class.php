@@ -81,7 +81,7 @@ class CommandController extends Controller {
         ##########################
         # B.1 关闭所有付款订单
         $tglist = $tgmx->where($find)->select();
-        foreach ($tglist as $key => $value) {
+        foreach ($tglist as $key => $val) {
             if($tgmx->where(array('id'=>$val['id']))->setField(array('status'=>2))===false){
                 $user->rollback();
                 $this->error('超时付款订单,处理失败!');
@@ -90,7 +90,7 @@ class CommandController extends Controller {
 
         # B.2 关闭所有收款订单
         $pplist = $ppmx->where($find)->select();
-        foreach ($pplist as $key => $value) {
+        foreach ($pplist as $key => $val) {
             if($ppmx->where(array('id'=>$val['id']))->setField(array('status'=>2))===false){
                 $user->rollback();
                 $this->error('超时收款订单,处理失败!');
