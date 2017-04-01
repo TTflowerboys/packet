@@ -509,7 +509,9 @@ class UserController extends CommandController {
         $user = M('user');
         $tree_type = is_numeric($tree_type) ? $tree_type : C('treeType');
         $tree_num = 0+$tree_num;
-        $rs = $user->where(array('parentid'=>$tree_num))->order('parent_where asc')->select();
+        $find['status'] = array('in',array(0,1,3));
+        $find['parentid'] = array('eq',$tree_num);
+        $rs = $user->where($find)->order('parent_where asc')->select();
         $rs2 = $user->where(array('id'=>$tree_num))->find();
 
         $loop_i = 1;
