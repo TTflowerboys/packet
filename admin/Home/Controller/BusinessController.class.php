@@ -79,8 +79,8 @@ class BusinessController extends CommandController {
     }
 
     public function comfirmDo(){
-        //if (!IS_POST) {E('页面不存在！');}
-        $id = trim(I('get.id'));
+        if (!IS_POST) {E('页面不存在！');}
+        $id = trim(I('post.id'));
         $user = M('user');
         $ppmx = M('ppmx');
         $tgmx = M('tgmx');

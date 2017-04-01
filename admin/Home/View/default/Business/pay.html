@@ -41,7 +41,7 @@
               <td class="hidden-sm hidden-xs t-red"><{:date('Y-m-d H:i',$vo['expiretime'])}></td>                    
               <td><{$vo.remark}></td>
               <td><div class="action-buttons">
-                <if condition="$vo['status'] eq 1">
+                <if condition="$vo.status eq 1">
                     <a href="javascript:;"  onclick="winopen('付款明细', '<{:U(\"business/tgDetails\",array(\"id\"=>$vo[id]))}>', '620px')" class="btn btn-minier btn-success">订单详情</a>
                 <else/>
                     <a href="javascript:;"  onclick="winopen('付款明细', '<{:U(\"business/tgDetails\",array(\"id\"=>$vo[id]))}>', '620px')" class="btn btn-minier btn-danger">订单详情</a>
