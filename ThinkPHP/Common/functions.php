@@ -1814,5 +1814,13 @@ function bankType($v){
     return $area[$v];
 }
 
-
+# 处理系统核心设置
+function getLdInfo($k,$v){
+    $ldarrRs = M('config')->getField('ldarr');
+    $ldarr = explode(',',$ldarrRs);
+    foreach ($ldarr as $key => $value) {            
+        $ldarr[$key]= explode(':', $value);
+    }
+    return $ldarr[$k][$v];
+}
 
