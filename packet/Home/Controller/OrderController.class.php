@@ -170,18 +170,14 @@ class OrderController extends CommandController {
           $tgkey=date('ymd',time()).$ppRs['id'].$this->randCode(3);
           $tgno='TG'.$tgkey;
         }
-        # 2. 金额
-        $ldarr= explode(',',C('config.ldarr'));
-        foreach ($ldarr as $key => $value) {
-            $ldarr[$key]= explode(':', $value);
-        }
+
         # 3. 新订单生成时间
 
         // $ldarr[0] => Array([0] => A级会员,[1] => 2,[2] => 1000,[3] => 24)
         $upUserRank = $ppRs['rank']+1;
-        $setUserRank = $ldarr[$upUserRank][0];
-        $priceStr = $ldarr[$upUserRank][2];
-        $expireHour = $ldarr[$upUserRank][3];
+        $setUserRank = getLdInfo($upUserRank,0);
+        $priceStr = getLdInfo($upUserRank,2);
+        $expireHour = getLdInfo($upUserRank,3);
         $expireTime = $time+60*60*$expireHour;
         $totlePrice = countPrice($priceStr);
         $upTgData['no'] = $tgno;
@@ -234,7 +230,7 @@ class OrderController extends CommandController {
         
         $descLdArr =  arrOrderByKey($ppRs['ldstr']); // 打款人领导,倒序
         $ldArrSize = count($descLdArr);
-        $getLdArr = explode('-',$ldarr[$upUserRank][1]); // 后台设置的领导层
+        $getLdArr = explode('-',getLdInfo($upUserRank,1)); // 后台设置的领导层
         # A.1 找出所有满足层数的领导，即：$incomeIdArr
         $incomeIdArr = array();                    // 返回匹配出的领导ID数组
         foreach ($getLdArr as $key => $value) {

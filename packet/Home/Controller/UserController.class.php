@@ -175,15 +175,10 @@ class UserController extends CommandController {
           $tgkey=date('ymd',time()).$rs.$this->randCode(3);
           $tgno='TG'.$tgkey;
         }
-        # 2. 金额
-        $ldarr= explode(',',C('config.ldarr'));
-        foreach ($ldarr as $key => $value) {            
-            $ldarr[$key]= explode(':', $value);
-        }
 
         // $ldarr[0] => Array([0] => A级会员,[1] => 2,[2] => 1000,[3] => 24)
         $jhServerPrice = C('config.jhprice')>0 ? C('config.jhprice') : 0;
-        $priceStr = $ldarr[0][2];
+        $priceStr = getLdInfo(0,2);
 
         $totlePrice = countPrice($priceStr);
         $tgData['no'] = $tgno;
@@ -236,10 +231,10 @@ class UserController extends CommandController {
 
         # 收款人信息
         # A.根据后台设置的层数，匹配出收款人信息
-        $remark = '会员【<b class="t-green">'.$tgrs['username'].'</b>】，'.C('wenanArr.jh').'<code>'.$ldarr[0][0].'</code>';
+        $remark = '会员【<b class="t-green">'.$tgrs['username'].'</b>】，'.C('wenanArr.jh').'<code>'.getLdInfo(0,0).'</code>';
         $descLdArr =  arrOrderByKey($rs1['ldstr']); // 打款人领导,倒序
         $ldArrSize = count($descLdArr);
-        $getLdArr = explode('-',$ldarr[0][1]); // 后台设置的领导层
+        $getLdArr = explode('-',getLdInfo(0,1)); // 后台设置的领导层
         $incomeIdArr = array();                    // 返回匹配出的领导ID数组
         foreach ($getLdArr as $key => $value) {
             if ($value<=$ldArrSize) {
