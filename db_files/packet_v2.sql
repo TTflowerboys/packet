@@ -48,7 +48,7 @@ CREATE TABLE `pk_config` (
   `domain` varchar(255) DEFAULT NULL COMMENT '域名',
   `rankarr` text COMMENT '会员级别设置',
   `ldarr` varchar(255) DEFAULT NULL,
-  `jhprice` double(12,2) DEFAULT NULL COMMENT '激活金额',
+  `fee` double(12,2) DEFAULT NULL COMMENT '服务费',
   `realname` varchar(255) DEFAULT NULL COMMENT '开户人信息',
   `bindphone` varchar(11) DEFAULT NULL COMMENT '绑定手机号',
   `cardno` varchar(255) DEFAULT NULL COMMENT '银行卡号',

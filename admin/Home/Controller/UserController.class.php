@@ -191,14 +191,14 @@ class UserController extends CommandController {
           $tgno='TG'.$tgkey;
         }
         
-        $jhServerPrice = C('config.jhprice')>0 ? C('config.jhprice') : 0;
+        $fee = C('config.fee')>0 ? C('config.fee') : 0;
         $priceStr = getLdInfo(0,2);
 
         $totlePrice = countPrice($priceStr);
         $tgData['no'] = $tgno;
         $tgData['uid'] = $rs1['id'];
         $tgData['username'] = $rs1['username'];
-        $tgData['price'] = $tgData['price2'] = $totlePrice+$jhServerPrice;
+        $tgData['price'] = $tgData['price2'] = $totlePrice + $fee;
         $ppData['price1'] = $tgData['price1'] = 0;
         $ppData['status'] = $tgData['status'] = 0;
         $tgData['remark'] = '会员【<b class="t-green">'.$rs1['username'].'</b>】，'.C('wenanArr.jh');        
@@ -228,8 +228,8 @@ class UserController extends CommandController {
         $ppData['xyuid'] = 0; // 0,代表收款方为平台
         $ppData['xyuser'] = '';
         # 2. 平台收服务费
-        if ($jhServerPrice>0) {
-            $ppData['price'] = $ppData['price2'] = $jhServerPrice;
+        if ($fee>0) {
+            $ppData['price'] = $ppData['price2'] = $fee;
             $ppData['remark'] = '会员【<b class="t-green">'.$tgrs['username'].'</b>】，帐户激活<code>'.C('wenanArr.fee').'</code>';
             if ($ppmx->add($ppData) === false) {
                 $user->rollback();
