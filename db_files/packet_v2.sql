@@ -43,12 +43,14 @@ INSERT INTO `pk_admin` VALUES ('1', 'admin', null, '7fef6171469e80d32c0559f88b37
 -- ----------------------------
 DROP TABLE IF EXISTS `pk_config`;
 CREATE TABLE `pk_config` (
-  `id` int(10) NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `webname` varchar(255) DEFAULT NULL COMMENT '网址名称',
   `domain` varchar(255) DEFAULT NULL COMMENT '域名',
   `rankarr` text COMMENT '会员级别设置',
   `ldarr` varchar(255) DEFAULT NULL,
   `fee` double(12,2) DEFAULT NULL COMMENT '服务费',
+  `offerprice` varchar(255) DEFAULT NULL COMMENT '报单金额',
+  `updateprice` varchar(255) DEFAULT NULL COMMENT '升级金额',
   `realname` varchar(255) DEFAULT NULL COMMENT '开户人信息',
   `bindphone` varchar(11) DEFAULT NULL COMMENT '绑定手机号',
   `cardno` varchar(255) DEFAULT NULL COMMENT '银行卡号',
@@ -62,7 +64,7 @@ CREATE TABLE `pk_config` (
 -- ----------------------------
 -- Records of pk_config
 -- ----------------------------
-INSERT INTO `pk_config` VALUES ('1', '前程ABC/FUTURE-ABC', 'www.FUTURE-ABC.com', 'A级会员,B级会员,C级会员', 'A级会员:2:1000:24,B级会员:2-4-6-8:150-200-250-400:72,C级会员:4-6-8-10:150-200-250-400:72', '80.00', '平台银行卡', '13007120000', '66666', '北京市延庆区军都山关沟古道北口', '1', '1489500349', '0');
+INSERT INTO `pk_config` VALUES ('1', '前程ABC/FUTURE-ABC', 'www.FUTURE-ABC.com', 'A级会员,B级会员,C级会员', 'A级会员:2:10:24,B级会员:2-4-6-8:2-2-2-4:72,C级会员:4-6-8-10:2-2-2-4:72', '80.00', '2000-10000-20000-50000', '1000-5000-10000-50000', '平台银行卡', '13007120000', '66666', '北京市延庆区军都山关沟古道北口', '1', '1489500349', '0');
 
 -- ----------------------------
 -- Table structure for pk_message
