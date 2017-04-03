@@ -9,6 +9,9 @@ class SysController extends CommandController {
             $a=explode(":",  $value);
             $rsRank[$key]=$a;
         }
+        $this->assign('updateprice',explode('-', C('config.updateprice')));
+        $this->assign('offerprice',explode('-', C('config.offerprice')));
+        
         $this->assign('rank',$rsRank);
         $this->assign('rs',C("config"));
         $this->assign('banktype',C('config.banktype'));
@@ -80,6 +83,15 @@ class SysController extends CommandController {
                     $rankarr=$rankarr.','.$value;
                 }             
             }
+        }        
+
+        $offerpriceArr = I('post.offerprice');
+        $updatepriceArr = I('post.updateprice');
+        if(is_array($offerpriceArr)){
+            $data['offerprice'] = implode('-',$offerpriceArr);
+        }
+        if(is_array($updatepriceArr)){
+            $data['updateprice'] = implode('-',$updatepriceArr);
         }
         $data['webname'] = $webname;
         $data['domain']  = $domain;

@@ -63,13 +63,30 @@
         <input type="text" name="fee" class="input-text settings-num" value="<{$rs.fee}>"><span class="input-group-addon">元</span>
       </div>
     </div>
+    <div class="form-items">
+      <label class="col-sm-2 control-label">报单金额：</label>
+      <div class="col-sm-10">
+        <volist name="offerprice" id="vo">
+            <input type="text" name="offerprice[]" class="input-text settings-num" value="<{$vo}>"><span class="input-group-addon"><if condition="$i eq count($updateprice)">元<else/>-</if></span>
+        </volist>
+      </div>
+    </div>
+    <div class="form-items">
+      <label class="col-sm-2 control-label">升级金额：</label>
+      <div class="col-sm-10">
+        <volist name="updateprice" id="vo">
+            <input type="text" name="updateprice[]" class="input-text settings-num" value="<{$vo}>"><span class="input-group-addon"><if condition="$i eq count($updateprice)">元<else/>-</if></span>
+        </volist>
+      </div>
+    </div>
+
     <volist name="rank" id="vo">
       <hr class="hr">
       <div class="form-items">
         <label class="col-sm-2 control-label" style="padding-top:0">
         <input type="text" name="rankTypeArr[]" class="input-text settings-num" value="<{$vo[0]}>">：</label>
         <div class="col-sm-10">
-          <span class="input-group-addon">上级</span><input type="text" name="ldLevelArr[]" class="input-text settings-num" value="<{$vo[1]}>"><span class="input-group-addon">层，获得金额</span><input type="text" name="jjPriceArr[]" class="input-text settings-num3" value="<{$vo[2]}>"><span class="input-group-addon">元，升级时间</span><input type="text" name="upHourArr[]" class="input-text settings-num" value="<{$vo[3]}>"><span class="input-group-addon">小时</span>
+          <span class="input-group-addon">上级</span><input type="text" name="ldLevelArr[]" class="input-text settings-num" value="<{$vo[1]}>"><span class="input-group-addon">层，获得金额</span><input type="text" name="jjPriceArr[]" class="input-text settings-num3" value="<{$vo[2]}>"><span class="input-group-addon">占比，升级时间</span><input type="text" name="upHourArr[]" class="input-text settings-num" value="<{$vo[3]}>"><span class="input-group-addon">小时</span>
         </div>
       </div>
    </volist>

@@ -3,8 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class CommandController extends Controller {
     public function _initialize(){
-		$config = M('config');
-		$rssys = $config->find();
+		$rssys = M('config')->find();
 		C('config', $rssys);
 		$this->checkAccess();
 		C('DEFAULT_THEME', $rsset['DEFAULT_THEME']);
