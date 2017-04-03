@@ -183,10 +183,15 @@ CREATE TABLE `pk_user` (
   `ldstr` varchar(255) DEFAULT NULL COMMENT '领导',
   `substatus` tinyint(2) DEFAULT '0' COMMENT '下级会员激活状态（0,未激活；1,一个激活；2,两激活）',
   `upgrade` tinyint(2) unsigned DEFAULT '0' COMMENT '更新（0,正常；1,正在更新中）',
+  `type` tinyint(2) unsigned DEFAULT NULL COMMENT '会员类型，即属于哪个系统;0-FA,1-FB,2-FC,3-FD',
+  `istop` tinyint(2) unsigned DEFAULT '0' COMMENT '是否是顶层会员，顶层会员银行卡金额流入平台帐号;0-否,1-是',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pk_user
 -- ----------------------------
-INSERT INTO `pk_user` VALUES ('1', 'A000001', 'e10adc3949ba59abbe56e057f20f883e', 'A000001', '1', '00000000000000001', 'A000001开户行地址', '', '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0');
+INSERT INTO `pk_user` VALUES ('1', 'FA000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1');
+INSERT INTO `pk_user` VALUES ('2', 'FB000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1');
+INSERT INTO `pk_user` VALUES ('3', 'FC000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1');
+INSERT INTO `pk_user` VALUES ('4', 'FD000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1');
