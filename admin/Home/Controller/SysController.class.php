@@ -62,7 +62,6 @@ class SysController extends CommandController {
         $domain = trim(I('post.domain'));
         $isclose = trim(I('post.isclose'));
         $jhPrice=trim(I("post.jhPrice"));
-        $jhHour   =trim(I("post.jhHour"));
         $rankTypeArr=I("post.rankTypeArr");
         $ldLevelArr =I("post.ldLevelArr");
         $jjPriceArr =I("post.jjPriceArr");
@@ -86,7 +85,6 @@ class SysController extends CommandController {
         $data['domain']  = $domain;
         $data['isclose'] = $isclose;
         $data['jhprice']=$jhPrice;
-        $data['jhhour']=$jhHour;
         $data['ldarr']=$ldarr;
         $data['rankarr']=$rankarr;
         $rs=M("config")->where(array("id"=>1))->save($data);

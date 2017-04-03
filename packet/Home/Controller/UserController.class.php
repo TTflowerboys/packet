@@ -134,11 +134,11 @@ class UserController extends CommandController {
         $data['status']=0;
         $data['tjnum']=0;
         $data['rank']=0;
-        $data['addtime']=$time;
         $data['parent_where'] = $parent_where;
         $data['parentid'] = $rsparent1['id'];
         $data['parentuser'] = $rsparent1['username'];
-        $data['expiretime'] = $time + 60 * 60 * C("config.jhhour");
+        $ppData['addtime'] = $tgData['addtime'] = $data['addtime'] = $time;
+        $ppData['expiretime'] = $tgData['expiretime'] = $data['expiretime'] = $time + 60 * 60 * getLdInfo(0,3);
 
         $user->startTrans();
 
@@ -185,11 +185,9 @@ class UserController extends CommandController {
         $tgData['uid'] = $rs1['id'];
         $tgData['username'] = $rs1['username'];
         $tgData['price'] = $tgData['price2'] = $totlePrice+$jhServerPrice;
-        $tgData['price1'] = 0;
-        $tgData['status'] = 0;
+        $ppData['price1'] = $tgData['price1'] = 0;
+        $ppData['status'] = $tgData['status'] = 0;
         $tgData['remark'] = '会员【<b class="t-green">'.$rs1['username'].'</b>】，'.C('wenanArr.jh');        
-        $tgData['addtime']= $time;
-        $tgData['expiretime'] = $time+60*60*C("config.jhhour");
         $tgData['type'] = 0; #订单类型分为两种（方便处理新会员和老会员）：0-激活；1-升级
 
         ## 生成激活红包 ##
@@ -207,10 +205,6 @@ class UserController extends CommandController {
         $ppData['tgno'] = $tgrs['no'];
         $ppData['tguid'] = $tgrs['uid'];
         $ppData['tguser'] = $tgrs['username'];
-        $ppData['status'] = 0;
-        $ppData['price1'] = 0;
-        $ppData['addtime']= $time;
-        $ppData['expiretime'] = $time+60*60*C("config.jhhour");
         # 1. 平台收款信息
         $ppData['xycardno'] = C('config.cardno');
         $ppData['xybanktype'] = C('config.banktype');
@@ -293,7 +287,7 @@ class UserController extends CommandController {
         # 发送信息
         $message = M('message');
         $rs1 = $user->where(array('id'=>$rs))->find();
-        $expireTime = $rs1["addtime"]+60*60*C("config.jhhour");
+        $expireTime = $rs1["addtime"] + 60 * 60 * getLdInfo(0,3);
         $payment = '';
         $msgData = array(
             'uid' => $rs1['id'],

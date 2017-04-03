@@ -55,7 +55,6 @@ $array1 = array(
     ),
     # 系谱图轨数
     'treeType' => 2,
-    'registTime'=> 24,
     'empty'=>'<div class="empty"><i class="icon-lost"></i>没有相关信息</div>',
     'pageErr' => '<div class="popCont"><div class="msg"><div class="msgHd"><i class="icon-lost"></i>糟糕，网页开小差了。。。</div><p class="msgBd">（你的访问有误，请稍后再试！）</p></div></div>'
 );

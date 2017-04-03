@@ -49,7 +49,6 @@ CREATE TABLE `pk_config` (
   `rankarr` text COMMENT '会员级别设置',
   `ldarr` varchar(255) DEFAULT NULL,
   `jhprice` double(12,2) DEFAULT NULL COMMENT '激活金额',
-  `jhhour` int(10) DEFAULT NULL COMMENT '激活时间',
   `realname` varchar(255) DEFAULT NULL COMMENT '开户人信息',
   `bindphone` varchar(11) DEFAULT NULL COMMENT '绑定手机号',
   `cardno` varchar(255) DEFAULT NULL COMMENT '银行卡号',
@@ -63,7 +62,7 @@ CREATE TABLE `pk_config` (
 -- ----------------------------
 -- Records of pk_config
 -- ----------------------------
-INSERT INTO `pk_config` VALUES ('1', '前程ABC/FUTURE-ABC', 'www.FUTURE-ABC.com', 'A级会员,B级会员,C级会员', 'A级会员:2:1000:24,B级会员:2-4-6-8:150-200-250-400:72,C级会员:4-6-8-10:150-200-250-400:72', '80.00', '24', '平台银行卡', '13007120000', '66666', '北京市延庆区军都山关沟古道北口', '1', '1489500349', '0');
+INSERT INTO `pk_config` VALUES ('1', '前程ABC/FUTURE-ABC', 'www.FUTURE-ABC.com', 'A级会员,B级会员,C级会员', 'A级会员:2:1000:24,B级会员:2-4-6-8:150-200-250-400:72,C级会员:4-6-8-10:150-200-250-400:72', '80.00', '平台银行卡', '13007120000', '66666', '北京市延庆区军都山关沟古道北口', '1', '1489500349', '0');
 
 -- ----------------------------
 -- Table structure for pk_message
