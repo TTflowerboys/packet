@@ -47,6 +47,12 @@ $array1 = array(
         0 => '激活订单',
         1 => '升级订单'
     ),
+    'symbolArr' => array(
+        0 => 'FA',
+        1 => 'FB',
+        2 => 'FC',
+        3 => 'FD'
+    ),
     'wenanArr' => array(
         'jh'=>'激活帐户',
         'fee'=>'服务费',
