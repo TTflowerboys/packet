@@ -1828,3 +1828,19 @@ function getLdInfo($k,$v){
 function getSymbol($v){
     return C('symbolArr')[$v];
 }
+
+# 总金额（$v,sys type; $type,price type-0,报单;1,升级）
+function getTotlePrice($v,$type){
+    $type = $type ? $type : 'offer';
+    $priceType = 0;
+    switch ($type) {
+        case 'offer':
+            $priceType = C('config.offerprice');
+            break;
+        
+        case 'update':
+            $priceType = C('config.updateprice');
+            break;
+    }
+    return explode('-', $priceType)[$v];
+}
