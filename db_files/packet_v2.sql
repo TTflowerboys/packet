@@ -192,6 +192,6 @@ CREATE TABLE `pk_user` (
 -- Records of pk_user
 -- ----------------------------
 INSERT INTO `pk_user` VALUES ('1', 'FA000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1');
-INSERT INTO `pk_user` VALUES ('2', 'FB000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1');
-INSERT INTO `pk_user` VALUES ('3', 'FC000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1');
-INSERT INTO `pk_user` VALUES ('4', 'FD000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1');
+INSERT INTO `pk_user` VALUES ('2', 'FB000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '1', '1');
+INSERT INTO `pk_user` VALUES ('3', 'FC000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '2', '1');
+INSERT INTO `pk_user` VALUES ('4', 'FD000001', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '3', '1');
