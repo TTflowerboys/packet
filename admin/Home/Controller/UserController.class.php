@@ -36,10 +36,16 @@ class UserController extends CommandController {
 
     public function team(){
         # treeType
-        $uid = 1;
-        $tree = $this->dis_thistree($uid).$this->dis_Parent($uid);
-        $this->assign('tree',$tree);
+        $this->assign('nav',C('symbolArr'));
         $this->display();
+    }
+
+    public function teamType(){
+        if (!IS_POST) {E('请求页面不在');}
+        $systype = trim(I('post.systype'));
+        $uid =  $systype && is_numeric($systype) ? $systype : 1;
+        $tree = $this->dis_thistree($uid).$this->dis_Parent($uid);
+        $this->success($tree);
     }
 
 

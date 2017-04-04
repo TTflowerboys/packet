@@ -1,25 +1,34 @@
 <include file='Index:header'/>
 <link rel="stylesheet" href="__PUBLIC__/tpl/admin/default/css/tree.css?v=1.0">
-<div class="container ptb42">
-    
-    <div id="tree_panel" class="panel-body panel-border">
-        <div id="tree" class="tree">
-            <ul id="tree_ul" class="clearfix">
-              <li id="tree_li">
-                <{$tree}>
-              </li>
-            </ul>
-        </div>                
-    </div>
-    <div class="position-info-list clearfix">
-        <div class="blank"><span>注册新会员</span></div>
-        <div class="status-0"><span>未激活</span></div>
-        <div class="user-type-up"><span>提示升级</span></div>
-        <div class="user-type-1"><span>A级会员</span></div>
-        <div class="user-type-2"><span>B级会员</span></div>
-        <div class="user-type-3"><span>C级会员</span></div>
+<div class="page">
+    <div class="tab-box J_tab">
+        <ul class="nav nav-tabs">
+            <volist name="nav" id="vo">                
+                <li data-target="show" class="<if condition='$i eq 1'>active</if>" onclick="show_type(<{$i}>)"><{$vo}>系统</li>
+            </volist>
+        </ul>
+        <div class="tab-content">
+            <div id="show" class="tab-pane tab-active">
+                <div id="tree_panel" class="panel-body panel-border">
+                    <div id="tree" class="tree">
+                        <ul id="tree_ul" class="clearfix">
+                          <li id="tree_li"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="position-info-list clearfix">
+                    <div class="blank"><span>注册新会员</span></div>
+                    <div class="status-0"><span>未激活</span></div>
+                    <div class="user-type-up"><span>提示升级</span></div>
+                    <div class="user-type-1"><span>A级会员</span></div>
+                    <div class="user-type-2"><span>B级会员</span></div>
+                    <div class="user-type-3"><span>C级会员</span></div>
+                </div>
+            </div>            
+        </div>
     </div>
 </div>
+
 <include file='Index:footer'/>
 
 <script>
@@ -49,4 +58,17 @@ function show_sun(uid){
 $(function(){
     $('#tree').addClass('J_tree');
 })
+
+
+function show_type(type){
+  var url = '<{:U("user/teamType")}>';
+  $.post(url, {systype:type},function (data){
+    if(data.status==1){
+      $('#tree_li').html(data.info);
+    }else{
+      layer.msg('获取数据失败！', {icon: 5});
+    }
+  }, "json");
+}
+show_type(1);
 </script>
