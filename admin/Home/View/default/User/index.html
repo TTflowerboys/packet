@@ -5,7 +5,14 @@
     <form action="">
       会员编号：<input type="text" class="input-text" name="username" value="<{$valuser}>" style="width:120px">
       接点人：<input type="text" class="input-text" name="parentuser" value="<{$valparent}>" style="width:120px">
-      推荐人：<input type="text" class="input-text" name="tjuser" value="<{$valtjuser}>" style="width:120px">      
+      系统类型  ：<select name="type" >
+      <option value="">--请选择--</option>
+        <?php
+        foreach(C('symbolArr') as $k=>$v){
+          echo "<option value=".$k.">".$v."系统</option>";
+        }
+        ?>
+      </select>
       会员级别：<select name="rank" >
       <option value="">--请选择--</option>
         <?php

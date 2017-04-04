@@ -176,10 +176,9 @@ class OrderController extends CommandController {
         // $ldarr[0] => Array([0] => A级会员,[1] => 2,[2] => 1000,[3] => 24)
         $upUserRank = $ppRs['rank']+1;
         $setUserRank = getLdInfo($upUserRank,0);
-        $priceStr = getLdInfo($upUserRank,2);
         $expireHour = getLdInfo($upUserRank,3);
         $expireTime = $time+60*60*$expireHour;
-        $totlePrice = countPrice($priceStr);
+        $totlePrice = getTotlePrice($ppRs['type'],'update');;
         $upTgData['no'] = $tgno;
         $upTgData['uid'] = $ppRs['id'];
         $upTgData['username'] = $ppRs['username'];
@@ -252,13 +251,14 @@ class OrderController extends CommandController {
             #print_r($intersectArr);
 
             # B. 给匹配出来领导打款
-            $priceArr = explode('-', $priceStr);
+            $percentStr = getLdInfo($upUserRank,2);
+            $percentArr = explode('-', $percentStr);
             $hasPayPrice = 0;
             foreach ($list as $key => $val) {
                 $k = array_search($val['id'], $intersectArr);
                 $upPpData['xyuid'] = $val['id'];
                 $upPpData['xyuser'] = $val['username'];
-                $upPpData['price'] = $upPpData['price2'] = $priceArr[$k];
+                $upPpData['price'] = $upPpData['price2'] = getPercent($k,$percentStr) * $totlePrice;
                 $upPpData['xycardno'] = $val['cardno'];
                 $upPpData['xybanktype'] = $val['banktype'];
                 $upPpData['xycarduser'] = $val['realname'];
@@ -269,7 +269,7 @@ class OrderController extends CommandController {
                     $user->rollback();
                     $this->error('生成收款订单失败！');
                 }
-                $hasPayPrice = $hasPayPrice + $priceArr[$k];
+                $hasPayPrice = $hasPayPrice + getPercent($k,$percentStr) * $totlePrice;;
             }
             # B.1 未分完的钱，全部打给平台
             $surplusPrice = $totlePrice - $hasPayPrice;

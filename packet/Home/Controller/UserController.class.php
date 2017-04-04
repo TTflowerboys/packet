@@ -180,9 +180,8 @@ class UserController extends CommandController {
 
         // $ldarr[0] => Array([0] => A级会员,[1] => 2,[2] => 1000,[3] => 24)
         $fee = C('config.fee')>0 ? C('config.fee') : 0;
-        $priceStr = getLdInfo(0,2);
 
-        $totlePrice = countPrice($priceStr);
+        $totlePrice = getTotlePrice($rs1['type']);
         $tgData['no'] = $tgno;
         $tgData['uid'] = $rs1['id'];
         $tgData['username'] = $rs1['username'];
@@ -243,11 +242,12 @@ class UserController extends CommandController {
             $find['id'] = array('in', $incomeIdArr);
             $list = $user->where($find)->select();
             # B.B 给匹配出来的收款人打款
-            $priceArr = explode('-', $priceStr);
+            $percentStr = getLdInfo(0,2);
+            $percentArr = explode('-', $percentStr);
             foreach ($list as $key => $val) {
                 $ppData['xyuid'] = $val['id'];
                 $ppData['xyuser'] = $val['username'];
-                $ppData['price'] = $ppData['price2'] = $priceArr[$key];
+                $ppData['price'] = $ppData['price2'] = getPercent($key,$percentStr) * $totlePrice;
                 $ppData['remark'] = $remark;
                 $ppData['xycardno'] = $val['cardno'];
                 $ppData['xybanktype'] = $val['banktype'];
@@ -261,10 +261,10 @@ class UserController extends CommandController {
                 }
             }
             # B.C 如果只匹配到部分领导人，剩余金额将打给平台
-            if ($incomeIdArrSize < count($priceArr)) {
+            if ($incomeIdArrSize < count($percentArr)) {
                 $surplusPrice = 0;
-                for ($i=$incomeIdArrSize; $i < count($priceArr); $i++) { 
-                    $surplusPrice = $surplusPrice + $priceArr[$i];
+                for ($i=$incomeIdArrSize; $i < count($percentArr); $i++) { 
+                    $surplusPrice = $surplusPrice + getPercent($i,$percentStr) * $totlePrice;
                 }
                 $ppData['xyuid'] = 0;
                 $ppData['xyuser'] = '';
@@ -300,9 +300,9 @@ class UserController extends CommandController {
             'type' => 0,
             'remark' => '会员【'.$tgrs['username'].'】账号激活',
             'tgid' => $tgrs['id'],
-            'price'=> $totlePrice+$jhServerPrice,
+            'price'=> $totlePrice+$fee,
             'price1'=>0,
-            'price2'=>$totlePrice+$jhServerPrice,
+            'price2'=>$totlePrice+$fee,
             'addtime'=>$time
         );
 

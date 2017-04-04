@@ -7,7 +7,7 @@ class UserController extends CommandController {
         $user = M('user');
         $status = trim(I('get.status'));
         $valuser = trim(I('get.username'));
-        $valtjuser = trim(I('get.tjuser'));
+        $type = trim(I('get.type'));
         $valparent = trim(I('get.parentuser'));
         $rank = I('get.rank');
 
@@ -18,7 +18,7 @@ class UserController extends CommandController {
         }
 
         if($valuser){$map['username']=$valuser;}
-        if ($valtjuser) {$map['tjuser']=$valtjuser;}
+        if (!empty($type) && is_numeric($type)) {$map['type']=$type;}
         if ($valparent) { $map['parentuser'] = $valparent; }
         if ($rank) {$map['rank']=$rank;}
         $listcount = $user->where($map)->field('id')->count();
@@ -27,7 +27,6 @@ class UserController extends CommandController {
         $empty = "<div class='NoInfo'><div class='tit'><i class='icon-lost'></i>空空如也～</div>抱歉，暂时还未搜索到<b class='t-green'>升级失败会员</b>相关信息！</div>";
         $this->assign('empty',$empty);
         $this->assign('valuser',$valuser);
-        $this->assign('valtjuser',$valtjuser);
         $this->assign('valparent',$valparent);
         $this->assign('page', $Page->show());
         $this->assign('list', $list);
@@ -201,9 +200,8 @@ class UserController extends CommandController {
         }
         
         $fee = C('config.fee')>0 ? C('config.fee') : 0;
-        $priceStr = getLdInfo(0,2);
 
-        $totlePrice = countPrice($priceStr);
+        $totlePrice = getTotlePrice($rs1['type']);
         $tgData['no'] = $tgno;
         $tgData['uid'] = $rs1['id'];
         $tgData['username'] = $rs1['username'];
@@ -264,11 +262,12 @@ class UserController extends CommandController {
             $find['id'] = array('in', $incomeIdArr);
             $list = $user->where($find)->select();
             # B.B 给匹配出来的收款人打款
-            $priceArr = explode('-', $priceStr);
+            $percentStr = getLdInfo(0,2);
+            $percentArr = explode('-', $percentStr);
             foreach ($list as $key => $val) {
                 $ppData['xyuid'] = $val['id'];
                 $ppData['xyuser'] = $val['username'];
-                $ppData['price'] = $ppData['price2'] = $priceArr[$key];
+                $ppData['price'] = $ppData['price2'] = getPercent($key,$percentStr) * $totlePrice;
                 $ppData['remark'] = $remark;
                 $ppData['xycardno'] = $val['cardno'];
                 $ppData['xybanktype'] = $val['banktype'];
@@ -282,10 +281,10 @@ class UserController extends CommandController {
                 }
             }
             # B.C 如果只匹配到部分领导人，剩余金额将打给平台
-            if ($incomeIdArrSize < count($priceArr)) {
+            if ($incomeIdArrSize < count($percentArr)) {
                 $surplusPrice = 0;
-                for ($i=$incomeIdArrSize; $i < count($priceArr); $i++) { 
-                    $surplusPrice = $surplusPrice + $priceArr[$i];
+                for ($i=$incomeIdArrSize; $i < count($percentArr); $i++) { 
+                    $surplusPrice = $surplusPrice + getPercent($i,$percentStr) * $totlePrice;
                 }
                 $ppData['xyuid'] = 0;
                 $ppData['xyuser'] = '';
@@ -295,7 +294,7 @@ class UserController extends CommandController {
                     $user->rollback();
                     $this->error('生成收款订单失败！');
                 }
-            }            
+            }
             
         }else{
             # 如果没有领导，则直接将钱全部打给平台[即，·接点人·为最顶层的人]
@@ -321,9 +320,9 @@ class UserController extends CommandController {
             'type' => 0,
             'remark' => '会员【'.$tgrs['username'].'】账号激活',
             'tgid' => $tgrs['id'],
-            'price'=> $totlePrice+$jhServerPrice,
+            'price'=> $totlePrice+$fee,
             'price1'=>0,
-            'price2'=>$totlePrice+$jhServerPrice,
+            'price2'=>$totlePrice+$fee,
             'addtime'=>$time
         );
 
