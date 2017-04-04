@@ -1844,3 +1844,10 @@ function getTotlePrice($v,$type){
     }
     return explode('-', $priceType)[$v];
 }
+
+# 计算金额占比(直接处理传过来的$str字符串，返回$i占比)
+function getPercent($i,$str){
+    $totle = countPrice($str);
+    $cur = explode('-',$str)[$i];
+    return $cur / $totle;
+}
