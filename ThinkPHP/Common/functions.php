@@ -1824,3 +1824,7 @@ function getLdInfo($k,$v){
     return $ldarr[$k][$v];
 }
 
+# 会员编号开始字符
+function getSymbol($v){
+    return C('symbolArr')[$v];
+}

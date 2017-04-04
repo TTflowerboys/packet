@@ -27,11 +27,6 @@ class UserController extends CommandController {
 
     public function reg(){
         $user = M('user');
-        $randno = 'A'.$this->randCode(6);
-        while($user->where(array('username'=>$randno))->find()){
-            $randno = 'A'.$this->randCode(6);
-        }
-        $this->assign('username',$randno);
 
         $ParentId = i('get.ParentId');
         if (is_numeric($ParentId) && $ParentId>0) {
@@ -42,7 +37,13 @@ class UserController extends CommandController {
                 $this->error('页面不存在！',U('user/team'));
             }
         }
-        $parent_where = i('get.ParentWhere');
+        $parent_where = trim(I('get.ParentWhere'));
+        $startSymbol = getSymbol($rsParent['type'] ? $rsParent['type'] : 0);
+        $randno =$startSymbol.$this->randCode(6);
+        while($user->where(array('username'=>$randno))->find()){
+            $randno =$startSymbol.$this->randCode(6);
+        }
+        $this->assign('username',$randno);
         $this->assign('where',$parent_where);
         $this->assign('parentuser', $parentuser);
         $this->assign('tjid',session('UserId'));
@@ -137,6 +138,7 @@ class UserController extends CommandController {
         $data['parent_where'] = $parent_where;
         $data['parentid'] = $rsparent1['id'];
         $data['parentuser'] = $rsparent1['username'];
+        $data['type'] = $rsparent1['type'];
         $ppData['addtime'] = $tgData['addtime'] = $data['addtime'] = $time;
         $ppData['expiretime'] = $tgData['expiretime'] = $data['expiretime'] = $time + 60 * 60 * getLdInfo(0,3);
 
