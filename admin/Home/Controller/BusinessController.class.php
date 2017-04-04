@@ -151,31 +151,29 @@ class BusinessController extends CommandController {
         # B.如果是已激活会员(status=1)，则rank+1
         $upTgrs = $tgmx->where(array('id'=>$tgrs['id'],'status'=>1))->find();
         if ($upTgrs) {
-            $userrs = $user->where(array('id'=>$upTgrs['uid']))->find();
-            if (!$userrs) { 
-                $this->error('会员不存在，请稍后再试！'); 
-            }else{
+            $userrs = $user->where(array('id'=>$upTgrs['uid'],'istop'=>0))->find();
+            if ($userrs) {
                 $userStatus = $userrs['status'];
                 switch ($userStatus) {
                     case 0:
                         #A.如果是未激活(status=0)的会员，则激活;
-                        if ($user->where(array('id'=>$userrs['id']))->save(array('status'=>1,'jhtime'=>$time)) === false) {
+                        if ($user->where(array('id'=>$userrs['id'],'istop'=>0))->save(array('status'=>1,'jhtime'=>$time)) === false) {
                             $user->rollback();
                             $this->error('更新会员失败！');
                         }
                         # A.1 更新上级substatus
-                        if ($user->where(array('id'=>$userrs['parentid']))->save(array('substatus'=>array('exp','substatus+1'))) === false) {
+                        if ($user->where(array('id'=>$userrs['parentid'],'istop'=>0))->save(array('substatus'=>array('exp','substatus+1'))) === false) {
                             $user->rollback();
                             $this->error('更新会员失败！');
                         }
                         # A.2 如果上级substatus==2，则表示上级的直属下级激活，此时应该提醒上级的上级升级
-                        $pRs = $user->where(array('id'=>$userrs['parentid']))->find();
+                        $pRs = $user->where(array('id'=>$userrs['parentid'],'istop'=>0))->find();
                         if ($pRs && ($pRs['substatus'] == 2)) {
-                            $ppRs = $user->where(array('id'=>$pRs['parentid']))->find();
+                            $ppRs = $user->where(array('id'=>$pRs['parentid'],'istop'=>0))->find();
                             if ($ppRs) { #上级的上级，这种情况发生在顶层下面的会员升级
                                 # TODO 72hour 未确定收款时又满足条件要升级
                                 #[为了防止72小时内重复升级，通过累加upgrade，可以达到连续升级的目的]
-                                if ($user->where(array('id'=>$ppRs['id']))->save(array('upgrade'=>array('exp','upgrade+1'))) === false) {
+                                if ($user->where(array('id'=>$ppRs['id'],'istop'=>0))->save(array('upgrade'=>array('exp','upgrade+1'))) === false) {
                                     $user->rollback();
                                     $this->error('更新会员失败！');
                                 }
@@ -191,7 +189,7 @@ class BusinessController extends CommandController {
                         #B.如果是已激活(status=1)的会员，则升级;
                         $upUserDate['rank'] = array('exp','rank+1');                        
                         $upUserDate['upgrade'] = array('exp','upgrade-1');
-                        if ($user->where(array('id'=>$userrs['id']))->save($upUserDate) === false) {
+                        if ($user->where(array('id'=>$userrs['id'],'istop'=>0))->save($upUserDate) === false) {
                             $user->rollback();
                             $this->error('更新会员失败！');
                         }
