@@ -199,7 +199,6 @@ class UserController extends CommandController {
           $tgno='TG'.$tgkey;
         }
         
-        $upUserRank = $rs1['rank']+1;
         $fee = C('config.fee')>0 ? C('config.fee') : 0;
 
         $totlePrice = getTotlePrice($rs1['type']);
@@ -261,7 +260,7 @@ class UserController extends CommandController {
         if ($incomeIdArrSize) {
             # B.在数据库中查找匹配的领导，并分别给他们打款
             $find['id'] = array('in', $incomeIdArr);
-            $find['rank'] = array('egt',$upUserRank);
+            $find['rank'] = array('egt',0);
             $find['istop'] = 0; # 不处理顶层会员
             $list = $user->where($find)->select();
             $realLdIdArr = array(); # 把同时满足'层数'和'级别'的领导id找出来
@@ -303,6 +302,7 @@ class UserController extends CommandController {
                 $ppData['xybankaddress'] = C('config.bankaddress');
                 $ppData['xycardphone'] = C('config.bindphone');
                 $ppData['price'] = $ppData['price2'] = $surplusPrice;
+                $ppData['remark'] = $remark;
                 if ($ppmx->add($ppData) === false) {
                     $user->rollback();
                     $this->error('生成收款订单失败！');
