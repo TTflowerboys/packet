@@ -240,6 +240,7 @@ class UserController extends CommandController {
         if ($incomeIdArrSize) {
             # B.在数据库中查找匹配的领导，并分别给他们打款
             $find['id'] = array('in', $incomeIdArr);
+            $find['istop'] = 0; # 不处理顶层会员
             $list = $user->where($find)->select();
             # B.B 给匹配出来的收款人打款
             $percentStr = getLdInfo(0,2);

@@ -237,11 +237,11 @@ class OrderController extends CommandController {
                 array_push($incomeIdArr,$descLdArr[$value-1]);
             }
         }
-
         if (count($incomeIdArr)>0) {
             # A.2 找出所有满足 '层数'和'级别'的领导                 
             $find['id'] = array('in', $incomeIdArr);
             $find['rank'] = array('egt',$upUserRank);
+            $find['istop'] = 0; # 不处理顶层会员
             $list = $user->where($find)->select();
             $realLdIdArr = array(); # 把同时满足'层数'和'级别'的领导id找出来
             foreach ($list as $key => $value) {
