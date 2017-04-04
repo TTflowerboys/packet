@@ -178,7 +178,7 @@ class UserController extends CommandController {
           $tgno='TG'.$tgkey;
         }
 
-        // $ldarr[0] => Array([0] => A级会员,[1] => 2,[2] => 1000,[3] => 24)
+        $upUserRank = $rs1['rank']+1;
         $fee = C('config.fee')>0 ? C('config.fee') : 0;
 
         $totlePrice = getTotlePrice($rs1['type']);
@@ -240,15 +240,24 @@ class UserController extends CommandController {
         if ($incomeIdArrSize) {
             # B.在数据库中查找匹配的领导，并分别给他们打款
             $find['id'] = array('in', $incomeIdArr);
+            $find['rank'] = array('egt',$upUserRank);
             $find['istop'] = 0; # 不处理顶层会员
             $list = $user->where($find)->select();
+            $realLdIdArr = array(); # 把同时满足'层数'和'级别'的领导id找出来
+            foreach ($list as $key => $value) {
+                array_push($realLdIdArr,$value['id']);
+            }
+            $intersectArr = array_intersect($incomeIdArr, $realLdIdArr);
+
             # B.B 给匹配出来的收款人打款
             $percentStr = getLdInfo(0,2);
             $percentArr = explode('-', $percentStr);
+            $hasPayPrice = 0;
             foreach ($list as $key => $val) {
+                $k = array_search($val['id'], $intersectArr);
                 $ppData['xyuid'] = $val['id'];
                 $ppData['xyuser'] = $val['username'];
-                $ppData['price'] = $ppData['price2'] = getPercent($key,$percentStr) * $totlePrice;
+                $ppData['price'] = $ppData['price2'] = getPercent($k,$percentStr) * $totlePrice;
                 $ppData['remark'] = $remark;
                 $ppData['xycardno'] = $val['cardno'];
                 $ppData['xybanktype'] = $val['banktype'];
@@ -260,17 +269,19 @@ class UserController extends CommandController {
                     $user->rollback();
                     $this->error('生成收款订单失败！');
                 }
+                $hasPayPrice = $hasPayPrice + getPercent($k,$percentStr) * $totlePrice;
             }
-            # B.C 如果只匹配到部分领导人，剩余金额将打给平台
-            if ($incomeIdArrSize < count($percentArr)) {
-                $surplusPrice = 0;
-                for ($i=$incomeIdArrSize; $i < count($percentArr); $i++) { 
-                    $surplusPrice = $surplusPrice + getPercent($i,$percentStr) * $totlePrice;
-                }
+            # B.C 未分完的钱，全部打给平台
+            $surplusPrice = $totlePrice - $hasPayPrice;
+            if ($surplusPrice>0) {
                 $ppData['xyuid'] = 0;
                 $ppData['xyuser'] = '';
+                $ppData['xycardno'] = C('config.cardno');
+                $ppData['xybanktype'] = C('config.banktype');
+                $ppData['xycarduser'] = C('config.realname');
+                $ppData['xybankaddress'] = C('config.bankaddress');
+                $ppData['xycardphone'] = C('config.bindphone');
                 $ppData['price'] = $ppData['price2'] = $surplusPrice;
-                $ppData['remark'] = $remark;
                 if ($ppmx->add($ppData) === false) {
                     $user->rollback();
                     $this->error('生成收款订单失败！');

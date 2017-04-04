@@ -269,7 +269,7 @@ class OrderController extends CommandController {
                     $user->rollback();
                     $this->error('生成收款订单失败！');
                 }
-                $hasPayPrice = $hasPayPrice + getPercent($k,$percentStr) * $totlePrice;;
+                $hasPayPrice = $hasPayPrice + getPercent($k,$percentStr) * $totlePrice;
             }
             # B.1 未分完的钱，全部打给平台
             $surplusPrice = $totlePrice - $hasPayPrice;
