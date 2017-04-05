@@ -6,31 +6,59 @@
   <title>会员登录</title>
   <link rel="stylesheet" href="__PUBLIC__/tpl/user/default/css/login.css">
   <link rel="stylesheet" href="__PUBLIC__/static/css/fonts.css">
+  <style>
+    .closemsg{background: rgba(211, 217, 231, .8);width: 260px;font: 14px/22px 'Microsoft YaHei';margin: 200px auto 0;border-radius: 5px;padding: 32px;}
+    .closemsg i{font-size: 70px;
+    background: #00b900;
+    color: #fff;
+    border-radius: 50%;
+    padding: 12px;
+    text-align: center;
+    overflow: hidden;
+    margin: -78px auto 22px;
+    display: block;
+    width: 76px;
+    height: 76px;
+    line-height: 76px;}
+    .closemsg p{text-indent: 2em;min-height: 150px;color: #333;}
+.closemsg .who{text-align: right;margin-top: 12px;}
+  </style>
 </head>
 <body>
 
-<div class="main" id="APPBox">
-  <div class="login-form">
-    <h1><img src="__PUBLIC__/tpl/user/default/images/logo.png" alt=""></h1>
-    <div class="loginBox">   
-      <form class="ajaxForm3" action="<{:U('login/loginDo')}>" method="post">
-        <div class="form-group">
-          <input type="text" class="text-ipt" name="username" placeholder="请输入ID" required autocomplete="off">
-        </div>
-        <div class="form-group">
-          <input type="password" class="text-ipt" name="password" placeholder="请输入密码" required autocomplete="off">
-        </div>
-        <div class="form-group">
-          <input type="text" class="text-ipt text-ipt-verify" id="veriCode" name="veriCode" placeholder="请输入验证码" required>
-          <img src="<{:U('verifyCode')}>" id="verify_img" class="verify-pic" width="138" height="44" alt="验证码">
-        </div>
-        <div class="form-group">
-          <input type="submit" class="text-submit" value="登 录">
-        </div>       
-      </form>
+<if condition="$config.isclose eq 1">
+    <div class="closemsg">
+      <i class="icon-lingdang"></i>
+      <p><{$config.closemsg}></p>
+      <div class="who"><{$config.webname}> 敬上</div>
     </div>
-    <div class="otherList">一个让平民变富翁的游戏</div>
-  </div>
+<else/>
+
+    <div class="main" id="APPBox">
+      <div class="login-form">
+        <h1><img src="__PUBLIC__/tpl/user/default/images/logo.png" alt=""></h1>
+        
+          <div class="loginBox">      
+              <form class="ajaxForm3" action="<{:U('login/loginDo')}>" method="post">
+                <div class="form-group">
+                  <input type="text" class="text-ipt" name="username" placeholder="请输入ID" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="text-ipt" name="password" placeholder="请输入密码" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="text-ipt text-ipt-verify" id="veriCode" name="veriCode" placeholder="请输入验证码" required>
+                  <img src="<{:U('verifyCode')}>" id="verify_img" class="verify-pic" width="138" height="44" alt="验证码">
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="text-submit" value="登 录">
+                </div>       
+              </form>
+          </div>
+        <div class="otherList">一个让平民变富翁的游戏</div>
+      </div>
+
+</if>
 </div>
 
 

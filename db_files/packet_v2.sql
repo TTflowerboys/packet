@@ -58,13 +58,14 @@ CREATE TABLE `pk_config` (
   `banktype` tinyint(2) DEFAULT '1' COMMENT '银行卡类型(1，中国农业银行)',
   `addtime` int(10) DEFAULT NULL COMMENT '银行卡修改时间',
   `isclose` tinyint(2) DEFAULT '0' COMMENT '关闭网站（0,打开；1,闭关）',
+  `closemsg` text COMMENT '关闭网站信息',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pk_config
 -- ----------------------------
-INSERT INTO `pk_config` VALUES ('1', '前程ABC/FUTURE-ABC', 'www.FUTURE-ABC.com', 'A级会员,B级会员,C级会员', 'A级会员:2:10:24,B级会员:2-4-6-8:2-2-2-4:72,C级会员:4-6-8-10:2-2-2-4:72', '80.00', '2000-10000-20000-50000', '1000-5000-10000-50000', '平台银行卡', '13007120000', '66666', '北京市延庆区军都山关沟古道北口', '1', '1489500349', '0');
+INSERT INTO `pk_config` VALUES ('1', '前程ABC/FUTURE-ABC', 'www.FUTURE-ABC.com', 'A级会员,B级会员,C级会员', 'A级会员:2:10:24,B级会员:2-4-6-8:2-2-2-4:72,C级会员:4-6-8-10:2-2-2-4:72', '80.00', '2000-10000-20000-50000', '1000-5000-10000-50000', '平台银行卡', '13007120000', '66666', '北京市延庆区军都山关沟古道北口', '1', '1489500349', '0','');
 
 -- ----------------------------
 -- Table structure for pk_message

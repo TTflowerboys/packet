@@ -11,7 +11,7 @@ class CommandController extends Controller {
 
         $this->autoCheck();
 
-        if (!session('UserId')) { $this->redirect('Home/Login/index'); }
+        if (!session('UserId') || C('config.isclose') == 1) { $this->redirect('Home/Login/index'); }
         $rsuser = M('user')->where(array('id' => session('UserId'),'username' => session('Username')))->find();
         C('rsuser', $rsuser);
         $this->assign('userRank',C('rsuser.rank'));

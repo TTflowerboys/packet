@@ -4,6 +4,8 @@ use Think\Controller;
 class LoginController extends Controller {
 	
     public function index(){
+        $config = M('config')->where(array('id'=>1))->find();
+        $this->assign('config',$config);
         $this->display();
     }
 
@@ -13,6 +15,9 @@ class LoginController extends Controller {
         $veriCode = trim(I('post.veriCode'));
         $username = trim(i('post.username'));
         $password = trim(i('post.password'));
+        if (C('config.isclose') == 1) {
+            $this->error('网站暂停，不能注册，请稍后再试！');
+        }
         if (empty($username)) {$this->error('用户编号不能为空！');}
         if (empty($password)) {$this->error('密码不能为空！');}
         if (empty($veriCode)) {$this->error('验证码不能为空！');}elseif (!check_verify($veriCode)) {$this->error("验证码输入有误！");}
