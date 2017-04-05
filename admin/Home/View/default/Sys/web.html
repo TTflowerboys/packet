@@ -6,7 +6,7 @@
     <li class="active" data-target="webSetting">网站设置</a></li>
   </ul>
   <div class="tab-content">
-      <form class="ajaxForm2 form-horizontal" action="<{:U('sys/saveDo')}>" method="post">
+      <form class="ajaxForm2 form-horizontal" action="<{:U('sys/webDo')}>" method="post">
           <div id="webSetting" class="tab-pane tab-active">
               <div class="form-items">
                   <label class="col-sm-2 control-label">关闭网站：</label><div class="col-sm-10" style="padding-top:5px"><input name="isclose" value="1"  <if condition="$rs.isclose eq 1">checked</if> class="switch btn-flat" type="checkbox" /><span class="lbl"></span></div>

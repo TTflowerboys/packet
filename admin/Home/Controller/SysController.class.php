@@ -26,8 +26,21 @@ class SysController extends CommandController {
         $this->display();
     }
 
-    public function saveDo(){
-        //A级会员:1:1000:24:,B级会员:2-4-6-8:150-200-250-400:72,C级会员:4-6-8-10:150-200-250-400:72
+    public function webDo(){
+        if( !IS_POST ) {E('页面不存在！');}
+        $webname = trim(I('post.webname'));
+        $domain = trim(I('post.domain'));
+        $isclose = trim(I('post.isclose'));
+        $closemsg = trim(I('post.closemsg'));
+        $data['webname'] = $webname;
+        $data['domain']  = $domain;
+        $data['isclose'] = $isclose;
+        $data['closemsg'] = $closemsg;
+        $rs=M("config")->where(array("id"=>1))->save($data);
+        if ($rs) { $this->success("保存成功！"); }
+    }
+
+    public function bankDo(){
         if( !IS_POST ) {E('页面不存在！');}
         # 平台银行卡
         $realname = trim(I('post.realname'));
@@ -43,12 +56,14 @@ class SysController extends CommandController {
         $data['cardno'] = $cardno;
         $data['bankaddress'] = $bankaddress;
         $data['addtime'] = time();
+        $rs=M("config")->where(array("id"=>1))->save($data);
+        if ($rs) { $this->success("保存成功！"); }
+    }
 
-        # 系统设置
-        $webname = trim(I('post.webname'));
-        $domain = trim(I('post.domain'));
-        $isclose = trim(I('post.isclose'));
-        $closemsg = trim(I('post.closemsg'));
+    public function saveDo(){
+        //A级会员:1:1000:24:,B级会员:2-4-6-8:150-200-250-400:72,C级会员:4-6-8-10:150-200-250-400:72
+        if( !IS_POST ) {E('页面不存在！');}
+        # 系统设置        
         $fee = trim(I("post.fee"));
         $rankTypeArr=I("post.rankTypeArr");
         $ldLevelArr =I("post.ldLevelArr");
@@ -78,10 +93,7 @@ class SysController extends CommandController {
         if(is_array($updatepriceArr)){
             $data['updateprice'] = implode('-',$updatepriceArr);
         }
-        $data['webname'] = $webname;
-        $data['domain']  = $domain;
-        $data['isclose'] = $isclose;
-        $data['closemsg'] = $closemsg;
+        
         $data['fee'] = $fee;
         $data['ldarr']=$ldarr;
         $data['rankarr']=$rankarr;
