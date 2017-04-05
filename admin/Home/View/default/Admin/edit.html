@@ -1,0 +1,43 @@
+<include file='Index:header'/>
+<div class="page">
+
+<div class="tab-box J_tab">
+  <ul class="nav nav-tabs">
+    <li class="active" data-target="showBank">管理员设置</a></li>
+  </ul>
+  <div class="tab-content">
+      <form class="ajaxForm2 form-horizontal" action="<{:U('admin/editDo')}>" method="post">
+          <div id="showBank" class="tab-pane tab-active">
+              <div class="form-items">
+                  <label class="col-sm-2 control-label">管理员帐号：</label>
+                  <div class="col-sm-10"><input type="text" class="input-text col-sm-5 col-xs-10" value="<{$rs.username}>" placeholder="管理员帐号" readonly></div>
+              </div>
+              <div class="form-items">
+                  <label class="col-sm-2 control-label">原密码：</label>
+                  <div class="col-sm-10"><input type="password" name="oldpassword" class="input-text col-sm-5 col-xs-10" placeholder="原密码"></div>
+              </div>
+              <div class="form-items">
+                  <label class="col-sm-2 control-label">新密码：</label>
+                  <div class="col-sm-10"><input type="password" name="password" class="input-text col-sm-5 col-xs-10" placeholder="新密码"></div>
+              </div>
+              <div class="form-items">
+                  <label class="col-sm-2 control-label">确认新密码：</label>
+                  <div class="col-sm-10"><input type="password" name="cpassword" class="input-text col-sm-5 col-xs-10" placeholder="确认新密码"></div>
+              </div>
+          </div>
+
+          <div class="form-items">
+            <label class="col-sm-2">&nbsp;</label>
+            <div class="col-sm-10">
+              <button class="btn btn-success" type="submit"><i class="ace-icon icon-right"></i>确认修改</button>
+              <button class="btn btn-primary" type="reset"><i class="ace-icon icon-back"></i>重置</button>
+            </div>
+          </div>
+      </form>
+  </div>
+</div>
+
+
+</div>
+
+<include file='Index:footer'/>
