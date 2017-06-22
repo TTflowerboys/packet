@@ -9,6 +9,10 @@ class CommandController extends Controller {
         $rsConfig = M('config')->where(array('id'=>1))->find();
         C('config', $rsConfig);
 
+        $this->assign('CoinA',getCoin(0,0));
+        $this->assign('CoinB',getCoin(1,0));
+        $this->assign('CoinC',getCoin(2,0));
+
         $this->autoCheck();
 
         if (!session('UserId') || C('config.isclose') == 1) { $this->redirect('Home/Login/index'); }
@@ -66,7 +70,7 @@ class CommandController extends Controller {
         # @user.status=3,方便平台对超时升级会员进行复活处理 #
         ##############################################         
         $data['status']= 0;
-        $data['type'] = 1;
+        $data['type'] = array('gt',0);
         $data['_string']= '('.$time.'-expiretime)>0';
         $outuptglist = $tgmx->where($data)->select();
         foreach($outuptglist as $key=>$val){

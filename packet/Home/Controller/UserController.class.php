@@ -25,6 +25,10 @@ class UserController extends CommandController {
         $this->display();
     }
 
+    public function purse(){
+        $this->display();
+    }
+
     public function reg(){
         $user = M('user');
 
@@ -66,6 +70,7 @@ class UserController extends CommandController {
         #$veriCode = trim(I('post.veriCode'));
 
         $user = M('user');
+
         if (empty($parentuser)) {$this->error('接点人用户编号不能为空！');}
         if (empty($username)) {$this->error('新会员用户编号不能为空！');}
         if (empty($password)) {$this->error('登录密码不能为空！');}
