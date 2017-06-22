@@ -1829,6 +1829,16 @@ function getSymbol($v){
     return C('symbolArr')[$v];
 }
 
+# 电子币
+function getCoin($k,$v){
+    $coinRs = M('config')->getField('coin');
+    $coinArr = explode(',', $coinRs);
+    foreach ($coinArr as $key => $value) {
+        $coinArr[$key] = explode(':', $value);
+    }
+    return $coinArr[$k][$v];
+}
+
 # 总金额（$v,sys type; $type,price type-0,报单;1,升级）
 function getTotlePrice($v,$type){
     $type = $type ? $type : 'offer';
