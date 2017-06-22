@@ -25,6 +25,19 @@ class SysController extends CommandController {
         $this->assign('rs',C("config"));
         $this->display();
     }
+    public function coin(){
+        $rsCoin=explode(',', C("config.coin"));
+        foreach ($rsCoin as $key => $value) {
+            $a=explode(":",  $value);
+            $rsCoin[$key]=$a;
+        }
+
+        $rsRank = explode(',', C("config.rankarr"));
+        
+        $this->assign('coin',$rsCoin);
+        $this->assign('rank',$rsRank);
+        $this->display();
+    }
 
     public function webDo(){
         if( !IS_POST ) {E('页面不存在！');}
@@ -81,7 +94,7 @@ class SysController extends CommandController {
                 }else{
                     $ldarr=$ldarr.','.$a;
                     $rankarr=$rankarr.','.$value;
-                }             
+                }
             }
         }        
 
@@ -99,6 +112,29 @@ class SysController extends CommandController {
         $data['rankarr']=$rankarr;
         $rs=M("config")->where(array("id"=>1))->save($data);
         if ($rs) { $this->success("保存成功！"); }
+    }
+
+    public function coinDo(){
+        if( !IS_POST ) {E('页面不存在！');}
+
+        $coinTypeArr = I('post.coinTypeArr');
+        $incomeArr = I('post.incomeArr');
+        $payArr = I('post.payArr');
+
+        $iconString = "";
+        if(is_array($coinTypeArr)){
+            foreach ($coinTypeArr as $key => $value) {
+                $a=$value.":".$incomeArr[$key].":".$payArr[$key];
+                if($iconString==''){
+                    $iconString=$a;
+                }else{
+                    $iconString=$iconString.','.$a;
+                }
+            }
+        }
+        $data['coin'] = $iconString;
+        $rs=M("config")->where(array("id"=>1))->save($data);
+        if ($rs) { $this->success('保存成功！'); }
     }
 
 }

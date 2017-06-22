@@ -151,18 +151,21 @@ class BusinessController extends CommandController {
         # B.如果是已激活会员(status=1)，则rank+1
         $upTgrs = $tgmx->where(array('id'=>$tgrs['id'],'status'=>1))->find();
         if ($upTgrs) {
-            $userrs = $user->where(array('id'=>$upTgrs['uid'],'istop'=>0))->find();
+            $userrs = $user->where(array('id'=>$upTgrs['uid'],'istop'=>0))->find();  // 不是顶层会员
             if ($userrs) {
                 $userStatus = $userrs['status'];
+                $userRank = $userrs['rank'];
                 switch ($userStatus) {
                     case 0:
-                        #A.如果是未激活(status=0)的会员，则激活;
-                        if ($user->where(array('id'=>$userrs['id'],'istop'=>0))->save(array('status'=>1,'jhtime'=>$time)) === false) {
+                        #A.如果是未激活(status=0)的会员，则激活并生成电子币;
+                        $coinType = "coin".$userRank;   // 电子币类型
+                        $coinNum = getCoin($userRank,1);// 电子币数量
+                        if ($user->where(array('id'=>$userrs['id'],'istop'=>0))->save(array('status'=>1,'jhtime'=>$time,$coinType=>$coinNum)) === false) {
                             $user->rollback();
                             $this->error('更新会员失败！');
                         }
                         # A.1 更新上级substatus
-                        if ($user->where(array('id'=>$userrs['parentid'],'istop'=>0))->save(array('substatus'=>array('exp','substatus+1'))) === false) {
+                        if ($user->where(array('id'=>$userrs['parentid'],'istop'=>0))->save(array('substatus'=>array('exp','substatus+1'))) === false) { 
                             $user->rollback();
                             $this->error('更新会员失败！');
                         }
@@ -187,8 +190,12 @@ class BusinessController extends CommandController {
                         break;
                     case 1:
                         #B.如果是已激活(status=1)的会员，则升级;
-                        $upUserDate['rank'] = array('exp','rank+1');                        
+                        $upUserDate['rank'] = array('exp','rank+1');
                         $upUserDate['upgrade'] = array('exp','upgrade-1');
+                        $uprank = $userRank+1;
+                        $coinType = "coin".$uprank;   // 电子币类型
+                        $coinNum = getCoin($uprank,1);// 电子币数量
+                        $upUserDate[$coinType] = $coinNum;
                         if ($user->where(array('id'=>$userrs['id'],'istop'=>0))->save($upUserDate) === false) {
                             $user->rollback();
                             $this->error('更新会员失败！');
@@ -248,7 +255,7 @@ class BusinessController extends CommandController {
         $upTgData['uid'] = $ppRs['id'];
         $upTgData['username'] = $ppRs['username'];
         $upTgData['price'] = $upTgData['price2'] = $totlePrice;
-        $upTgData['type'] = 1;
+        $upPpData['type'] = $upTgData['type'] = $upUserRank;
         $upPpData['price1'] = $upTgData['price1'] = 0;
         $upPpData['status'] = $upTgData['status'] = 0;
         $upPpData['remark'] = $upTgData['remark'] = "会员【<b class='t-green'>".$ppRs['username']."</b>】，".C('wenanArr.up')."<code>".$setUserRank."</code>";
