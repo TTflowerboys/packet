@@ -1,0 +1,193 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : packet_HK
+Source Server Version : 50169
+Source Host           : packet.gotoftp1.com:3306
+Source Database       : packet
+
+Target Server Type    : MYSQL
+Target Server Version : 50169
+File Encoding         : 65001
+
+Date: 2017-06-22 12:38:17
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for pk_admin
+-- ----------------------------
+DROP TABLE IF EXISTS `pk_admin`;
+CREATE TABLE `pk_admin` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `nicename` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `addtime` int(10) DEFAULT NULL,
+  `lasttime` int(10) DEFAULT NULL,
+  `logintime` int(10) DEFAULT NULL,
+  `ip` varchar(20) DEFAULT NULL COMMENT '当前IP',
+  `lastip` varchar(20) DEFAULT NULL COMMENT '上次IP',
+  `isstop` tinyint(2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of pk_admin
+-- ----------------------------
+INSERT INTO `pk_admin` VALUES ('1', 'admin', null, '21232f297a57a5a743894a0e4a801fc3', null, '1498005189', '1498038356', '111.196.215.16', '111.196.215.16', null);
+
+-- ----------------------------
+-- Table structure for pk_config
+-- ----------------------------
+DROP TABLE IF EXISTS `pk_config`;
+CREATE TABLE `pk_config` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `webname` varchar(255) DEFAULT NULL COMMENT '网址名称',
+  `domain` varchar(255) DEFAULT NULL COMMENT '域名',
+  `rankarr` text COMMENT '会员级别设置',
+  `ldarr` varchar(255) DEFAULT NULL,
+  `fee` double(12,2) DEFAULT NULL COMMENT '服务费',
+  `offerprice` varchar(255) DEFAULT NULL COMMENT '报单金额',
+  `updateprice` varchar(255) DEFAULT NULL COMMENT '升级金额',
+  `realname` varchar(255) DEFAULT NULL COMMENT '开户人信息',
+  `bindphone` varchar(11) DEFAULT NULL COMMENT '绑定手机号',
+  `cardno` varchar(255) DEFAULT NULL COMMENT '银行卡号',
+  `bankaddress` varchar(255) DEFAULT NULL COMMENT '开户行地址',
+  `banktype` tinyint(2) DEFAULT '1' COMMENT '银行卡类型(1，中国农业银行)',
+  `addtime` int(10) DEFAULT NULL COMMENT '银行卡修改时间',
+  `isclose` tinyint(2) DEFAULT '0' COMMENT '关闭网站（0,打开；1,闭关）',
+  `closemsg` text COMMENT '关闭网站信息',
+  `coin` varchar(255) DEFAULT NULL COMMENT '电子币（A级互助币，B级财富币，C级财富币）',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of pk_config
+-- ----------------------------
+INSERT INTO `pk_config` VALUES ('1', '前程ABC', 'www.FUTURE-ABC.com', 'A级会员,B级会员,C级会员', 'A级会员:1-2:5-5:24,B级会员:2-4-6-8:2-2-2-4:72,C级会员:4-6-8-10:2-2-2-4:72', '80.00', '2000-10000-20000-60000', '1000-5000-10000-50000', '张西京-平台服务', '13264105772', '622848 00188 04135 178', '', '1', '1491759326', '0', '网站升级、暂时关闭', 'A级互助币:6:1,B级财富币:340:1,C级财富币:1360:1');
+
+-- ----------------------------
+-- Table structure for pk_message
+-- ----------------------------
+DROP TABLE IF EXISTS `pk_message`;
+CREATE TABLE `pk_message` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` int(10) DEFAULT NULL COMMENT '接收信息方id',
+  `tgid` int(10) DEFAULT NULL COMMENT '付款订单ID',
+  `username` varchar(255) DEFAULT NULL COMMENT '接收信息方账号',
+  `type` tinyint(2) DEFAULT NULL COMMENT '类型（0,平台TO会员）',
+  `message` text COMMENT '信息内容',
+  `status` tinyint(2) DEFAULT '0',
+  `addtime` int(10) DEFAULT NULL COMMENT '时间',
+  `expiretime` int(10) DEFAULT NULL COMMENT '过期时间',
+  `comfirmtime` int(10) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+  `price` double(10,2) DEFAULT '0.00',
+  `price1` double(10,2) DEFAULT '0.00',
+  `price2` double(10,2) DEFAULT '0.00',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for pk_ppmx
+-- ----------------------------
+DROP TABLE IF EXISTS `pk_ppmx`;
+CREATE TABLE `pk_ppmx` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tgno` varchar(20) DEFAULT NULL,
+  `tgid` int(10) DEFAULT NULL COMMENT '付款ID',
+  `tguid` int(10) DEFAULT NULL,
+  `tguser` varchar(20) DEFAULT NULL,
+  `xyuid` int(10) DEFAULT NULL COMMENT '收款方(0,表示平台)',
+  `xyuser` varchar(20) DEFAULT NULL,
+  `price` double(12,2) DEFAULT '0.00' COMMENT '收款金额',
+  `price1` double(12,2) DEFAULT NULL,
+  `price2` double(12,2) DEFAULT NULL,
+  `status` tinyint(2) DEFAULT '0',
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+  `addtime` int(10) DEFAULT NULL COMMENT '生成时间',
+  `expiretime` int(10) DEFAULT NULL COMMENT '过期时间',
+  `comfirmtime` int(10) DEFAULT NULL COMMENT '确认收款时间',
+  `xycardno` varchar(255) DEFAULT NULL COMMENT '收款人-银行卡',
+  `xycarduser` varchar(255) DEFAULT NULL COMMENT '收款人-银行卡开户姓名',
+  `xybankaddress` varchar(255) DEFAULT NULL COMMENT '收款人-银行卡地址',
+  `xycardphone` varchar(11) DEFAULT NULL COMMENT '收款人-银行卡绑定电话',
+  `xybanktype` varchar(255) DEFAULT NULL COMMENT '银行卡类型',
+  `type` tinyint(2) DEFAULT '0' COMMENT '0-激活订单；1-A级订单；2-B级订单(与会员级别挂钩)',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for pk_tgmx
+-- ----------------------------
+DROP TABLE IF EXISTS `pk_tgmx`;
+CREATE TABLE `pk_tgmx` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` int(10) DEFAULT NULL COMMENT '提供人ID',
+  `username` varchar(255) DEFAULT NULL,
+  `no` varchar(20) DEFAULT NULL COMMENT '订单号',
+  `price` double(12,2) DEFAULT '0.00' COMMENT '付款总金额（price1 + price2）',
+  `price1` double(12,2) DEFAULT '0.00' COMMENT '实付金额（price - price2）',
+  `price2` double(12,2) DEFAULT '0.00' COMMENT '未付金额(price - price1)',
+  `status` tinyint(2) DEFAULT '0' COMMENT '付款状态（0,等待付款；1,完成付款；2,付款失败）',
+  `remark` varchar(255) DEFAULT NULL,
+  `type` tinyint(2) DEFAULT '0' COMMENT '0-激活订单；1-A级订单；2-B级订单(与会员级别挂钩)',
+  `addtime` int(10) DEFAULT NULL COMMENT '订单生成时间',
+  `comfirmtime` int(10) DEFAULT NULL COMMENT '完成时间',
+  `expiretime` int(10) DEFAULT NULL COMMENT '订单过期时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for pk_user
+-- ----------------------------
+DROP TABLE IF EXISTS `pk_user`;
+CREATE TABLE `pk_user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(32) DEFAULT NULL,
+  `realname` varchar(20) DEFAULT NULL COMMENT '开户人姓名',
+  `banktype` varchar(255) DEFAULT NULL COMMENT '银行卡类型',
+  `cardno` varchar(255) DEFAULT NULL COMMENT '银行卡',
+  `bankaddress` varchar(255) DEFAULT NULL COMMENT '银行卡地址',
+  `phone` varchar(20) DEFAULT NULL COMMENT '手机号',
+  `rank` tinyint(2) unsigned DEFAULT '0' COMMENT '级别',
+  `status` tinyint(2) DEFAULT '0' COMMENT '账号状态（0,未激活；1,已激活；2,激活失败;3,超时升级）',
+  `addtime` int(10) DEFAULT NULL COMMENT '生成时间',
+  `logintime` int(10) DEFAULT NULL COMMENT '登录时间',
+  `lasttime` int(10) DEFAULT NULL COMMENT '上次登录时间',
+  `jhtime` int(10) DEFAULT NULL COMMENT '激活时间',
+  `expiretime` int(10) DEFAULT NULL COMMENT '过期时间',
+  `ip` varchar(20) DEFAULT NULL COMMENT '登录IP',
+  `lastip` varchar(20) DEFAULT NULL COMMENT '上次登录IP',
+  `tjid` int(10) DEFAULT '0' COMMENT '推荐人id',
+  `tjuser` varchar(20) DEFAULT NULL COMMENT '推荐人账号',
+  `tjnum` int(10) unsigned DEFAULT '0' COMMENT '我推荐的总人数',
+  `parentid` int(10) unsigned DEFAULT '0' COMMENT '位置（接点人ID）',
+  `parentuser` varchar(255) DEFAULT NULL,
+  `parent_where` tinyint(2) DEFAULT NULL COMMENT '点位（1,左；2,右）',
+  `floor` int(10) DEFAULT NULL COMMENT '层数',
+  `left` int(11) DEFAULT NULL COMMENT '左区ID',
+  `right` int(11) DEFAULT NULL COMMENT '右区ID',
+  `ldstr` varchar(255) DEFAULT NULL COMMENT '领导',
+  `substatus` tinyint(2) DEFAULT '0' COMMENT '下级会员激活状态（0,未激活；1,一个激活；2,两激活）',
+  `upgrade` tinyint(2) unsigned DEFAULT '0' COMMENT '更新（0,正常；1,正在更新中）',
+  `type` tinyint(2) unsigned DEFAULT NULL COMMENT '会员类型，即属于哪个系统;0-FA,1-FB,2-FC,3-FD',
+  `istop` tinyint(2) unsigned DEFAULT '0' COMMENT '是否是顶层会员，顶层会员银行卡金额流入平台帐号;0-否,1-是',
+  `coin0` smallint(6) DEFAULT '0' COMMENT ' 电子币( A级电子币)',
+  `coin1` smallint(6) DEFAULT '0' COMMENT ' 电子币( B级电子币)',
+  `coin2` smallint(6) DEFAULT '0' COMMENT ' 电子币( C级电子币)',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of pk_user
+-- ----------------------------
+INSERT INTO `pk_user` VALUES ('1', 'FA000001', '09ee396dbbe3d8577a265c436615ab6f', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '0', '1', '0', '0', '0');
+INSERT INTO `pk_user` VALUES ('2', 'FB000001', '09ee396dbbe3d8577a265c436615ab6f', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '1', '1', '0', '0', '0');
+INSERT INTO `pk_user` VALUES ('3', 'FC000001', '09ee396dbbe3d8577a265c436615ab6f', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '2', '1', '0', '0', '0');
+INSERT INTO `pk_user` VALUES ('4', 'FD000001', '09ee396dbbe3d8577a265c436615ab6f', null, null, null, null, null, '0', '1', null, null, null, null, null, null, null, '0', null, '1', '0', null, null, null, null, null, null, '0', '0', '3', '1', '0', '0', '0');
