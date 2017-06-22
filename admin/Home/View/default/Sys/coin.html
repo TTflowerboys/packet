@@ -1,0 +1,42 @@
+<include file='Index:header'/>
+<div class="page">
+
+<div class="tab-box J_tab">
+  <ul class="nav nav-tabs">
+    <li class="active" data-target="sys">电子币设置</li>
+  </ul>
+  <div class="tab-content">
+<form class="ajaxForm2 form-horizontal" action="<{:U('sys/coinDo')}>" method="post">
+
+  <div id="sys" class="tab-pane tab-active">
+    
+
+    <volist name="coin" id="vo">
+      <hr class="hr">
+      <div class="form-items">
+        <label class="col-sm-2 control-label" style="padding-top:0">
+        <input type="text" name="coinTypeArr[]" class="input-text settings-num" value="<{$vo[0]}>">：</label>
+        <div class="col-sm-10">
+          <span class="input-group-addon"><strong class="t-green"><{:$rank[$key]}></strong> 升级成功的同时，发放</span><input type="text" name="incomeArr[]" class="input-text settings-num" value="<{$vo[1]}>"><span class="input-group-addon">个；激活</span><input type="text" class="input-text settings-num2" value="1" readonly><span class="input-group-addon">个 <strong class="t-green"><{:$rank[$key]}></strong> 扣除</span><input type="text" name="payArr[]" class="input-text settings-num" value="<{$vo[2]}>"><span class="input-group-addon">个</span>
+        </div>
+      </div>
+   </volist>
+
+  </div> <!-- baisc 基础设置 -->
+
+
+    <div class="form-items">
+      <label class="col-sm-2">&nbsp;</label>
+      <div class="col-sm-10">
+        <button class="btn btn-success" type="submit"><i class="ace-icon icon-right"></i>确认修改</button>
+        <button class="btn btn-primary" type="reset"><i class="ace-icon icon-back"></i>重置</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+
+</div>
+
+<include file='Index:footer'/>
