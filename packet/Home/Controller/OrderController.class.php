@@ -64,6 +64,13 @@ class OrderController extends CommandController {
             $user->rollback();
             $this->error('更新订单失败！');
         }
+        # 扣除收款人对应电子币（注意：后台对应地方没有加些功能）
+        $xyUid = $rs['xyuid'];   // 收款人ID
+        $xyType = $rs['type'];   // 收款订单级别
+        $xyCoinType = 'coin'.$xyType;  // 会员coin类型
+        $xyCoinNum = getCoin($xyType,2);  // coin类型的数量
+        $upCoin[$xyCoinType] = array('exp',$xyCoinType.'-'.$xyCoinNum);
+        $user->where(array('id'=>$xyUid))->save($upCoin);
 
         # 更新付款订单
         $tgrs = $tgmx->where(array('id'=>$rs['tgid'],'status'=>0))->find();
@@ -90,10 +97,13 @@ class OrderController extends CommandController {
             $userrs = $user->where(array('id'=>$upTgrs['uid'],'istop'=>0))->find();
             if ($userrs) {
                 $userStatus = $userrs['status'];
+                $userRank = $userrs['rank'];
                 switch ($userStatus) {
                     case 0:
                         #A.如果是未激活(status=0)的会员，则激活;
-                        if ($user->where(array('id'=>$userrs['id'],'istop'=>0))->save(array('status'=>1,'jhtime'=>$time)) === false) {
+                        $coinType = "coin".$userRank;   // 电子币类型
+                        $coinNum = getCoin($userRank,1);// 电子币数量
+                        if ($user->where(array('id'=>$userrs['id'],'istop'=>0))->save(array('status'=>1,'jhtime'=>$time,$coinType=> $coinNum)) === false) {
                             $user->rollback();
                             $this->error('更新会员失败！');
                         }
@@ -124,10 +134,15 @@ class OrderController extends CommandController {
                         #B.如果是已激活(status=1)的会员，则升级;
                         $upUserDate['rank'] = array('exp','rank+1');
                         $upUserDate['upgrade'] = array('exp','upgrade-1');
+                        $uprank = $userRank+1;
+                        $coinType = "coin".$uprank;   // 电子币类型
+                        $coinNum = getCoin($uprank,1);// 电子币数量
+                        $upUserDate[$coinType] = $coinNum;
                         if ($user->where(array('id'=>$userrs['id'],'istop'=>0))->save($upUserDate) === false) {
                             $user->rollback();
                             $this->error('更新会员失败！');
                         }
+                        //echo $user->_sql();
                         if ($userrs['upgrade']>1) {
                             $this->financeDo($userrs['id']);
                         }
@@ -181,7 +196,7 @@ class OrderController extends CommandController {
         $upTgData['uid'] = $ppRs['id'];
         $upTgData['username'] = $ppRs['username'];
         $upTgData['price'] = $upTgData['price2'] = $totlePrice;
-        $upTgData['type'] = 1;
+        $upPpData['type'] = $upTgData['type'] = $upUserRank;
         $upPpData['price1'] = $upTgData['price1'] = 0;
         $upPpData['status'] = $upTgData['status'] = 0;
         $upPpData['remark'] = $upTgData['remark'] = "会员【<b class='t-green'>".$ppRs['username']."</b>】，".C('wenanArr.up')."<code>".$setUserRank."</code>";
