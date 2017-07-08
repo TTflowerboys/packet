@@ -74,9 +74,11 @@ class UserController extends CommandController {
         if (empty($parentuser)) {$this->error('接点人用户编号不能为空！');}
         if (empty($username)) {$this->error('新会员用户编号不能为空！');}
         if (empty($password)) {$this->error('登录密码不能为空！');}
-        if (!empty($phone) && !check_mobile($phone)) {
+        if (empty($phone) || !check_mobile($phone)) {
             $this->error('手机号输入不正确！');
         }
+        if (empty($cardno)) {$this->error('银行帐号不能为空！');}
+        if (empty($realname)) {$this->error('开户姓名不能为空！');}
 
         #if (empty($veriCode)) {$this->error('验证码不能为空！');}elseif (!check_verify($veriCode)) {$this->error("验证码输入有误！");}
 
