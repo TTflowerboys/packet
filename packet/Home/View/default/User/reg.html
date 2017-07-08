@@ -8,7 +8,7 @@
 </div>
 <div class="container">
   <div class="userRegMain">
-<form class="ajaxForm" action="<{:U('user/regDo')}>" method="post">
+<form id="regForm" action="<{:U('user/regDo')}>" method="post">
   <div class="row">    
     <div class="col-lg-6">
       <div class="form-group"><label class="label">接点人用户编号</label><input type="text" placeholder="请输入接点人用户编号" class="text-ipt" value="<{$parentuser}>" name="parentuser" readonly></div>
@@ -20,10 +20,10 @@
 
   <div class="row">
     <div class="col-lg-6">
-      <div class="form-group"><label class="label">登录密码<span>（默认为：123456）</span></label><input type="text" placeholder="登录密码" class="text-ipt" name="password" required value="123456"></div>
+      <div class="form-group"><label class="label">登录密码<span>（默认为：123456）</span></label><input type="text" placeholder="登录密码" class="text-ipt" name="password" value="123456"></div>
     </div>
     <div class="col-lg-6">
-      <div class="form-group"><label class="label" for="">手机号</label><input type="number" placeholder="手机号" class="text-ipt" name="phone" id="mobile"></div>
+      <div class="form-group"><label class="label" for=""><span>*</span>手机号<span>（必填）</span></label><input type="number" placeholder="手机号" class="text-ipt" name="phone" id="mobile"></div>
     </div>
     
   </div>
@@ -33,12 +33,12 @@
       <div class="form-group"><label class="label">开户银行</label><select name="banktype" class="text-ipt"><option value="1">中国农业银行</option></select></div>
     </div>
     <div class="col-lg-6">
-      <div class="form-group"><label class="label">银行帐号</label><input  type="text" name="cardno" placeholder="银行帐号" class="text-ipt"></div>
+      <div class="form-group"><label class="label"><span>*</span>银行帐号<span>（必填）</span></label><input  type="text" name="cardno" placeholder="银行帐号" class="text-ipt" id="cardno"></div>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <div class="form-group"><label class="label">开户姓名</label><input  type="text" name="realname" placeholder="开户姓名" class="text-ipt"></div>
+      <div class="form-group"><label class="label"><span>*</span>开户姓名<span>（必填）</span></label><input  type="text" name="realname" placeholder="开户姓名" class="text-ipt" id="realname"></div>
     </div>
     <div class="col-lg-6">
       <div class="form-group"><label class="label">请选择会员点位</label>
@@ -50,7 +50,7 @@
   <input type="hidden" name="tjuser" value="<{$tjuser}>">
   <input type="hidden" name="tjid" value="<{$tjid}>">
   <div class="form-group-bottom clearfix tac">
-    <button type="submit" class="text-submit"><i class="ace-icon icon-right"></i>确认注册</button>
+    <a class="text-submit J_submit" href="javascript:;" onclick="checkout()"><i class="ace-icon icon-right"></i>确认注册</a>
     <button class="text-reset" type="reset"><i class="ace-icon icon-back"></i>重置</button>
   </div>
 </form>
@@ -60,3 +60,59 @@
 
 <include file='Index:footer'/>
 
+<script src="https://cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+<script>
+	function checkout(){
+		var mobile = parseInt($("#mobile").val());
+        if(mobile<13000000000||mobile>18999999999||isNaN(mobile)){
+            layer.tips('请输入正确的手机号',$("#mobile"), { tips: [1, '#FF3100'], time:3000 });
+            return false;
+        }
+
+		var uname = $("#realname").val();  
+        if(uname.length<1){
+            layer.tips('姓名不能为空',$("#realname"), { tips: [1, '#FF3100'], time:3000 });
+            return false;
+        }
+        if(!/.*[\u4e00-\u9fa5]+.*$/.test(uname)){
+            layer.tips('姓名还是填中文的吧',$("#realname"), { tips: [1, '#FF3100'], time:3000 });
+            return false;
+        }
+
+        var cardno = $("#cardno").val();  
+        if(cardno.length<1){
+            layer.tips('银行卡号不能为空',$("#cardno"), { tips: [1, '#FF3100'], time:3000 });
+            return false;
+        }
+
+        var action = $("#regForm").attr('action');
+        $.ajax({
+            type: 'POST',
+            url: action,
+            timeout: 20000,
+            dataType: "json",
+            beforeSend: function(){
+                $('.J_submit').addClass('loading');
+                $('.J_submit').text('正在提交...');
+            },
+            complete: function(){
+                $('.J_submit').removeClass('loading');
+                $('.J_submit').text('预约试听提交');
+            },
+            data: $("#regForm").serialize(),
+            success: function(data){
+                if(data.status==1){
+                    layer.alert(data.info, {icon: 6});
+                    location.href = data.url;
+                }else{
+                    layer.msg(data.info, {icon: 5});
+                }
+                
+            },
+            error:function(data){
+                layer.msg("网络延迟，请您一定要再试一试");
+            }
+        });
+ 
+	}
+</script>
