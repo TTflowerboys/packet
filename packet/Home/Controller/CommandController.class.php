@@ -18,6 +18,7 @@ class CommandController extends Controller {
         if (!session('UserId') || C('config.isclose') == 1) { $this->redirect('Home/Login/index'); }
         $rsuser = M('user')->where(array('id' => session('UserId'),'username' => session('Username')))->find();
         C('rsuser', $rsuser);
+        $this->assign('webname',C('config.webname'));
         $this->assign('userRank',C('rsuser.rank'));
 
     }
