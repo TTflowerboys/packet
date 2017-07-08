@@ -283,7 +283,7 @@ class UserController extends CommandController {
                 $ppData['xybanktype'] = $val['banktype'];
                 $ppData['xycarduser'] = $val['realname'];
                 $ppData['xybankaddress'] = $val['bankaddress'];
-                $ppData['xycardphone'] = $val['bindphone'];
+                $ppData['xycardphone'] = $val['phone'];
 
                 if ($ppmx->add($ppData) === false) {
                     $user->rollback();

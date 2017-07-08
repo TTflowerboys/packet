@@ -276,7 +276,7 @@ class OrderController extends CommandController {
                 $upPpData['xybanktype'] = $val['banktype'];
                 $upPpData['xycarduser'] = $val['realname'];
                 $upPpData['xybankaddress'] = $val['bankaddress'];
-                $upPpData['xycardphone'] = $val['bindphone'];
+                $upPpData['xycardphone'] = $val['phone'];
 
                 if ($ppmx->add($upPpData) === false) {
                     $user->rollback();
