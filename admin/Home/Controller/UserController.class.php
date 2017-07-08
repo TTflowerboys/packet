@@ -110,7 +110,7 @@ class UserController extends CommandController {
             $this->error('接点人不存在！');
         }
         # 接点人，是否激活
-        $rsparent1 = $user->where(array('id' => $rsparent['id'], 'status' => 1))->find();
+        $rsparent1 = $user->where(array('id' => $rsparent['id'], 'status' => array('not in','0,2')))->find();
         if (!$rsparent1) {
             $this->error('接点人未激活，暂时不能注册，请稍后再试！');
         }
