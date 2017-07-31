@@ -3,8 +3,8 @@
 >* 官方网站：[ThinkPHP 5.0](http://www.thinkphp.cn)
 >* 官方GitHub地址：[ThinkPHP 5.0](https://github.com/top-think/think)
 
-### packet分支
->packet分支，是一个`互助（双轨）系统`，它是基于`thinkphp 3.2.2`开发的。
+## 项目
+> 项目名称：`尚谷互联网商学院`
 
 ### 技术支持
 >[三镇网络技术有限公司](http://www.threetowns.cn)，专注于网络营销、电子商务和企业定制化建站服务，把正确的营销方向当作一种使命，帮助客户提供专业的网络营销方案。其雄厚的实力，专业的营销团队一直活跃于各大电子商务平台的前线。
